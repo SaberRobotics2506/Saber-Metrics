@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FRC-Scouting.iml" filepath="$PROJECT_DIR$/.idea/modules/FRC-Scouting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FRC-Scouting.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FRC-Scouting.app.iml" />
     </modules>
   </component>
 </project>
