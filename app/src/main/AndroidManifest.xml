@@ -11,24 +11,13 @@
         android:theme="@style/Theme.FRCScouting">
 
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"
+            android:name="MainActivity"
+            android:label="@string/title_activity_main"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:exported="true">
-
-            <intent-filter>
-                <category android:name="android.intent.category.HOME"></category>
-            </intent-filter>
-
         </activity>
 
 
