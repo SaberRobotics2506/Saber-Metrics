@@ -13,12 +13,18 @@
         layout="@layout/content_main" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ApplicationFooter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="8sp"
         android:text="@string/app_name"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
         android:visibility="visible"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center"
