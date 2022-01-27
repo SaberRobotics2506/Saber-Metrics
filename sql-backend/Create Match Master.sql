@@ -1,3 +1,5 @@
+--This SQL Querry creates the MatchMaster table in our backend with all of the fields required for telemetry
+
 CREATE TABLE MatchMaster(
 Team# Int,
 Match# Int,
