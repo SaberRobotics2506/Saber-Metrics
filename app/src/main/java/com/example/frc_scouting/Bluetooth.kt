@@ -5,11 +5,12 @@ import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 
-//Import Android Bluetooth components
+//Import Android components
 import android.bluetooth.BluetoothSocket;
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.widget.Toast
 
 private const val TAG = "MY_APP_DEBUG_TAG"
 
@@ -20,7 +21,7 @@ const val MESSAGE_WRITE: Int = 1
 const val MESSAGE_TOAST: Int = 2
 // ... (Add other message types here as needed.)
 
-class MyBluetoothService(
+class Bluetooth(
         // handler that gets info from Bluetooth service
         private val handler: Handler) {
 
@@ -80,6 +81,7 @@ class MyBluetoothService(
                 mmSocket.close()
             } catch (e: IOException) {
                 Log.e(TAG, "Could not close the connect socket", e)
+                //MainActivity.callToast("Error: Could not load the connect socket", Toast.LENGTH_LONG) not working (IDK how to call methods through other classes)
             }
         }
     }

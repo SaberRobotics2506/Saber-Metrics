@@ -1,16 +1,12 @@
 package com.example.frc_scouting
 
-//import android utilities
+//imports
 import android.os.Bundle
-
-//import androidx utilities
+import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-
-//Import android widgets
-import android.widget.Button;
-import android.widget.ProgressBar
-import android.widget.Toast;
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,12 +27,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    public fun callToast(text: String, mode: Int)
+    {
+        Toast.makeText(this@MainActivity, text, mode).show()
+    }
+
     private fun onFormSubmission() {
         //Warn the user not to disable bluetooth or to turn off the device
-        Toast.makeText(this@MainActivity, "⚠ DO NOT DISABLE BLUETOOTH OR CLOSE THE APP ⚠", Toast.LENGTH_LONG).show()
+        callToast("⚠ DO NOT DISABLE BLUETOOTH OR CLOSE THE APP ⚠", Toast.LENGTH_LONG)
 
         toggleUI()
-
 
 
         //Toast.makeText(this@MainActivity, "Your data has been sent successfully!", Toast.LENGTH_SHORT).show() will use later
