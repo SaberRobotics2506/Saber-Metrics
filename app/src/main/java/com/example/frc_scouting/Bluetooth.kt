@@ -1,3 +1,5 @@
+package com.example.frc_scouting
+
 //Import Java Utilities
 import java.io.IOException
 import java.io.InputStream
