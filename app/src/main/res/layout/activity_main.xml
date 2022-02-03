@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:scaleX="2.5"
         android:translationY="-100px"
+        android:visibility="invisible"
         app:layout_anchor="@+id/Send"
         app:layout_anchorGravity="bottom|center" />
 
@@ -45,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:translationY="-150px"
+        android:visibility="invisible"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center" />
 
