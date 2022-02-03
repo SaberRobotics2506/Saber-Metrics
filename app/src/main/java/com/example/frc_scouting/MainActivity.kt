@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onFormSubmission() {
+        //Warn the user not to disable bluetooth or to turn off the device
+        Toast.makeText(this@MainActivity, "⚠ DO NOT DISABLE BLUETOOTH OR CLOSE THE APP ⚠", Toast.LENGTH_LONG).show()
 
         findViewById<Button>(R.id.Send).isVisible = false; //Remove the send button to prevent another button press
         findViewById<ProgressBar>(R.id.progressBar).isVisible = true; //Show the loading bar
         findViewById<ProgressBar>(R.id.progressBar2).isVisible = true; //Show the spinning thing
 
-        //Warn the user not to disable bluetooth or to turn off the device
-        Toast.makeText(this@MainActivity, "⚠ DO NOT DISABLE BLUETOOTH OR CLOSE THE APP ⚠", Toast.LENGTH_LONG).show()
 
         //Toast.makeText(this@MainActivity, "Your data has been sent successfully!", Toast.LENGTH_SHORT).show() will use later
     }
