@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.core.view.isVisible
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,11 +20,16 @@ class MainActivity : AppCompatActivity() {
         // set on-click listener
         sendButton.setOnClickListener {
             // your code to perform when the user clicks on the button
-            onFormSubmission()
+            onFormSubmission(sendButton)
         }
     }
 
-    fun onFormSubmission() {
-        Toast.makeText(this@MainActivity, "The data you have entered is being sent to the server.\nDO NOT TURN OFF YOUR DEVICE OR DISABLE BLUETOOTH.", Toast.LENGTH_LONG).show()
+    fun onFormSubmission(btn: Button) {
+
+        btn.isVisible = false; //Remove the send button to prevent another button press
+
+        //Warn the user not to disable bluetooth or to turn off the device
+        Toast.makeText(this@MainActivity, "⚠ DO NOT DISABLE BLUETOOTH OR CLOSE THE APP ⚠", Toast.LENGTH_LONG).show()
+
     }
 }
