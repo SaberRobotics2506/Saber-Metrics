@@ -8,55 +8,36 @@
     android:scaleY="1"
     android:translationY="-25px"
     android:visibility="visible"
-    tools:context=".MainActivity"
+    tools:context=".LaunchActivity"
     tools:visibility="visible">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_main" />
-
     <Button
-        android:id="@+id/Send"
-        android:layout_width="wrap_content"
+        android:id="@+id/LetsGo"
+        android:layout_width="189dp"
         android:layout_height="wrap_content"
         android:rotationX="0"
         android:rotationY="0"
         android:scaleX="1"
         android:scaleY="1"
-        android:text="@string/send_data"
+        android:text="@string/Lets_Go"
         android:visibility="visible"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center"
         tools:visibility="visible" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="2.5"
-        android:translationY="-100px"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/Send"
-        app:layout_anchorGravity="bottom|center" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
+    <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationY="-150px"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Scouted_By_Default_Text"
+        android:text="@string/Welcome_Message"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:typeface="normal"
+        android:visibility="visible"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center" />
 

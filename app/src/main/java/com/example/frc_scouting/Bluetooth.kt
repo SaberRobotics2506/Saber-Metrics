@@ -44,7 +44,7 @@ class Bluetooth(
                     break
                 }
 
-                // Send the obtained bytes to the UI activity.
+                // Lets_Go the obtained bytes to the UI activity.
                 val readMsg = handler.obtainMessage(
                         MESSAGE_READ, numBytes, -1,
                         mmBuffer)
@@ -59,7 +59,7 @@ class Bluetooth(
             } catch (e: IOException) {
                 Log.e(TAG, "Error occurred when sending data", e)
 
-                // Send a failure message back to the activity.
+                // Lets_Go a failure message back to the activity.
                 val writeErrorMsg = handler.obtainMessage(MESSAGE_TOAST)
                 val bundle = Bundle().apply {
                     putString("toast", "Couldn't send data to the other device")
@@ -81,7 +81,7 @@ class Bluetooth(
                 mmSocket.close()
             } catch (e: IOException) {
                 Log.e(TAG, "Could not close the connect socket", e)
-                //MainActivity.callToast("Error: Could not load the connect socket", Toast.LENGTH_LONG) not working (IDK how to call methods through other classes)
+                //LaunchActivity.callToast("Error: Could not load the connect socket", Toast.LENGTH_LONG) not working (IDK how to call methods through other classes)
             }
         }
     }

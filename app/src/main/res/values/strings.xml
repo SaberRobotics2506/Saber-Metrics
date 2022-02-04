@@ -6,12 +6,23 @@
     <string name="Scouted_By_Default_Text">Your name</string>
     <string name="wait">Please Wait...</string>
     <string name="title_activity_send_data">SendData</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!--Strings for LaunchActivity-->
+    <string name="Welcome_Title">Welcome Back!</string>
+    <string name="Welcome_Message">
+        Welcome to FRC-Scouting!
+        \n\n
+        This app was developed by me (Nathan) to send scouting data to our SQL database over Bluetooth.
+        If at any point while using the app you have a question feel free to contact me.
+        \n\n
+        To report a bug with this app go to https://github.com/IBXCODECAT/FRC-Scouting/issues and open an Issue.
+        \n\n
+        I genuinely hope that the FIRST robotics 2022 season goes well for you all and that you all have a great time at competition!
+        \n\n
+        Tap \"Let\'s Go!\" bellow to start entering data!
+    </string>
+    <string name="Lets_Go">Let\'s Go</string>
+
+    <!--Strings for DataActivity-->
+    <string name="Data_Collection_Title">Data Entry</string>
 </resources>
