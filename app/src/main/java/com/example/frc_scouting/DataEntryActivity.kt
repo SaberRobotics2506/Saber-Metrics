@@ -14,7 +14,7 @@ class DataEntryActivity : AppCompatActivity() {
 
     }
 
-    fun whatsThisListeners()
+    private fun whatsThisListeners()
     {
         // get reference to form submission button
         val teamNumberHelp = findViewById<Button>(R.id.teamNumberHelp)
