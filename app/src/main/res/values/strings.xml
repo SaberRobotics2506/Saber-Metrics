@@ -25,4 +25,6 @@
 
     <!--Strings for DataActivity-->
     <string name="Data_Collection_Title">Data Entry</string>
+    <string name="teamNumberTXT">Team Number</string>
+    <string name="matchNumberTXT">Match Number</string>
 </resources>
