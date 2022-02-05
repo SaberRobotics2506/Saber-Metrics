@@ -4,7 +4,6 @@
     <string name="send_data">Send my data!</string>
     <string name="request_data">Request Data!</string>
     <string name="Scouted_By_Default_Text">Your name</string>
-    <string name="wait">Please Wait...</string>
     <string name="title_activity_send_data">SendData</string>
 
     <!--Strings for LaunchActivity-->
@@ -28,5 +27,10 @@
     <string name="Help">What\'s This?</string>
     <string name="teamNumberTXT">Team Number</string>
     <string name="matchNumberTXT">Match Number</string>
+    <string name="submit">Submit Data</string>
 
+    <!--Strings for BluetoothActivity-->
+    <string name="wait">Please Wait...</string>
+    <string name="bluetoothSuccess">You did the thing! Thank you for helping with data collection!</string>
+    <string name="bluetoothFail">There was a problem sending your data... It\'s probably our fault, but please check your Bluetooth connection and try again!</string>
 </resources>
