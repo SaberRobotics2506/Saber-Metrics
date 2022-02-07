@@ -1,4 +1,4 @@
-name: Code Scanning
+name: Test Sweep
 on:
   push:
     branches: [main]
@@ -10,5 +10,3 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Qodana Scan
-        uses: JetBrains/qodana-action@v4.2.5
