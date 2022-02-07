@@ -10,30 +10,5 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Cache files
-        uses: actions/cache@v2
-        with:
-            path: |
-                ~/.sonar
-            key: ${{ runner.os }}-sonar
-            restore-keys: ${{ runner.os }}-sonar
-      - name: Run Codescan On Push
-        if: github.event_name == 'push'
-        uses: codescan-io/codescan-scanner-action@1.2
-        with:
-          organization: ‘Enter organization key here’
-          projectKey: ‘Enter project key here’       
-          login: ${{ secrets.codescan_token }}
-      - name: Run Codescan On PR
-        if: github.event_name == 'pull_request'
-        uses: codescan-io/codescan-scanner-action@1.2
-        with:
-          login: ${{ secrets.codescan_token }}
-          args: |
-            sonar.branch.name=${{github.head_ref}}
-            sonar.branch.target=${{github.base_ref}}
-            sonar.branch.type=SHORT
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: codescan.sarif
+      - name: Qodana Scan
+        uses: JetBrains/qodana-action@v4.2.5
