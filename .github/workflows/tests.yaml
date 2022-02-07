@@ -8,14 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: APK build action
         # You may pin to the exact commit or the version.
         # uses: MayMeow/apk-build-action@95e89a1681596fb6f674c5d0151993db6eb12789
-        uses: MayMeow/apk-build-action@v3
-        with:
+        - uses: MayMeow/apk-build-action@v3
+          with:
           # ANDROID_COMPILE_SDK is the version of Android you're compiling with.
-          android-compile-sdk: 31.0
-          # ANDROID_BUILD_TOOLS is the version of the Android build tools you are using.
-          android-build-tools: 21.1.0
-          # It's what version of the command line tools we're going to download from the official site.
-          android-sdk-tools: 26.1.1
+            android-compile-sdk: 31.0
+            # ANDROID_BUILD_TOOLS is the version of the Android build tools you are using.
+            android-build-tools: 21.1.0
+            # It's what version of the command line tools we're going to download from the official site.
+            android-sdk-tools: 26.1.1
