@@ -28,8 +28,6 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.2
         with:
-          organization: ‘Enter organization key here’
-          projectKey: ‘Enter project key here’
           login: ${{ secrets.codescan_token }}
           args: |
             sonar.branch.name=${{github.head_ref}}
