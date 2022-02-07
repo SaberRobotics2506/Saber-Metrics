@@ -41,3 +41,13 @@
 </p>
 
 ---
+
+<h1 align="center">Welcome FIRST Teams!</h1>
+
+<p align="center">
+    <strong>
+        This repository contains code for an Android Studio application to help you with your scouting needs!
+    </strong>
+    <br/><br/>
+    Lorsem ipsum dolar sit amet...
+</P>
