@@ -19,7 +19,9 @@
         <img src="https://img.shields.io/discord/888875214459535360?color=5865F2&logo=discord&logoColor=white" alt="Discord server"/>
     </a>
     <img src="https://img.shields.io/github/commit-activity/w/IBXCODECAT/FRC-Scouting?label=commits"/>
-    <img src="https://img.shields.io/github/downloads/IBXCODECAT/FRC-Scouting/total"/>
+    <a href="https://github.com/IBXCODECAT/FRC-Scouting/releases">
+        <img src="https://img.shields.io/github/downloads/IBXCODECAT/FRC-Scouting/total"/>
+    </a>
     <a href="https://github.com/IBXCODECAT/FRC-Scouting/issues">
         <img src="https://img.shields.io/github/issues/IBXCODECAT/FRC-Scouting"/>
     </a>
