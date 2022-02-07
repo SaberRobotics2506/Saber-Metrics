@@ -1,4 +1,4 @@
-name: Minimal Android CI Workflow
+name: Android CI Workflow
 
 on:
   push:
@@ -30,10 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Setup JDK
-        uses: actions/setup-java@v1
+      - name: Setup Kotlin
+        uses: fwilhe2/setup-kotlin@0.2.0
         with:
-          java-version: 1.8
+          # Version of the compiler to download, if not provided a default value is used.
+          version: 1.4.30
+          # Install Kotlin/Native tool chain (not needed for compiling jvm programs).
+          install-native: false
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
