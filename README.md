@@ -28,7 +28,9 @@
     <a href="https://github.com/IBXCODECAT/FRC-Scouting/blob/main/.github/LICENSE">
         <img src="https://img.shields.io/github/license/IBXCODECAT/FRC-Scouting"/>
     </a>
-    <img src="https://img.shields.io/maintenance/yes/2022"/>
+    <a href="https://github.com/IBXCODECAT/FRC-Scouting/actions">
+        <img src="https://img.shields.io/maintenance/yes/2022"/>
+    </a>
     <br/>
     <a href="https://github.com/IBXCODECAT">
         <img src="https://img.shields.io/github/followers/IBXCODECAT?label=Follow&style=social" alt="GitHub"/>
