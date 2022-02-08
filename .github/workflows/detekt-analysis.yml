@@ -51,7 +51,7 @@ jobs:
     - name: Get Detekt download URL
       id: detekt_info
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.CODESCAN_TOKEN }}
       run: |
         gh api graphql --field tagName=$DETEKT_RELEASE_TAG --raw-field query='
           query getReleaseAssetDownloadUrl($tagName: String!) {
