@@ -8,7 +8,7 @@
     android:scaleY="1"
     android:translationY="-25px"
     android:visibility="visible"
-    tools:context=".LaunchActivity"
+    tools:context="com.ibxcodecat.frc_scouting.LaunchActivity"
     tools:visibility="visible">
 
     <Button

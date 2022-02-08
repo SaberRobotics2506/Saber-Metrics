@@ -1,4 +1,4 @@
-package com.example.frc_scouting
+package com.ibxcodecat.frc_scouting
 
 //Import Java Utilities
 import java.io.IOException

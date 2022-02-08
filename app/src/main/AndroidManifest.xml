@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FRCScouting">
         <activity
-            android:name=".DataEntryActivity"
+            android:name="com.ibxcodecat.frc_scouting.DataEntryActivity"
             android:exported="false"
             android:label="@string/Data_Collection_Title">
         </activity>
         <activity
-            android:name=".BluetoothActivity"
+            android:name="com.ibxcodecat.frc_scouting.BluetoothActivity"
             android:exported="false"
             android:label="Sending Data">
         </activity>
         <activity
-            android:name=".LaunchActivity"
+            android:name="com.ibxcodecat.frc_scouting.LaunchActivity"
             android:exported="true"
             android:label="@string/Welcome_Title">
             <intent-filter>
