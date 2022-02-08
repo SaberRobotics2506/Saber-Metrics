@@ -36,8 +36,9 @@ class DataEntryActivity : AppCompatActivity() {
 
         //Switch to BlueTooth Activity
         submitButton.setOnClickListener(){
-            val switchActivityIntent = Intent(this, BluetoothActivity::class.java)
-            startActivity(switchActivityIntent)
+            val submissionIntent = Intent(this, BluetoothActivity::class.java)
+            submissionIntent.putExtra("","") //Extra data goes here
+            startActivity(submissionIntent)
         }
     }
 }
