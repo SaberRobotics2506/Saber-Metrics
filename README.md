@@ -50,7 +50,7 @@
 
 <p align="center">
     <strong>
-        This repository contains code for an Android Studio application to help you with your scouting needs!
+        This repository contains our telemetry applications to help you with your scouting needs!
     </strong>
     <br/><br/>
     At 
