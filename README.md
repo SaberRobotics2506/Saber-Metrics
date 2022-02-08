@@ -3,7 +3,9 @@
 ---
 
 <p float="left" align="center">
-    <img src="/.github/assets/saber-robotics.png" height="100" />
+    <a href="https://saberrobotics.org">
+        <img src="/.github/assets/saber-robotics.png" height="100" />
+    </a>
     <img src="/.github/assets/android.png" height="100" />
     <img src="/.github/assets/FIRST.png" height="100" /> 
 </p>
@@ -51,5 +53,16 @@
         This repository contains code for an Android Studio application to help you with your scouting needs!
     </strong>
     <br/><br/>
-    Lorsem ipsum dolar sit amet...
+    At 
+    <a href="https://saberrobotics.org">
+        Saber Robotics
+    </a>
+    we develop many tools to help us collect telemetry data at competion. These tools are collectivly called <strong>Saber Metrics</strong>. This year, we have decided to make our telemetry tools open source for other teams to use! For more information about
+    <strong>
+        Saber Metrics
+    </strong>
+    please check the
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/wiki">
+        wiki.
+    </a>
 </P>
