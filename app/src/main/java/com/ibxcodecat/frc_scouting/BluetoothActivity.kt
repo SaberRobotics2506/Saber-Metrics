@@ -3,6 +3,7 @@ package com.ibxcodecat.frc_scouting
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.PopupMenu
@@ -31,11 +32,12 @@ class BluetoothActivity : AppCompatActivity() {
         {
             if(setupBluetooth())
             {
-
+                updateLoadingText("Sending your data...")
+                //throwError("ERR: 1 [Permission Denied]")
             }
             else
             {
-                updateLoadingText("ERR 0: [Null Adapter]")
+                throwError("ERR 0: [Null Adapter]")
             }
         }
         else
@@ -45,9 +47,13 @@ class BluetoothActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateLoadingText(text: String)
+    private fun updateLoadingText(text: String) { findViewById<TextView>(R.id.wait).text = text }
+
+    private fun throwError(text: String)
     {
-        findViewById<TextView>(R.id.wait).text = text;
+        val view: TextView = findViewById<TextView>(R.id.wait);
+        view.text = text;
+        view.setTextColor(Color.RED)
     }
 
     private fun checkData(teamNumber: String, matchNumber: String): Boolean
@@ -67,6 +73,7 @@ class BluetoothActivity : AppCompatActivity() {
             }
         }
 
+        throwError("ERR: 2 [BAD DATA]")
         return false;
     }
 
@@ -88,7 +95,7 @@ class BluetoothActivity : AppCompatActivity() {
                 val enableBluetoothIntent: Intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
                 var activityResult: ActivityResultLauncher<Intent> = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ActivityResultCallback<ActivityResult> { })
 
-                activityResult.launch(enableBluetoothIntent);
+                activityResult.launch(enableBluetoothIntent)
             }
 
             return true;
