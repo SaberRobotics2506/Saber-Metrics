@@ -40,8 +40,8 @@ class DataEntryActivity : AppCompatActivity() {
             val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
 
             //Extra data to send with the activity switch
-            submissionIntent.putExtra("Team Number", Integer.parseInt(findViewById<EditText>(R.id.teamNumber).text.toString()))
-            submissionIntent.putExtra("Match Number", Integer.parseInt(findViewById<EditText>(R.id.matchNumber).text.toString()))
+            submissionIntent.putExtra("Team Number", findViewById<EditText>(R.id.teamNumber).text.toString())
+            submissionIntent.putExtra("Match Number", findViewById<EditText>(R.id.matchNumber).text.toString())
 
 
 

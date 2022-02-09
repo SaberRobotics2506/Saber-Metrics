@@ -21,30 +21,47 @@ class BluetoothActivity : AppCompatActivity() {
 
         //Toast.makeText(this@BluetoothActivity, "⚠ DO NOT DISABLE BLUETOOTH OR EXIT THIS ACTIVITY ⚠", Toast.LENGTH_LONG).show()
 
-        val teamNumber: Int = intent.getIntExtra("Team Number", -1) //-1 will be invalid in checkData()
+        val teamNumber: String = intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
+        val matchNumber: String = intent.getStringExtra("Match Number")!!
 
         Toast.makeText(this@BluetoothActivity, teamNumber, Toast.LENGTH_LONG).show()
 
-        if(checkData(teamNumber))
+        if(checkData(teamNumber, matchNumber))
         {
             if(setupBluetooth())
             {
 
             }
         }
+        else
+        {
+            val kickIntent = Intent(this, DataEntryActivity::class.java) //Create submission intent and activity
+            startActivity(kickIntent)
+        }
     }
 
-    private fun checkData(teamNumber: Int): Boolean
+    private fun checkData(teamNumber: String, matchNumber: String): Boolean
     {
         val validator = DataValidator();
 
         if(validator.ValidateTeamNumber(teamNumber))
         {
-            Toast.makeText(this@BluetoothActivity, "Valid", Toast.LENGTH_LONG).show()
+            //The team number is valid
+
+            if(validator.ValidateMatchNumber(matchNumber))
+            {
+                //The team number and match number are valid
+
+
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
-            Toast.makeText(this@BluetoothActivity, "Valid", Toast.LENGTH_LONG).show()
+            //The team number is invalid
         }
 
         return false;
