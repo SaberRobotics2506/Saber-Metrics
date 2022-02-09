@@ -5,6 +5,8 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.widget.PopupMenu
+import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
@@ -23,8 +25,6 @@ class BluetoothActivity : AppCompatActivity() {
 
         val teamNumber: String = intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
         val matchNumber: String = intent.getStringExtra("Match Number")!!
-
-        Toast.makeText(this@BluetoothActivity, teamNumber, Toast.LENGTH_LONG).show()
 
         if(checkData(teamNumber, matchNumber))
         {
@@ -51,17 +51,9 @@ class BluetoothActivity : AppCompatActivity() {
             if(validator.ValidateMatchNumber(matchNumber))
             {
                 //The team number and match number are valid
-
+                return true;
 
             }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            //The team number is invalid
         }
 
         return false;

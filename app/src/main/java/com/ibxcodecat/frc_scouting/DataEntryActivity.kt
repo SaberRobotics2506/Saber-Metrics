@@ -44,7 +44,6 @@ class DataEntryActivity : AppCompatActivity() {
             submissionIntent.putExtra("Match Number", findViewById<EditText>(R.id.matchNumber).text.toString())
 
 
-
             startActivity(submissionIntent) //Start the activity with extra data
         }
     }
