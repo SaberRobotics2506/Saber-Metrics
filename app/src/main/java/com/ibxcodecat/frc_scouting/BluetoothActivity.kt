@@ -4,6 +4,7 @@ import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
@@ -20,16 +21,34 @@ class BluetoothActivity : AppCompatActivity() {
 
         //Toast.makeText(this@BluetoothActivity, "⚠ DO NOT DISABLE BLUETOOTH OR EXIT THIS ACTIVITY ⚠", Toast.LENGTH_LONG).show()
 
-        val teamNumber: String? = intent.getStringExtra("Team Number")
+        val teamNumber: Int = intent.getIntExtra("Team Number", -1) //-1 will be invalid in checkData()
 
         Toast.makeText(this@BluetoothActivity, teamNumber, Toast.LENGTH_LONG).show()
 
-        if(setupBluetooth())
+        if(checkData(teamNumber))
         {
+            if(setupBluetooth())
+            {
 
+            }
         }
     }
 
+    private fun checkData(teamNumber: Int): Boolean
+    {
+        val validator = DataValidator();
+
+        if(validator.ValidateTeamNumber(teamNumber))
+        {
+            Toast.makeText(this@BluetoothActivity, "Valid", Toast.LENGTH_LONG).show()
+        }
+        else
+        {
+            Toast.makeText(this@BluetoothActivity, "Valid", Toast.LENGTH_LONG).show()
+        }
+
+        return false;
+    }
 
     private fun setupBluetooth(): Boolean
     {
