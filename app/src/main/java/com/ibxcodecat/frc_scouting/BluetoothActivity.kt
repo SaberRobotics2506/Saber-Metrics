@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.PopupMenu
 import android.widget.PopupWindow
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
@@ -32,6 +33,10 @@ class BluetoothActivity : AppCompatActivity() {
             {
 
             }
+            else
+            {
+                updateLoadingText("ERR 0: [Null Adapter]")
+            }
         }
         else
         {
@@ -40,8 +45,15 @@ class BluetoothActivity : AppCompatActivity() {
         }
     }
 
+    private fun updateLoadingText(text: String)
+    {
+        findViewById<TextView>(R.id.wait).text = text;
+    }
+
     private fun checkData(teamNumber: String, matchNumber: String): Boolean
     {
+        updateLoadingText("Validating Data...")
+
         val validator = DataValidator();
 
         if(validator.ValidateTeamNumber(teamNumber))
@@ -52,7 +64,6 @@ class BluetoothActivity : AppCompatActivity() {
             {
                 //The team number and match number are valid
                 return true;
-
             }
         }
 
@@ -61,6 +72,9 @@ class BluetoothActivity : AppCompatActivity() {
 
     private fun setupBluetooth(): Boolean
     {
+
+        updateLoadingText("Setting up Bluetooth...")
+
         val adapter: BluetoothAdapter? = getBluetoothAdapter();
 
         if(getBluetoothAdapter() == null)
@@ -71,7 +85,6 @@ class BluetoothActivity : AppCompatActivity() {
         {
             if(!adapter?.isEnabled!!)
             {
-
                 val enableBluetoothIntent: Intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
                 var activityResult: ActivityResultLauncher<Intent> = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ActivityResultCallback<ActivityResult> { })
 
