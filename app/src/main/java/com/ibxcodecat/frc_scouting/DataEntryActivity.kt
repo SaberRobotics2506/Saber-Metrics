@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import com.example.frc_scouting.R
 
@@ -36,9 +37,15 @@ class DataEntryActivity : AppCompatActivity() {
 
         //Switch to BlueTooth Activity
         submitButton.setOnClickListener(){
-            val submissionIntent = Intent(this, BluetoothActivity::class.java)
-            submissionIntent.putExtra("","") //Extra data goes here
-            startActivity(submissionIntent)
+            val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
+
+            //Extra data to send with the activity switch
+            submissionIntent.putExtra("Team Number", findViewById<EditText>(R.id.teamNumber).text.toString())
+            submissionIntent.putExtra("Match Number", Integer.parseInt(findViewById<EditText>(R.id.matchNumber).text.toString()))
+
+
+
+            startActivity(submissionIntent) //Start the activity with extra data
         }
     }
 }

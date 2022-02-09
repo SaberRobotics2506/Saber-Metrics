@@ -18,16 +18,20 @@ class BluetoothActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth)
 
-        Toast.makeText(this@BluetoothActivity, "⚠ DO NOT DISABLE BLUETOOTH OR EXIT THIS ACTIVITY ⚠", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this@BluetoothActivity, "⚠ DO NOT DISABLE BLUETOOTH OR EXIT THIS ACTIVITY ⚠", Toast.LENGTH_LONG).show()
+
+        val teamNumber: String? = intent.getStringExtra("Team Number")
+
+        Toast.makeText(this@BluetoothActivity, teamNumber, Toast.LENGTH_LONG).show()
 
         if(setupBluetooth())
         {
-            //Do stuff
+
         }
     }
 
 
-    fun setupBluetooth(): Boolean
+    private fun setupBluetooth(): Boolean
     {
         val adapter: BluetoothAdapter? = getBluetoothAdapter();
 
