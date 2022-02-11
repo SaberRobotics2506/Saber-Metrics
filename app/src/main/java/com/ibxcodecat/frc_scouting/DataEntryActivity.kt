@@ -1,6 +1,7 @@
 package com.ibxcodecat.frc_scouting
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.Toast
 import com.example.frc_scouting.R
 
 class DataEntryActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_entry)
@@ -16,6 +18,39 @@ class DataEntryActivity : AppCompatActivity() {
         whatsThisListeners()
         submissionListener()
 
+    }
+
+    private fun errorTextFormatting(text: EditText)
+    {
+        text.setTextColor(Color.RED)
+        text.setHintTextColor(Color.RED)
+    }
+
+    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText)
+    {
+        teamNumber.setTextColor(Color.BLACK)
+        teamNumber.setHintTextColor(Color.BLACK)
+        matchNumber.setTextColor(Color.BLACK)
+        matchNumber.setHintTextColor(Color.BLACK)
+    }
+
+    private fun checkData(): Boolean
+    {
+        val teamNumber = findViewById<EditText>(R.id.teamNumber)
+        val matchNumber = findViewById<EditText>(R.id.matchNumber)
+
+        resetTextFormatting(teamNumber, matchNumber)
+
+        val validator :DataValidator = DataValidator()
+
+        when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString()))
+        {
+            DataValidator.DataError.TeamNumberError -> errorTextFormatting(teamNumber)
+            DataValidator.DataError.MatchNumberError -> errorTextFormatting(matchNumber)
+            else -> { return true }
+        }
+
+        return false
     }
 
     private fun whatsThisListeners()
@@ -36,15 +71,22 @@ class DataEntryActivity : AppCompatActivity() {
         val submitButton = findViewById<Button>(R.id.submit)
 
         //Switch to BlueTooth Activity
-        submitButton.setOnClickListener(){
-            val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
+        submitButton.setOnClickListener {
 
-            //Extra data to send with the activity switch
-            submissionIntent.putExtra("Team Number", findViewById<EditText>(R.id.teamNumber).text.toString())
-            submissionIntent.putExtra("Match Number", findViewById<EditText>(R.id.matchNumber).text.toString())
+            if(checkData())
+            {
+                val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
 
+                //The data to send with the activity switch
+                submissionIntent.putExtra("Team Number", findViewById<EditText>(R.id.teamNumber).text.toString())
+                submissionIntent.putExtra("Match Number", findViewById<EditText>(R.id.matchNumber).text.toString())
 
-            startActivity(submissionIntent) //Start the activity with extra data
+                startActivity(submissionIntent) //Start the activity with extra data
+            }
+            else
+            {
+                Toast.makeText(this@DataEntryActivity, "The data you entered doesn't look quite right...", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

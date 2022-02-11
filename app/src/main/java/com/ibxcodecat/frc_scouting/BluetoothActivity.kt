@@ -16,7 +16,7 @@ import com.example.frc_scouting.R
 
 
 class BluetoothActivity : AppCompatActivity() {
-    var disableNavigation: Boolean = false;
+    private var disableNavigation: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class BluetoothActivity : AppCompatActivity() {
 
             if (setupBluetooth()) {
                 updateLoadingText("Sending your data...")
-                disableNavigation = true;
+                disableNavigation = true
             } else {
                 throwError("ERR 0x02: [Null Adapter]") //T
             }
@@ -46,16 +46,15 @@ class BluetoothActivity : AppCompatActivity() {
         if(disableNavigation) {
             if (keyCode == KeyEvent.KEYCODE_APP_SWITCH || keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_ALL_APPS) {
                 Toast.makeText(this@BluetoothActivity, "Android navigation buttons are locked because we're sending data...", Toast.LENGTH_LONG).show()
-                return true;
+                return true
             }
-
         }
         return super.onKeyDown(keyCode, event)
     }
 
     //Update the loading text bellow the spinning thing and turn it black
     private fun updateLoadingText(text: String) {
-        val view: TextView = findViewById<TextView>(R.id.wait)
+        val view = findViewById<TextView>(R.id.wait)
         view.text = text
         view.setTextColor(Color.BLACK)
     }
@@ -63,49 +62,25 @@ class BluetoothActivity : AppCompatActivity() {
     //Update the loading text bellow the spinning thing and turn it red
     private fun throwError(text: String)
     {
-        val view: TextView = findViewById<TextView>(R.id.wait);
-        view.text = text;
+        val view = findViewById<TextView>(R.id.wait)
+        view.text = text
         view.setTextColor(Color.RED)
     }
 
-    //Check the data that was passed into the bluetooth thing
-    private fun checkData(teamNumber: String, matchNumber: String): Boolean
+    private fun checkData(temp1: String, temp2: String): Boolean
     {
-        updateLoadingText("Validating Data...")
-
-        try
-        {
-            val validator = DataValidator();
-
-            if(validator.ValidateTeamNumber(teamNumber)) //team number valid?
-            {
-                if(validator.ValidateMatchNumber(matchNumber)) //The team number and match number are valid
-                {
-                    return true;
-                }
-            }
-
-            throwError("ERR: 0x00 [DATA_INVALID]")
-            return false;
-        }
-        catch(ex: Exception)
-        {
-            throwError("ERR: 0x01 [INTENT_REJECTED]")
-            return false;
-        }
-
+        return true
     }
 
     private fun setupBluetooth(): Boolean
     {
-
         updateLoadingText("Setting up Bluetooth...")
 
-        val adapter: BluetoothAdapter? = getBluetoothAdapter();
+        val adapter: BluetoothAdapter? = getBluetoothAdapter()
 
         if(getBluetoothAdapter() == null)
         {
-            return false;
+            return false
         }
         else
         {
@@ -117,7 +92,7 @@ class BluetoothActivity : AppCompatActivity() {
                 activityResult.launch(enableBluetoothIntent)
             }
 
-            return true;
+            return true
         }
     }
 
@@ -126,9 +101,9 @@ class BluetoothActivity : AppCompatActivity() {
         val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
 
         if (bluetoothAdapter == null) {
-            Toast.makeText(this@BluetoothActivity, "Your device does not support bluetooth", Toast.LENGTH_LONG).show();
+            Toast.makeText(this@BluetoothActivity, "Your device does not support bluetooth", Toast.LENGTH_LONG).show()
         }
 
-        return bluetoothAdapter;
+        return bluetoothAdapter
     }
 }
