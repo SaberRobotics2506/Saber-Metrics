@@ -1,13 +1,10 @@
 package com.ibxcodecat.frc_scouting
 
-import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.widget.PopupMenu
-import android.widget.PopupWindow
+import android.view.KeyEvent
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
@@ -19,33 +16,51 @@ import com.example.frc_scouting.R
 
 
 class BluetoothActivity : AppCompatActivity() {
+    var disableNavigation: Boolean = false;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth)
 
-        val teamNumber: String = intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
+        val teamNumber: String =
+            intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
         val matchNumber: String = intent.getStringExtra("Match Number")!!
 
 
         updateLoadingText("Validating your data...")
 
-        if(checkData(teamNumber, matchNumber))
-        {
+        if (checkData(teamNumber, matchNumber)) {
             updateLoadingText("Setting up Bluetooth...")
 
-            if(setupBluetooth())
-            {
+            if (setupBluetooth()) {
                 updateLoadingText("Sending your data...")
-            }
-            else
-            {
+                disableNavigation = true;
+            } else {
                 throwError("ERR 0x02: [Null Adapter]") //T
             }
         }
     }
 
-    private fun updateLoadingText(text: String) { findViewById<TextView>(R.id.wait).text = text }
+    //Override default android navigation when 'disableNavigation' is true with a popup
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if(disableNavigation) {
+            if (keyCode == KeyEvent.KEYCODE_APP_SWITCH || keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_ALL_APPS) {
+                Toast.makeText(this@BluetoothActivity, "Android navigation buttons are locked because we're sending data...", Toast.LENGTH_LONG).show()
+                return true;
+            }
 
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    //Update the loading text bellow the spinning thing and turn it black
+    private fun updateLoadingText(text: String) {
+        val view: TextView = findViewById<TextView>(R.id.wait)
+        view.text = text
+        view.setTextColor(Color.BLACK)
+    }
+
+    //Update the loading text bellow the spinning thing and turn it red
     private fun throwError(text: String)
     {
         val view: TextView = findViewById<TextView>(R.id.wait);
@@ -53,6 +68,7 @@ class BluetoothActivity : AppCompatActivity() {
         view.setTextColor(Color.RED)
     }
 
+    //Check the data that was passed into the bluetooth thing
     private fun checkData(teamNumber: String, matchNumber: String): Boolean
     {
         updateLoadingText("Validating Data...")
