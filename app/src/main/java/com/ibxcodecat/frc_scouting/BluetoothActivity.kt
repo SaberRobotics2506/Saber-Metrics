@@ -23,27 +23,24 @@ class BluetoothActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth)
 
-        //Toast.makeText(this@BluetoothActivity, "⚠ DO NOT DISABLE BLUETOOTH OR EXIT THIS ACTIVITY ⚠", Toast.LENGTH_LONG).show()
-
         val teamNumber: String = intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
         val matchNumber: String = intent.getStringExtra("Match Number")!!
 
+
+        updateLoadingText("Validating your data...")
+
         if(checkData(teamNumber, matchNumber))
         {
+            updateLoadingText("Setting up Bluetooth...")
+
             if(setupBluetooth())
             {
                 updateLoadingText("Sending your data...")
-                //throwError("ERR: 1 [Permission Denied]")
             }
             else
             {
-                throwError("ERR 0: [Null Adapter]")
+                throwError("ERR 0x02: [Null Adapter]") //T
             }
-        }
-        else
-        {
-            val kickIntent = Intent(this, DataEntryActivity::class.java) //Create submission intent and activity
-            startActivity(kickIntent)
         }
     }
 
@@ -60,21 +57,27 @@ class BluetoothActivity : AppCompatActivity() {
     {
         updateLoadingText("Validating Data...")
 
-        val validator = DataValidator();
-
-        if(validator.ValidateTeamNumber(teamNumber))
+        try
         {
-            //The team number is valid
+            val validator = DataValidator();
 
-            if(validator.ValidateMatchNumber(matchNumber))
+            if(validator.ValidateTeamNumber(teamNumber)) //team number valid?
             {
-                //The team number and match number are valid
-                return true;
+                if(validator.ValidateMatchNumber(matchNumber)) //The team number and match number are valid
+                {
+                    return true;
+                }
             }
+
+            throwError("ERR: 0x00 [DATA_INVALID]")
+            return false;
+        }
+        catch(ex: Exception)
+        {
+            throwError("ERR: 0x01 [INTENT_REJECTED]")
+            return false;
         }
 
-        throwError("ERR: 2 [BAD DATA]")
-        return false;
     }
 
     private fun setupBluetooth(): Boolean
