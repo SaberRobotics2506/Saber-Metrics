@@ -4,6 +4,7 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.KeyEvent
 import android.widget.TextView
 import android.widget.Toast
@@ -22,22 +23,18 @@ class BluetoothActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth)
 
-        val teamNumber: String =
-            intent.getStringExtra("Team Number")!! //-1 will be invalid in checkData()
-        val matchNumber: String = intent.getStringExtra("Match Number")!!
+        val dataObj: DataObject = DataObject()
 
+        val teamNumber: Int = dataObj.teamNumber
+        val matchNumber: Int = dataObj.matchNumber
 
-        updateLoadingText("Validating your data...")
+        println("$teamNumber $matchNumber")
 
-        if (checkData(teamNumber, matchNumber)) {
-            updateLoadingText("Setting up Bluetooth...")
-
-            if (setupBluetooth()) {
-                updateLoadingText("Sending your data...")
-                disableNavigation = true
-            } else {
-                throwError("ERR 0x02: [Null Adapter]") //T
-            }
+        if (setupBluetooth()) {
+            updateLoadingText("Sending your data...")
+            disableNavigation = true
+        } else {
+            throwError("ERR 0x02: [Null Adapter]") //T
         }
     }
 
@@ -65,11 +62,6 @@ class BluetoothActivity : AppCompatActivity() {
         val view = findViewById<TextView>(R.id.wait)
         view.text = text
         view.setTextColor(Color.RED)
-    }
-
-    private fun checkData(temp1: String, temp2: String): Boolean
-    {
-        return true
     }
 
     private fun setupBluetooth(): Boolean

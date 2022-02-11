@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -77,9 +78,10 @@ class DataEntryActivity : AppCompatActivity() {
             {
                 val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
 
-                //The data to send with the activity switch
-                submissionIntent.putExtra("Team Number", findViewById<EditText>(R.id.teamNumber).text.toString())
-                submissionIntent.putExtra("Match Number", findViewById<EditText>(R.id.matchNumber).text.toString())
+                val dataObj: DataObject = DataObject()
+
+                dataObj.teamNumber = findViewById<EditText>(R.id.teamNumber).text.toString().toInt()
+                dataObj.matchNumber = findViewById<EditText>(R.id.matchNumber).text.toString().toInt()
 
                 startActivity(submissionIntent) //Start the activity with extra data
             }
