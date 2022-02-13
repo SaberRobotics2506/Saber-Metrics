@@ -1,20 +1,14 @@
 <resources>
-    <string name="app_name">FRC-Scouting</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="app_name">Saber Metrics</string>
     <string name="send_data">Send my data!</string>
-    <string name="request_data">Request Data!</string>
-    <string name="Scouted_By_Default_Text">Your name</string>
-    <string name="title_activity_send_data">SendData</string>
 
     <!--Strings for LaunchActivity-->
-    <string name="Welcome_Title">Welcome Back!</string>
+    <string name="Welcome_Title">Saber Metrics</string>
     <string name="Welcome_Message">
-        Welcome to FRC-Scouting!
+        Welcome to Saber-Metrics!
         \n\n
         This app was developed by me (Nathan) to send scouting data to our SQL database over Bluetooth.
         If at any point while using the app you have a question feel free to contact me.
-        \n\n
-        To report a bug with this app go to https://github.com/IBXCODECAT/FRC-Scouting/issues and open an Issue.
         \n\n
         I genuinely hope that the FIRST robotics 2022 season goes well for you all and that you all have a great time at competition!
         \n\n
