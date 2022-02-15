@@ -77,7 +77,13 @@ class DataEntryActivity : AppCompatActivity() {
 
             if(checkData())
             {
-                
+                val teamNumber = findViewById<EditText>(R.id.teamNumber)
+                val matchNumber = findViewById<EditText>(R.id.matchNumber)
+
+                val dataToSerialize: SerializationData = SerializationData(
+                    teamNumber.text.toString().toInt(),
+                    matchNumber.text.toString().toInt()
+                )
             }
             else
             {
