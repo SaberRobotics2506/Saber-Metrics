@@ -15,9 +15,11 @@
         <entry key="..\:/Users/natha/OneDrive/Desktop/FRC-Scouting/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/natha/OneDrive/Desktop/FRC-Scouting/app/src/main/res/layout/content_main.xml" value="0.20625" />
         <entry key="..\:/Users/natha/OneDrive/Desktop/FRC-Scouting/app/src/main/res/layout/send_data.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Saber-Metrics/app/src/main/res/layout/activity_data_entry.xml" value="0.33" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
