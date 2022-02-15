@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.frc_scouting">
-
     <!-- Allows app to scan for Bluetooth devices. The app will never use Bluetooth to track location -->
     <uses-permission
         android:name="android.permission.BLUETOOTH_SCAN"
@@ -23,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FRCScouting">
         <activity
+            android:name="com.ibxcodecat.frc_scouting.SubmittedActivity"
+            android:exported="false" />
+        <activity
             android:name=".Sucsess"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
@@ -31,11 +33,11 @@
         <activity
             android:name="com.ibxcodecat.frc_scouting.DataEntryActivity"
             android:exported="false"
-            android:label="@string/Data_Collection_Title"></activity>
+            android:label="@string/Data_Collection_Title" />
         <activity
             android:name="com.ibxcodecat.frc_scouting.BluetoothActivity"
             android:exported="false"
-            android:label="Sending Data"></activity>
+            android:label="Sending Data" />
         <activity
             android:name="com.ibxcodecat.frc_scouting.LaunchActivity"
             android:exported="true"

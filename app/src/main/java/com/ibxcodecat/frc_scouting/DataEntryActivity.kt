@@ -84,6 +84,10 @@ class DataEntryActivity : AppCompatActivity() {
                     teamNumber.text.toString().toInt(),
                     matchNumber.text.toString().toInt()
                 )
+
+                //switch activity post submition as confirmation
+                val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
+                startActivity(switchActivityIntent)
             }
             else
             {

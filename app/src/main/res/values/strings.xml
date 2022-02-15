@@ -30,4 +30,6 @@
     <string name="title_activity_sucsess">Sucsess</string>
 
     <string name="dummy_content">Yummy\nCONTENT</string>
+
+    <string name="submitted">You did the thing!</string>
 </resources>
