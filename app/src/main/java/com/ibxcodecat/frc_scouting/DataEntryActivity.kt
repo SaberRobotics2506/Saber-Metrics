@@ -76,14 +76,14 @@ class DataEntryActivity : AppCompatActivity() {
 
             if(checkData())
             {
-                val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
+                /*val submissionIntent = Intent(this, BluetoothActivity::class.java) //Create submission intent and activity
 
                 val dataObj: DataObject = DataObject()
 
                 dataObj.teamNumber = findViewById<EditText>(R.id.teamNumber).text.toString().toInt()
                 dataObj.matchNumber = findViewById<EditText>(R.id.matchNumber).text.toString().toInt()
 
-                startActivity(submissionIntent) //Start the activity with extra data
+                startActivity(submissionIntent) //Start the activity with extra data*/
             }
             else
             {
