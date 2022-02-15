@@ -19,8 +19,8 @@
     <!--Strings for DataActivity-->
     <string name="Data_Collection_Title">Data Entry</string>
     <string name="Help">\?</string>
-    <string name="teamNumberTXT">Team Number</string>
-    <string name="matchNumberTXT">Match Number</string>
+    <string name="teamNumberTXT">Team #</string>
+    <string name="matchNumberTXT">Match #</string>
     <string name="submit">Submit Data</string>
 
     <!--Strings for BluetoothActivity-->
