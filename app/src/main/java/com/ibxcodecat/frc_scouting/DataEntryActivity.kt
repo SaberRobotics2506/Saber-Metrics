@@ -91,11 +91,11 @@ class DataEntryActivity : AppCompatActivity() {
 
                 if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
                 {
-                    Toast.makeText(this@DataEntryActivity, this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
                 }
                 else
                 {
-                    Toast.makeText(this@DataEntryActivity, "It no workie", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@DataEntryActivity, "It no workie :(", Toast.LENGTH_LONG).show()
                 }
 
             }

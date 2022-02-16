@@ -6,8 +6,6 @@ import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class FileSystem
 {
@@ -29,9 +27,9 @@ public class FileSystem
         File file = new File(context.getExternalFilesDir(null), "test.txt");
 
         //This point and below is responsible for the write operation
-        FileOutputStream outputStream = null;
+        FileOutputStream outputStream;
         try {
-            file.createNewFile();
+            //file.createNewFile();
             //second argument of FileOutputStream constructor indicates whether
             //to append or create new file if one exists
             outputStream = new FileOutputStream(file, true);
