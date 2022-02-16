@@ -1,13 +1,15 @@
 package com.ibxcodecat.frc_scouting
 
-import android.content.Intent
+import android.Manifest.permission.READ_EXTERNAL_STORAGE
+import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.frc_scouting.R
+
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -43,7 +45,7 @@ class DataEntryActivity : AppCompatActivity() {
 
         resetTextFormatting(teamNumber, matchNumber)
 
-        val validator :DataValidator = DataValidator()
+        val validator = DataValidator()
 
         when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString()))
         {
@@ -80,14 +82,22 @@ class DataEntryActivity : AppCompatActivity() {
                 val teamNumber = findViewById<EditText>(R.id.teamNumber)
                 val matchNumber = findViewById<EditText>(R.id.matchNumber)
 
-                val dataToSerialize: SerializationData = SerializationData(
+                val dataToSerialize = SerializationData(
                     teamNumber.text.toString().toInt(),
                     matchNumber.text.toString().toInt()
                 )
 
-                //switch activity post submition as confirmation
-                val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
-                startActivity(switchActivityIntent)
+                val fileSystem = FileSystem()
+
+                if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
+                {
+                    Toast.makeText(this@DataEntryActivity, this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
+                }
+                else
+                {
+                    Toast.makeText(this@DataEntryActivity, "It no workie", Toast.LENGTH_LONG).show()
+                }
+
             }
             else
             {
