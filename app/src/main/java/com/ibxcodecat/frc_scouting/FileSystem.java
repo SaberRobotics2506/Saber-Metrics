@@ -29,7 +29,8 @@ public class FileSystem
         //This point and below is responsible for the write operation
         FileOutputStream outputStream;
         try {
-            //file.createNewFile();
+            file.createNewFile();
+
             //second argument of FileOutputStream constructor indicates whether
             //to append or create new file if one exists
             outputStream = new FileOutputStream(file, true);

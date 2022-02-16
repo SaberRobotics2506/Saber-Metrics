@@ -28,29 +28,17 @@
             android:name="com.ibxcodecat.frc_scouting.SubmittedActivity"
             android:exported="false" />
         <activity
-            android:name=".Sucsess"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:label="@string/title_activity_sucsess"
-            android:theme="@style/Theme.FRCScouting.Fullscreen" />
-        <activity
             android:name="com.ibxcodecat.frc_scouting.DataEntryActivity"
             android:exported="false"
             android:label="@string/Data_Collection_Title" />
-        <activity
-            android:name="com.ibxcodecat.frc_scouting.BluetoothActivity"
-            android:exported="false"
-            android:label="Sending Data" />
         <activity
             android:name="com.ibxcodecat.frc_scouting.LaunchActivity"
             android:exported="true"
             android:label="@string/Welcome_Title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
