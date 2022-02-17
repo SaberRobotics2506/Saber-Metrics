@@ -63,19 +63,19 @@
 
     <EditText
         android:id="@+id/scoutedBy"
-        android:layout_width="832px"
-        android:layout_height="128px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="604dp"
+        android:layout_marginBottom="14dp"
         android:ems="10"
         android:hint="@string/scouterTXT"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <Button
@@ -107,9 +107,9 @@
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="604dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/scoutedBy"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintStart_toEndOf="@+id/scoutedBy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
