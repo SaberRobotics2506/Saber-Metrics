@@ -4,11 +4,12 @@ data class SerializationData (
     val team: Int = -1,
     val match: Int = -1,
 
+    val scouter: String = "Empty Field",
+
     /*
 
     Not Yet Implemented
 
-    val scouter: String = "Empty Field",
     val regional: String = "Empty Field",
 
     val autoLowGoalSuccess: Int = -1,
