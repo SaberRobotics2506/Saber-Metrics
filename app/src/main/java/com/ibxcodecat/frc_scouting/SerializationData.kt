@@ -1,10 +1,15 @@
 package com.ibxcodecat.frc_scouting
 
-data class DataToSerialize (
+data class SerializationData (
     val team: Int = -1,
     val match: Int = -1,
 
     val scouter: String = "Empty Field",
+
+    /*
+
+    Not Yet Implemented
+
     val regional: String = "Empty Field",
 
     val autoLowGoalSuccess: Int = -1,
@@ -26,4 +31,6 @@ data class DataToSerialize (
 
     val winLossTie: Char,
     val comments: String = "Empty Field"
+
+     */
 )

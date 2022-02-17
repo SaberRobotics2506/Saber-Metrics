@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/matchNumber2"
+        android:id="@+id/scoutedBy"
         android:layout_width="832px"
         android:layout_height="128px"
         android:layout_marginStart="16dp"
@@ -92,8 +92,8 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="151px"
-        android:layout_marginEnd="125px"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="125dp"
         android:layout_marginBottom="16dp"
         android:text="@string/submit"
         android:visibility="visible"
@@ -103,13 +103,13 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/matchNumberHelp"
+        android:id="@+id/scoutedByHelp"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="604dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/matchNumber2"
+        app:layout_constraintStart_toEndOf="@+id/scoutedBy"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
