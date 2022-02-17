@@ -38,7 +38,7 @@
         android:id="@+id/teamNumberHelp"
         android:layout_width="@dimen/help_button_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
@@ -61,11 +61,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/matchNumber2"
+        android:layout_width="864px"
+        android:layout_height="128px"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="604dp"
+        android:ems="10"
+        android:hint="@string/scouterTXT"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
     <Button
-        android:id="@+id/matchNumberHelp"
+        android:id="@+id/matchNumberHelp2"
         android:layout_width="@dimen/help_button_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:text="@string/Help"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
@@ -75,8 +92,8 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="151dp"
-        android:layout_marginEnd="125dp"
+        android:layout_marginStart="151px"
+        android:layout_marginEnd="125px"
         android:layout_marginBottom="16dp"
         android:text="@string/submit"
         android:visibility="visible"
@@ -84,5 +101,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/matchNumberHelp"
+        android:layout_width="@dimen/help_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="604dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/matchNumber2"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
