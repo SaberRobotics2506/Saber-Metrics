@@ -22,6 +22,7 @@
     <string name="teamNumberTXT">Team #</string>
     <string name="matchNumberTXT">Match #</string>
     <string name="submit">Submit Data</string>
+    <string name="scouterTXT">Scouted by:</string>
 
     <!--Strings for BluetoothActivity-->
     <string name="wait">Please Wait...</string>
