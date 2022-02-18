@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.ibxcodecat.frc_scouting.DataEntryActivity">
 
-    <Button
-        android:id="@+id/matchNumberHelp3"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/toggleButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="wrap_content"
@@ -71,6 +61,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/matchNumberHelp"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/matchNumber"
+        app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp" />
+
     <EditText
         android:id="@+id/scoutedBy"
         android:layout_width="wrap_content"
@@ -89,14 +89,38 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/matchNumberHelp2"
+        android:id="@+id/scoutedByHelp"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/matchNumber"
-        app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp" />
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintStart_toEndOf="@+id/scoutedBy" />
+
+    <ToggleButton
+        android:id="@+id/regionalSelector"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#455A64"
+        android:textOff="@string/regionalOffText"
+        android:textOn="@string/regionalOnText"
+        app:layout_constraintStart_toEndOf="@+id/teamNumberHelp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/regionalHelp"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/regionalSelector"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/submit"
@@ -111,35 +135,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/scoutedByHelp"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="14dp"
-        android:text="@string/Help"
-        app:layout_constraintBottom_toTopOf="@+id/submit"
-        app:layout_constraintStart_toEndOf="@+id/scoutedBy" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="144dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:text="regionalToggle"
-        android:textOff="@string/regionalOffText"
-        android:textOn="@string/regionalOnText"
-        app:layout_constraintStart_toEndOf="@+id/teamNumberHelp"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:layout_width="75dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/matchNumberHelp2"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
