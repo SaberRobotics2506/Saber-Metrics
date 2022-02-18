@@ -29,12 +29,14 @@ class DataEntryActivity : AppCompatActivity() {
         text.setHintTextColor(Color.RED)
     }
 
-    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText)
+    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText, scoutedBy: EditText)
     {
         teamNumber.setTextColor(Color.BLACK)
         teamNumber.setHintTextColor(Color.BLACK)
         matchNumber.setTextColor(Color.BLACK)
         matchNumber.setHintTextColor(Color.BLACK)
+        scoutedBy.setTextColor(Color.BLACK)
+        scoutedBy.setHintTextColor(Color.BLACK)
     }
 
     private fun checkData(): Boolean
@@ -43,7 +45,7 @@ class DataEntryActivity : AppCompatActivity() {
         val matchNumber = findViewById<EditText>(R.id.matchNumber)
         val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
 
-        resetTextFormatting(teamNumber, matchNumber)
+        resetTextFormatting(teamNumber, matchNumber, scoutedBy)
 
         val validator = DataValidator()
 
