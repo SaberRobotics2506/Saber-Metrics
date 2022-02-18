@@ -11,7 +11,7 @@ public class DataValidator {
     public enum DataError { TeamNumberError, MatchNumberError, ScoutedByErrror, NONE };
     private static DataError dataError;
 
-    public DataError CheckData(String teamNumber, String matchNumber/*, String scoutedBy*/)
+    public DataError CheckData(String teamNumber, String matchNumber, String scoutedBy)
     {
         if(!ValidateTeamNumber(teamNumber))
         {
@@ -23,10 +23,10 @@ public class DataValidator {
             return dataError.MatchNumberError;
         }
 
-        /*if(!ValidateScoutedBy(scoutedBy))
+        if(!ValidateScoutedBy(scoutedBy))
         {
             return dataError.ScoutedByErrror;
-        }*/
+        }
 
         return dataError.NONE;
     }

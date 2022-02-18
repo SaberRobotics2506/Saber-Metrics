@@ -20,19 +20,19 @@
     <a href="https://discord.gg/WvbCRGSKre">
         <img src="https://img.shields.io/discord/888875214459535360?color=5865F2&logo=discord&logoColor=white" alt="Discord server"/>
     </a>
-    <a href="https://github.com/IBXCODECAT/FRC-Scouting/commits/main">
-        <img src="https://img.shields.io/github/commit-activity/w/IBXCODECAT/FRC-Scouting?label=commits"/>
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/commits/main">
+        <img src="https://img.shields.io/github/commit-activity/w/IBXCODECAT/Saber-Metrics?label=commits"/>
     </a>
-    <a href="https://github.com/IBXCODECAT/FRC-Scouting/releases">
-        <img src="https://img.shields.io/github/downloads/IBXCODECAT/FRC-Scouting/total"/>
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/releases">
+        <img src="https://img.shields.io/github/downloads/IBXCODECAT/Saber-Metrics/total"/>
     </a>
-    <a href="https://github.com/IBXCODECAT/FRC-Scouting/issues">
-        <img src="https://img.shields.io/github/issues/IBXCODECAT/FRC-Scouting"/>
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/issues">
+        <img src="https://img.shields.io/github/issues/IBXCODECAT/Saber-Metrics"/>
     </a>
-    <a href="https://github.com/IBXCODECAT/FRC-Scouting/blob/main/.github/LICENSE">
-        <img src="https://img.shields.io/github/license/IBXCODECAT/FRC-Scouting"/>
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/blob/main/.github/LICENSE">
+        <img src="https://img.shields.io/github/license/IBXCODECAT/Saber-Metrics"/>
     </a>
-    <a href="https://github.com/IBXCODECAT/FRC-Scouting/actions">
+    <a href="https://github.com/IBXCODECAT/Saber-Metrics/actions">
         <img src="https://img.shields.io/maintenance/yes/2022"/>
     </a>
     <br/>
