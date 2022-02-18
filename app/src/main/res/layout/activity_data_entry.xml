@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.ibxcodecat.frc_scouting.DataEntryActivity">
 
+    <Button
+        android:id="@+id/matchNumberHelp3"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="wrap_content"
@@ -111,5 +121,25 @@
         android:text="@string/Help"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/scoutedBy" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="regionalToggle"
+        android:textOff="@string/regionalOffText"
+        android:textOn="@string/regionalOnText"
+        app:layout_constraintStart_toEndOf="@+id/teamNumberHelp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/matchNumberHelp2"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
