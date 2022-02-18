@@ -62,9 +62,9 @@ class DataEntryActivity : AppCompatActivity() {
     {
         // get reference to what's this buttons
         val teamNumberHelp = findViewById<Button>(R.id.teamNumberHelp)
-        val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp2)
+        val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp)
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
-        val regionalHelp = findViewById<Button>(R.id.matchNumberHelp3)
+        val regionalHelp = findViewById<Button>(R.id.regionalHelp)
 
         // listen for on-click and run Toast
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting. It should be printed on the bumper guard of their robot.", Toast.LENGTH_LONG).show() }
@@ -86,7 +86,7 @@ class DataEntryActivity : AppCompatActivity() {
                 val teamNumber = findViewById<EditText>(R.id.teamNumber)
                 val matchNumber = findViewById<EditText>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
-                val regionalToggle = findViewById<ToggleButton>(R.id.toggleButton)
+                val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
 
                 val dataToSerialize = SerializationData(
                     teamNumber.text.toString().toInt(),
