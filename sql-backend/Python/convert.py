@@ -9,7 +9,7 @@ from os import listdir
 from os.path import isfile
 from os.path import join
 
-def ReadAllData():
+def FetchData():
 	searchForFileType = ".scout" #The filetype to include in the file search
 	cwd = os.getcwd() #Get current working directory (cwd)
 	files = os.listdir(cwd) #Read all files from cwd and add to file list
@@ -24,7 +24,7 @@ def ReadAllData():
 	
 	return data_list
 
-data = ReadAllData()
+data = FetchData()
 print(data)
 
 #with open(jsonFile) as json_data:
