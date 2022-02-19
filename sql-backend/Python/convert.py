@@ -24,6 +24,11 @@ def FetchData():
 	
 	return data_list
 
+def CreateSQL(data_dict): #Create SQL satement from a data dictionary
+	TABLE_NAME = "db0.MatchMaster1" #The name of the SQL table we inserting data into
+	
+	statement = "INSERT INTO " + TABLE_NAME + "(" + ""
+	
 data = FetchData()
 print(data)
 
