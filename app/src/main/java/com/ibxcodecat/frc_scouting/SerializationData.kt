@@ -5,12 +5,11 @@ data class SerializationData (
     val match: Int = -1,
 
     val scouter: String = "Empty Field",
+    val regional: String = "Empty Field",
 
     /*
 
     Not Yet Implemented
-
-    val regional: String = "Empty Field",
 
     val autoLowGoalSuccess: Int = -1,
     val autoLowGoalFail: Int = -1,

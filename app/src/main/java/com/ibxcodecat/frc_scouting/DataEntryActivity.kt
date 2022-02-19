@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.frc_scouting.R
 
@@ -28,12 +29,14 @@ class DataEntryActivity : AppCompatActivity() {
         text.setHintTextColor(Color.RED)
     }
 
-    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText)
+    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText, scoutedBy: EditText)
     {
         teamNumber.setTextColor(Color.BLACK)
         teamNumber.setHintTextColor(Color.BLACK)
         matchNumber.setTextColor(Color.BLACK)
         matchNumber.setHintTextColor(Color.BLACK)
+        scoutedBy.setTextColor(Color.BLACK)
+        scoutedBy.setHintTextColor(Color.BLACK)
     }
 
     private fun checkData(): Boolean
@@ -42,11 +45,11 @@ class DataEntryActivity : AppCompatActivity() {
         val matchNumber = findViewById<EditText>(R.id.matchNumber)
         val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
 
-        resetTextFormatting(teamNumber, matchNumber)
+        resetTextFormatting(teamNumber, matchNumber, scoutedBy)
 
         val validator = DataValidator()
 
-        when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString()))
+        when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString(), scoutedBy.text.toString()))
         {
             DataValidator.DataError.TeamNumberError -> errorTextFormatting(teamNumber)
             DataValidator.DataError.MatchNumberError -> errorTextFormatting(matchNumber)
@@ -61,14 +64,15 @@ class DataEntryActivity : AppCompatActivity() {
     {
         // get reference to what's this buttons
         val teamNumberHelp = findViewById<Button>(R.id.teamNumberHelp)
-        val matchNumberHelp = findViewById<Button>(R.id.scoutedByHelp)
+        val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp)
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
+        val regionalHelp = findViewById<Button>(R.id.regionalHelp)
 
         // listen for on-click and run Toast
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting. It should be printed on the bumper guard of their robot.", Toast.LENGTH_LONG).show() }
         matchNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the match number for the match you are currently scouting. The match number should be visible on the scoreboard or main display.", Toast.LENGTH_LONG).show() }
         scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is your name num nuts!", Toast.LENGTH_LONG).show() }
-
+        regionalHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the regional you are currently attending", Toast.LENGTH_LONG).show() }
     }
 
     private fun submissionListener()
@@ -84,11 +88,13 @@ class DataEntryActivity : AppCompatActivity() {
                 val teamNumber = findViewById<EditText>(R.id.teamNumber)
                 val matchNumber = findViewById<EditText>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
+                val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
 
                 val dataToSerialize = SerializationData(
                     teamNumber.text.toString().toInt(),
                     matchNumber.text.toString().toInt(),
-                    scoutedBy.text.toString()
+                    scoutedBy.text.toString(),
+                    regionalToggle.text.toString()
                 )
 
                 val fileSystem = FileSystem()
