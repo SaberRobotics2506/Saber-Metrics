@@ -25,6 +25,8 @@
     <string name="scouterTXT">Scouted by:</string>
     <string name="regionalOffText">Duluth</string>
     <string name="regionalOnText">Milwaukee</string>
+    <string name="taxiOnText">Robot did taxi</string>
+    <string name="taxiOffText">Robot did not taxi</string>
 
     <!--Strings for BluetoothActivity-->
     <string name="wait">Please Wait...</string>
