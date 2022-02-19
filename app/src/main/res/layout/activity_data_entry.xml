@@ -111,6 +111,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
+    <ToggleButton
+        android:id="@+id/taxiSelector"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#455A64"
+        android:textOff="@string/taxiOffText"
+        android:textOn="@string/taxiOnText"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/matchNumberHelp"
+        app:layout_constraintTop_toBottomOf="@+id/regionalSelector"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/taxiHelp"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/regionalSelector"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
     <Button
         android:id="@+id/regionalHelp"
         android:layout_width="48dp"

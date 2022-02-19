@@ -53,7 +53,7 @@ class DataEntryActivity : AppCompatActivity() {
         {
             DataValidator.DataError.TeamNumberError -> errorTextFormatting(teamNumber)
             DataValidator.DataError.MatchNumberError -> errorTextFormatting(matchNumber)
-            DataValidator.DataError.ScoutedByErrror -> errorTextFormatting(scoutedBy)
+            DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
             else -> { return true }
         }
 
@@ -67,12 +67,14 @@ class DataEntryActivity : AppCompatActivity() {
         val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp)
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
         val regionalHelp = findViewById<Button>(R.id.regionalHelp)
+        val taxiHelp = findViewById<Button>(R.id.taxiHelp)
 
         // listen for on-click and run Toast
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting. It should be printed on the bumper guard of their robot.", Toast.LENGTH_LONG).show() }
         matchNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the match number for the match you are currently scouting. The match number should be visible on the scoreboard or main display.", Toast.LENGTH_LONG).show() }
         scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is your name num nuts!", Toast.LENGTH_LONG).show() }
         regionalHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the regional you are currently attending", Toast.LENGTH_LONG).show() }
+        taxiHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot taxi out of its spot during auto? You should know this unless you're blind you dum-dum!", Toast.LENGTH_LONG).show() }
     }
 
     private fun submissionListener()
@@ -89,12 +91,14 @@ class DataEntryActivity : AppCompatActivity() {
                 val matchNumber = findViewById<EditText>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
                 val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
+                val taxiToggle = findViewById<Button>(R.id.taxiSelector)
 
                 val dataToSerialize = SerializationData(
                     teamNumber.text.toString().toInt(),
                     matchNumber.text.toString().toInt(),
                     scoutedBy.text.toString(),
-                    regionalToggle.text.toString()
+                    regionalToggle.text.toString(),
+                    taxiToggle.isSelected(),
                 )
 
                 val fileSystem = FileSystem()

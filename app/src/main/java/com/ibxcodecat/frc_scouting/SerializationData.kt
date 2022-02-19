@@ -6,6 +6,7 @@ data class SerializationData (
 
     val scouter: String = "Empty Field",
     val regional: String = "Empty Field",
+    val taxi: Boolean = false,
 
     /*
 
