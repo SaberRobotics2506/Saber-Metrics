@@ -9,6 +9,4 @@ TelopHighGoalMiss Int,
 DefensePlays Int,
 EndGameStatus Int,
 EndGameSuccess Int,
-AllianceScore Int,
-WinLossTie VarChar(1), 
-Comments VarChar (500)
+WinLossTie VarChar(1)

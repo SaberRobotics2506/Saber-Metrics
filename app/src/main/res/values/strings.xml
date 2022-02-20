@@ -22,12 +22,13 @@
     <string name="teamNumberTXT">Team #</string>
     <string name="matchNumberTXT">Match #</string>
     <string name="submit">Submit Data</string>
-    <string name="scouterTXT">Scouted by:</string>
+    <string name="scouterTXT">Your Name</string>
     <string name="regionalOffText">Duluth</string>
     <string name="regionalOnText">Milwaukee</string>
     <string name="taxiOnText">Robot did taxi</string>
     <string name="taxiOffText">Robot did not taxi</string>
-    <string name="scoreTXT">Score #</string>
+    <string name="scoreTXT">Score</string>
+    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>

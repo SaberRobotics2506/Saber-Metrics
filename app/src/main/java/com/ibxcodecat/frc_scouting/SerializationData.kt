@@ -11,6 +11,8 @@ data class SerializationData (
 
     val allianceScore: Int = -1,
 
+    val comments: String = "Empty Field"
+    
     /*
 
     Not Yet Implemented
@@ -32,7 +34,6 @@ data class SerializationData (
     val endGameStatus: Int = -1,
 
     val winLossTie: Char,
-    val comments: String = "Empty Field"
 
      */
 )
