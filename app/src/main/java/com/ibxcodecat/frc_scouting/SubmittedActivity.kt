@@ -21,7 +21,7 @@ class SubmittedActivity : AppCompatActivity() {
 
     //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
-        Toast.makeText(this@SubmittedActivity, "This action is disabled to protect previous data entries... Tap \"New Entry\" Instead...", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@SubmittedActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
         return;
     }
 
