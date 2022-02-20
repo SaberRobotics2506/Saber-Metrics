@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.frc_scouting">
+    package="com.ibxcodecat.frc_scouting">
     <!-- Allows app to scan for Bluetooth devices. The app will never use Bluetooth to track location -->
     <uses-permission
         android:name="android.permission.BLUETOOTH_SCAN"

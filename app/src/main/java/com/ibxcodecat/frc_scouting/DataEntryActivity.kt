@@ -1,5 +1,6 @@
 package com.ibxcodecat.frc_scouting
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -7,12 +8,9 @@ import android.widget.EditText
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.frc_scouting.R
-
+import com.ibxcodecat.frc_scouting.R
 
 class DataEntryActivity : AppCompatActivity() {
-
-    //var gson = Gson()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +18,6 @@ class DataEntryActivity : AppCompatActivity() {
 
         whatsThisListeners()
         submissionListener()
-
     }
 
     private fun errorTextFormatting(text: EditText)
@@ -29,7 +26,7 @@ class DataEntryActivity : AppCompatActivity() {
         text.setHintTextColor(Color.RED)
     }
 
-    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText, scoutedBy: EditText)
+    private fun resetTextFormatting(teamNumber: EditText, matchNumber: EditText, scoutedBy: EditText, score: EditText)
     {
         teamNumber.setTextColor(Color.BLACK)
         teamNumber.setHintTextColor(Color.BLACK)
@@ -37,6 +34,8 @@ class DataEntryActivity : AppCompatActivity() {
         matchNumber.setHintTextColor(Color.BLACK)
         scoutedBy.setTextColor(Color.BLACK)
         scoutedBy.setHintTextColor(Color.BLACK)
+        score.setTextColor(Color.BLACK)
+        score.setHintTextColor(Color.BLACK)
     }
 
     private fun checkData(): Boolean
@@ -44,16 +43,18 @@ class DataEntryActivity : AppCompatActivity() {
         val teamNumber = findViewById<EditText>(R.id.teamNumber)
         val matchNumber = findViewById<EditText>(R.id.matchNumber)
         val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
+        val score = findViewById<EditText>(R.id.score)
 
-        resetTextFormatting(teamNumber, matchNumber, scoutedBy)
+        resetTextFormatting(teamNumber, matchNumber, scoutedBy, score)
 
         val validator = DataValidator()
 
-        when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString(), scoutedBy.text.toString()))
+        when(validator.CheckData(teamNumber.text.toString(), matchNumber.text.toString(), scoutedBy.text.toString(), score.text.toString()))
         {
             DataValidator.DataError.TeamNumberError -> errorTextFormatting(teamNumber)
             DataValidator.DataError.MatchNumberError -> errorTextFormatting(matchNumber)
             DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
+            DataValidator.DataError.ScoreError -> errorTextFormatting(score)
             else -> { return true }
         }
 
@@ -68,6 +69,7 @@ class DataEntryActivity : AppCompatActivity() {
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
         val regionalHelp = findViewById<Button>(R.id.regionalHelp)
         val taxiHelp = findViewById<Button>(R.id.taxiHelp)
+        val scoreHelp = findViewById<Button>(R.id.scoreHelp)
 
         // listen for on-click and run Toast
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting. It should be printed on the bumper guard of their robot.", Toast.LENGTH_LONG).show() }
@@ -75,6 +77,7 @@ class DataEntryActivity : AppCompatActivity() {
         scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is your name num nuts!", Toast.LENGTH_LONG).show() }
         regionalHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the regional you are currently attending", Toast.LENGTH_LONG).show() }
         taxiHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot taxi out of its spot during auto? You should know this unless you're blind you dum-dum!", Toast.LENGTH_LONG).show() }
+        scoreHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the total score for the alliance the team you are scouting is a member of!", Toast.LENGTH_LONG).show() }
     }
 
     private fun submissionListener()
@@ -91,14 +94,16 @@ class DataEntryActivity : AppCompatActivity() {
                 val matchNumber = findViewById<EditText>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
                 val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
-                val taxiToggle = findViewById<Button>(R.id.taxiSelector)
+                val taxiToggle = findViewById<ToggleButton>(R.id.taxiSelector)
+                val score = findViewById<EditText>(R.id.score)
 
                 val dataToSerialize = SerializationData(
                     teamNumber.text.toString().toInt(),
                     matchNumber.text.toString().toInt(),
                     scoutedBy.text.toString(),
                     regionalToggle.text.toString(),
-                    taxiToggle.isSelected(),
+                    taxiToggle.isChecked,
+                    score.text.toString().toInt(),
                 )
 
                 val fileSystem = FileSystem()
@@ -106,12 +111,14 @@ class DataEntryActivity : AppCompatActivity() {
                 if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
                 {
                     Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
+
+                    val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
+                    startActivity(switchActivityIntent)
                 }
                 else
                 {
                     Toast.makeText(this@DataEntryActivity, "It no workie :(", Toast.LENGTH_LONG).show()
                 }
-
             }
             else
             {

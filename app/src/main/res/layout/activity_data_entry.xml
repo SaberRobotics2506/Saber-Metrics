@@ -111,6 +111,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
+    <Button
+        android:id="@+id/regionalHelp"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/regionalSelector"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
     <ToggleButton
         android:id="@+id/taxiSelector"
         android:layout_width="144dp"
@@ -136,16 +147,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
+    <EditText
+        android:id="@+id/score"
+        android:layout_width="@dimen/text_box_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/scoreTXT"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchNumber" />
+
     <Button
-        android:id="@+id/regionalHelp"
+        android:id="@+id/scoreHelp"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/regionalSelector"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        app:layout_constraintStart_toEndOf="@+id/score"
+        app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp" />
 
     <Button
         android:id="@+id/submit"
