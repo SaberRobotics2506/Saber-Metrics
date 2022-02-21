@@ -1,20 +1,14 @@
 <resources>
-    <string name="app_name">FRC-Scouting</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="app_name">Saber Metrics</string>
     <string name="send_data">Send my data!</string>
-    <string name="request_data">Request Data!</string>
-    <string name="Scouted_By_Default_Text">Your name</string>
-    <string name="title_activity_send_data">SendData</string>
 
     <!--Strings for LaunchActivity-->
-    <string name="Welcome_Title">Welcome Back!</string>
+    <string name="Welcome_Title">Saber Metrics</string>
     <string name="Welcome_Message">
-        Welcome to FRC-Scouting!
+        Welcome to Saber-Metrics!
         \n\n
         This app was developed by me (Nathan) to send scouting data to our SQL database over Bluetooth.
         If at any point while using the app you have a question feel free to contact me.
-        \n\n
-        To report a bug with this app go to https://github.com/IBXCODECAT/FRC-Scouting/issues and open an Issue.
         \n\n
         I genuinely hope that the FIRST robotics 2022 season goes well for you all and that you all have a great time at competition!
         \n\n
@@ -24,13 +18,18 @@
 
     <!--Strings for DataActivity-->
     <string name="Data_Collection_Title">Data Entry</string>
-    <string name="Help">What\'s This?</string>
-    <string name="teamNumberTXT">Team Number</string>
-    <string name="matchNumberTXT">Match Number</string>
+    <string name="Help">\?</string>
+    <string name="teamNumberTXT">Team #</string>
+    <string name="matchNumberTXT">Match #</string>
     <string name="submit">Submit Data</string>
+    <string name="scouterTXT">Your Name</string>
+    <string name="regionalOffText">Duluth</string>
+    <string name="regionalOnText">Milwaukee</string>
+    <string name="taxiOnText">Robot did taxi</string>
+    <string name="taxiOffText">Robot did not taxi</string>
+    <string name="scoreTXT">Score</string>
+    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
 
-    <!--Strings for BluetoothActivity-->
-    <string name="wait">Please Wait...</string>
-    <string name="bluetoothSuccess">You did the thing! Thank you for helping with data collection!</string>
-    <string name="bluetoothFail">There was a problem sending your data... It\'s probably our fault, but please check your Bluetooth connection and try again!</string>
+    <!--Strings for SubmittedActivity-->
+    <string name="next">New Entry</string>
 </resources>
