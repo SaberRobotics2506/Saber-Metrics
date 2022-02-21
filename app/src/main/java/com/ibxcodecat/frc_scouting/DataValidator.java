@@ -11,36 +11,35 @@ public class DataValidator {
 
     //Checks data in DataEntryActivity, returns -1 for pass, and a positive int for the problematic field
     public enum DataError { TeamNumberError, MatchNumberError, ScoutedByError, ScoreError, CommentsError, NONE }
-    private static DataError dataError;
 
     public DataError CheckData(String teamNumber, int matchNumber, String scoutedBy, String score, String comments)
     {
         if(!ValidateTeamNumber(teamNumber))
         {
-            return dataError.TeamNumberError;
+            return DataError.TeamNumberError;
         }
 
         if(!ValidateMatchNumber(matchNumber))
         {
-            return dataError.MatchNumberError;
+            return DataError.MatchNumberError;
         }
 
         if(!ValidateScore(score))
         {
-            return dataError.ScoreError;
+            return DataError.ScoreError;
         }
 
         if(!ValidateScoutedBy(scoutedBy))
         {
-            return dataError.ScoutedByError;
+            return DataError.ScoutedByError;
         }
 
         if(!ValidateComments(comments))
         {
-            return dataError.CommentsError;
+            return DataError.CommentsError;
         }
 
-        return dataError.NONE;
+        return DataError.NONE;
     }
 
     private boolean ValidateTeamNumber(String teamNumber) {
@@ -68,12 +67,7 @@ public class DataValidator {
 
     private boolean ValidateMatchNumber(int matchNumber)
     {
-        if(matchNumber <= TOTAL_MATCHES && matchNumber > 0)
-        {
-            return true;
-        }
-
-        return false;
+        return matchNumber <= TOTAL_MATCHES && matchNumber > 0;
     }
 
     private boolean ValidateScore(String allianceScore)
@@ -89,31 +83,16 @@ public class DataValidator {
             return false;
         }
 
-        if(score <= MAX_SCORE)
-        {
-            return true;
-        }
-
-        return false;
+        return score <= MAX_SCORE;
     }
 
     private boolean ValidateScoutedBy(String scoutedBy)
     {
-        if(scoutedBy.length() < NAME_CHAR_LIMIT && scoutedBy.length() > 0)
-        {
-            return true;
-        }
-
-        return false;
+        return scoutedBy.length() < NAME_CHAR_LIMIT && scoutedBy.length() > 0;
     }
 
     private boolean ValidateComments(String comments)
     {
-        if(comments.length() < COMMENTS_CHAR_LIMIT && comments.length() > 0)
-        {
-            return true;
-        }
-
-        return false;
+        return comments.length() < COMMENTS_CHAR_LIMIT && comments.length() > 0;
     }
 }
