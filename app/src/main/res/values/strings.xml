@@ -22,17 +22,14 @@
     <string name="teamNumberTXT">Team #</string>
     <string name="matchNumberTXT">Match #</string>
     <string name="submit">Submit Data</string>
-    <string name="scouterTXT">Scouted by:</string>
+    <string name="scouterTXT">Your Name</string>
     <string name="regionalOffText">Duluth</string>
     <string name="regionalOnText">Milwaukee</string>
+    <string name="taxiOnText">Robot did taxi</string>
+    <string name="taxiOffText">Robot did not taxi</string>
+    <string name="scoreTXT">Score</string>
+    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
 
-    <!--Strings for BluetoothActivity-->
-    <string name="wait">Please Wait...</string>
-    <string name="bluetoothSuccess">You did the thing! Thank you for helping with data collection!</string>
-    <string name="bluetoothFail">There was a problem sending your data... It\'s probably our fault, but please check your Bluetooth connection and try again!</string>
-    <string name="title_activity_success">Success</string>
-
-    <string name="dummy_content">Yummy\nCONTENT</string>
-
-    <string name="submitted">You did the thing!</string>
+    <!--Strings for SubmittedActivity-->
+    <string name="next">New Entry</string>
 </resources>
