@@ -1,0 +1,12 @@
+AutoLowGoalMake Int,
+AutoLowGoalMiss Int,
+AutoHighGoalMake Int,
+AutoHighGoalMiss Int,
+TelopLowGoalMake Int,
+TelopLowGoalMiss Int,
+TelopHighGoalMake Int,
+TelopHighGoalMiss Int,
+DefensePlays Int,
+EndGameStatus Int,
+EndGameSuccess Int,
+WinLossTie VarChar(1)
