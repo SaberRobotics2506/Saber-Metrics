@@ -6,8 +6,13 @@ data class SerializationData (
 
     val scouter: String = "Empty Field",
     val regional: String = "Empty Field",
+
     val taxi: Boolean = false,
 
+    val allianceScore: Int = -1,
+
+    val comments: String = "Empty Field"
+    
     /*
 
     Not Yet Implemented
@@ -27,10 +32,8 @@ data class SerializationData (
     val defensePlays: Int = -1,
 
     val endGameStatus: Int = -1,
-    val alianceScore: Int = -1,
 
     val winLossTie: Char,
-    val comments: String = "Empty Field"
 
      */
 )
