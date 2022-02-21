@@ -18,85 +18,114 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible"></LinearLayout>
 
-    <EditText
+    <View
+        android:id="@+id/verticalDivider"
+        android:layout_width="1dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="5dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/scoutedBy"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/teamNumberHelp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/horizontalDivider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verticalDivider" />
+
+    <View
+        android:id="@+id/horizontalDivider2"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/comments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
         android:id="@+id/teamNumber"
         android:layout_width="@dimen/text_box_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/teamNumberTXT"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        android:visibility="visible"
+        android:background="#00000000"
+        android:entries="@array/teams"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/teamNumberHelp"
-        android:layout_width="48dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
-    <EditText
+    <Spinner
         android:id="@+id/matchNumber"
         android:layout_width="@dimen/text_box_width"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        android:entries="@array/matches"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamNumber" />
+
+    <Button
+        android:id="@+id/matchNumberHelp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/matchNumber"
+        app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/score"
+        android:layout_width="@dimen/text_box_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/matchNumberTXT"
+        android:hint="@string/scoreTXT"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/matchNumber" />
 
     <Button
-        android:id="@+id/matchNumberHelp"
-        android:layout_width="48dp"
+        android:id="@+id/scoreHelp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/matchNumber"
-        app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp" />
-
-    <EditText
-        android:id="@+id/scoutedBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:hint="@string/scouterTXT"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/submit"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/scoutedByHelp"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="14dp"
-        android:text="@string/Help"
-        app:layout_constraintBottom_toTopOf="@+id/submit"
-        app:layout_constraintStart_toEndOf="@+id/scoutedBy" />
+        app:layout_constraintStart_toEndOf="@+id/score"
+        app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ToggleButton
         android:id="@+id/regionalSelector"
@@ -113,14 +142,85 @@
 
     <Button
         android:id="@+id/regionalHelp"
-        android:layout_width="48dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
         app:layout_constraintStart_toEndOf="@+id/regionalSelector"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <ToggleButton
+        android:id="@+id/taxiSelector"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#455A64"
+        android:textOff="@string/taxiOffText"
+        android:textOn="@string/taxiOnText"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/matchNumberHelp"
+        app:layout_constraintTop_toBottomOf="@+id/regionalSelector"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/taxiHelp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/taxiSelector"
+        app:layout_constraintTop_toBottomOf="@+id/regionalHelp"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/scoutedBy"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/scouterTXT"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/scoreHelp"
+        app:layout_constraintTop_toBottomOf="@+id/taxiSelector"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/scoutedByHelp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Help"
+        app:layout_constraintStart_toEndOf="@+id/scoutedBy"
+        app:layout_constraintTop_toBottomOf="@+id/taxiHelp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/comments"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/comments"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/submit"
