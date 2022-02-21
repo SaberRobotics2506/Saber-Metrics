@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="winLossTie">
+        <item>Select</item>
+        <item>Win</item>
+        <item>Loss</item>
+        <item>Tie</item>
+    </string-array>
+
+    <string-array name="teams">
+        <item>Team #</item>
+        <item>93</item>
+        <item>167</item>
+        <item>876</item>
+        <item>1675</item>
+        <item>1732</item>
+        <item>2052</item>
+        <item>2175</item>
+        <item>2227</item>
+        <item>2239</item>
+        <item>2264</item>
+        <item>2501</item>
+        <item>2503</item>
+        <item>2506</item>
+        <item>2526</item>
+        <item>2531</item>
+        <item>2861</item>
+        <item>2977</item>
+        <item>3058</item>
+        <item>3102</item>
+        <item>3122</item>
+        <item>3134</item>
+        <item>3197</item>
+        <item>3275</item>
+        <item>3276</item>
+        <item>3291</item>
+        <item>3294</item>
+        <item>3740</item>
+        <item>4009</item>
+        <item>4181</item>
+        <item>4230</item>
+        <item>4238</item>
+        <item>4511</item>
+        <item>4607</item>
+        <item>4656</item>
+        <item>4674</item>
+        <item>4728</item>
+        <item>4741</item>
+        <item>5125</item>
+        <item>5143</item>
+        <item>5253</item>
+        <item>5348</item>
+        <item>5464</item>
+        <item>5653</item>
+        <item>5690</item>
+        <item>5826</item>
+        <item>5847</item>
+        <item>6047</item>
+        <item>6146</item>
+        <item>6160</item>
+        <item>6217</item>
+        <item>6318</item>
+        <item>6574</item>
+        <item>7048</item>
+        <item>7068</item>
+        <item>7311</item>
+        <item>7797</item>
+        <item>7893</item>
+        <item>8836</item>
+    </string-array>
+
+    <string-array name="matches">
+        <item>Match #</item>
+        <item>Match 1</item>
+        <item>Match 2</item>
+        <item>Match 3</item>
+        <item>Match 4</item>
+        <item>Match 5</item>
+        <item>Match 6</item>
+        <item>Match 7</item>
+        <item>Match 8</item>
+        <item>Match 9</item>
+        <item>Match 10</item>
+        <item>Match 11</item>
+        <item>Match 12</item>
+        <item>Match 13</item>
+        <item>Match 14</item>
+        <item>Match 15</item>
+        <item>Match 16</item>
+        <item>Match 17</item>
+        <item>Match 18</item>
+        <item>Match 19</item>
+        <item>Match 20</item>
+        <item>Match 21</item>
+        <item>Match 22</item>
+        <item>Match 23</item>
+        <item>Match 24</item>
+        <item>Match 25</item>
+        <item>Match 26</item>
+        <item>Match 27</item>
+        <item>Match 28</item>
+        <item>Match 29</item>
+        <item>Match 30</item>
+        <item>Match 31</item>
+        <item>Match 32</item>
+        <item>Match 33</item>
+        <item>Match 34</item>
+        <item>Match 35</item>
+        <item>Match 36</item>
+        <item>Match 37</item>
+        <item>Match 38</item>
+        <item>Match 39</item>
+        <item>Match 40</item>
+        <item>Match 41</item>
+        <item>Match 42</item>
+        <item>Match 43</item>
+        <item>Match 44</item>
+        <item>Match 45</item>
+        <item>Match 46</item>
+        <item>Match 47</item>
+        <item>Match 48</item>
+        <item>Match 49</item>
+        <item>Match 50</item>
+        <item>Match 51</item>
+        <item>Match 52</item>
+        <item>Match 53</item>
+        <item>Match 54</item>
+        <item>Match 55</item>
+        <item>Match 56</item>
+        <item>Match 57</item>
+        <item>Match 58</item>
+        <item>Match 59</item>
+        <item>Match 60</item>
+        <item>Match 61</item>
+        <item>Match 62</item>
+        <item>Match 63</item>
+        <item>Match 64</item>
+        <item>Match 65</item>
+        <item>Match 66</item>
+        <item>Match 67</item>
+        <item>Match 68</item>
+        <item>Match 69</item>
+        <item>Match 70</item>
+        <item>Match 71</item>
+        <item>Match 72</item>
+        <item>Match 73</item>
+        <item>Match 74</item>
+        <item>Match 75</item>
+        <item>Match 76</item>
+        <item>Match 77</item>
+        <item>Match 78</item>
+        <item>Match 79</item>
+        <item>Match 80</item>
+        <item>Match 81</item>
+        <item>Match 82</item>
+        <item>Match 83</item>
+        <item>Match 84</item>
+        <item>Match 85</item>
+        <item>Match 86</item>
+        <item>Match 87</item>
+        <item>Match 88</item>
+        <item>Match 89</item>
+        <item>Match 90</item>
+        <item>Match 91</item>
+        <item>Match 92</item>
+        <item>Match 93</item>
+        <item>Match 94</item>
+        <item>Match 95</item>
+        <item>Match 96</item>
+        <item>Match 97</item>
+        <item>Match 98</item>
+        <item>Match 99</item>
+    </string-array>
+</resources>

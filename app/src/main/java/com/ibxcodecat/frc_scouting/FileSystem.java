@@ -9,7 +9,6 @@ import java.io.FileOutputStream;
 
 public class FileSystem
 {
-
     public boolean WriteGSON(SerializationData serializationData, DataEntryActivity context)
     {
         Gson gson = new Gson();
@@ -18,13 +17,12 @@ public class FileSystem
         //Checking the availability state of the External Storage.
         String state = Environment.getExternalStorageState();
         if (!Environment.MEDIA_MOUNTED.equals(state)) {
-
             //If it isn't mounted - we can't write into it.
             return false;
         }
 
         //Create a new file that points to the root directory, with the given name:
-        File file = new File(context.getExternalFilesDir(null), serializationData.getTeam() + "-" + serializationData.getMatch() + ".txt");
+        File file = new File(context.getExternalFilesDir(null), serializationData.getTeam() + "-" + serializationData.getMatch() + ".scout");
 
         //This point and below is responsible for the write operation
         FileOutputStream outputStream;
