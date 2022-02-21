@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.frc_scouting">
+    package="com.ibxcodecat.frc_scouting">
     <!-- Allows app to scan for Bluetooth devices. The app will never use Bluetooth to track location -->
     <uses-permission
         android:name="android.permission.BLUETOOTH_SCAN"
@@ -15,6 +15,7 @@
         android:maxSdkVersion="30" />
 
     <!--Permission to write scouting files-->
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
@@ -26,15 +27,21 @@
         android:theme="@style/Theme.FRCScouting">
         <activity
             android:name="com.ibxcodecat.frc_scouting.SubmittedActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.ibxcodecat.frc_scouting.DataEntryActivity"
             android:exported="false"
-            android:label="@string/Data_Collection_Title" />
+            android:label="@string/Data_Collection_Title"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.ibxcodecat.frc_scouting.LaunchActivity"
             android:exported="true"
-            android:label="@string/Welcome_Title">
+            android:label="@string/Welcome_Title"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
