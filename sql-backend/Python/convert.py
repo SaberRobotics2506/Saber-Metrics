@@ -38,8 +38,8 @@ def ReadJSON():
 def CreateSQLQuerry(data):
 	for json_dictionary in data: #For each JSON dictionary in the data list...
 		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
-			print("Key: " + key)
-			print("Value" + value)
+			print(key)
+			print(value)
 		
 data = ReadJSON()
 print(data)
