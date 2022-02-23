@@ -29,8 +29,13 @@
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
     <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
-    <string name="autoGroupLabelText">Goal attempts in auto</string>
-    <string name="teleopGroupLabelText">Goal attempts in teleop</string>
+    <string name="autoGroupLabelText">Autonomous</string>
+    <string name="teleopGroupLabelText">Teleop</string>
+    <string name="autoHighMakeText">Successful Attempts</string>
+    <string name="autoHighMissText">Misses</string>
+    <string name="autoLowMakeText">Successful Attempts</string>
+    <string name="autoLowMissText">Misses</string>
+
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
