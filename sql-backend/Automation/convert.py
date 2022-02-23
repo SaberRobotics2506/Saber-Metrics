@@ -40,12 +40,10 @@ def BuildInsertQueries(data):
     TABLE_NAME = "MatchMaster1" #Store the name of the table to be referenced again later when creating the query
 	
     for json_dictionary in data: #For each JSON dictionary in the data list...
-        query = "INSERT INTO " + TABLE_NAME + " (" #Start constructing this INSERT query using the table name specified
         for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
-            print(key)
-            print(value)
-            
-        query_list.append(query)
+            query = "INSERT INTO " + TABLE_NAME #Start constructing this INSERT query using the table name specified
+            query = query + "(" + str(key) + ")VALUES(" + str(value) + ")" #Create an INSERT query for this KeyValuePair
+            query_list.append(query) #Append the query we created to the query_list
             
     return query_list
     
