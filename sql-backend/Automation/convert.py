@@ -26,25 +26,31 @@ def ReadJSON():
 	for file in files: #Loop through all files in the file list
 		if(searchForFileType in file): #If the filetype is of ".scout"...
 		
-			try: #Attempt the following
+			try:
 				with open(file) as json_data: #Read json data of file into "json_data"
 					data = json.load(json_data) #Save loaded json data to a "data" dictionary
 					data_list.append(data) #Append the data dictionary to the list we defined above
-			except: #If we failed to 
-				print("Unable to read \"*.scout\" file becasue it is not in a valid JSON format | ERROR") #Print an error message to the console
+			except:
+				print("Unable to read \"*.scout\" file becasue it is not in a valid JSON format | ERROR") #Print an error message to the console'
 	
 	return data_list #Returns a list of dictionaries representing each files' JSON Data
 
-def CreateSQLQuerry(data):
-	for json_dictionary in data: #For each JSON dictionary in the data list...
-		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
-			print(key)
-			print(value)
-		
+def BuildInsertQueries(data):
+    query_list = [] #Define an empty list to store SQL querries in
+    TABLE_NAME = "MatchMaster1" #Store the name of the table to be referenced again later when creating the query
+	
+    for json_dictionary in data: #For each JSON dictionary in the data list...
+        query = "INSERT INTO " + TABLE_NAME + " (" #Start constructing this INSERT query using the table name specified
+        for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
+            print(key)
+            print(value)
+            
+        query_list.append(query)
+            
+    return query_list
+    
 data = ReadJSON()
 print(data)
 
-CreateSQLQuerry(data)
-	
-	
-
+queries = BuildInsertQueries(data)
+print (queries)
