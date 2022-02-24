@@ -16,7 +16,7 @@ from os.path import join
 
 ####################CONSTANTS####################
 
-BUILDER_OUTPUT_FILE_NAME = "sqlBuilderOutput.sql"
+BUILDER_OUTPUT_FILE_NAME = "sqlBuilderOutput.sql" #This is the filename of the build output SQL file
 CURRENT_WORKING_DIRECTORY = os.getcwd() #Get current working directory (cwd) of this file
 SEARCH_FOR_FILETYPE = ".scout" #The filetype to include in the file searches
 TABLE_NAME = "MatchMaster1" #The name of the SQL table we are writing queries for
@@ -64,6 +64,12 @@ def BuildInsertQueries(data):
 	return query_list #Return the list of queries that we have created
 	
 def WriteQueryFile(query_list):
+
+	# This function loops through all the queries in the query list and appends them to a string
+	# Once appended the string will be written to the file specified in the constant BUILDER_OUTPUT_FILE_NAME
+	# This file can then either be ran manually by the user or triggered via another function
+	# NOTE: This function does not return anything, and build output is in the current working directory
+	
 	with open(BUILDER_OUTPUT_FILE_NAME, "w+") as builderOutputFile:
 		fileContents = ("--This SQL query file was built with the SQL Builder python script\n\n")
 		
@@ -82,4 +88,4 @@ data = ReadJSON()
 queries = BuildInsertQueries(data)
 WriteQueryFile(queries)
 
-#RunSQLQuery()
+#	RunSQLQuery()
