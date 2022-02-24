@@ -59,8 +59,6 @@ def BuildInsertQueries(data):
 		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
 			query = "INSERT INTO " + TABLE_NAME #Start constructing this INSERT query using the table name specified
 			
-			print(type(key))
-			
 			if(type(value) is int): #If the value of the current field is an intager
 				query = query + "(" + str(key) + ")VALUES(" + str(value) + ") --Generated Integer Query\n" #Create an INSERT query for this KeyValuePair as an int query
 			elif(type(value) is str):
