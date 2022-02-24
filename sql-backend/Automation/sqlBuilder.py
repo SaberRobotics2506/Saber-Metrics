@@ -58,7 +58,16 @@ def BuildInsertQueries(data):
 	for json_dictionary in data: #For each JSON dictionary in the data list...
 		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
 			query = "INSERT INTO " + TABLE_NAME #Start constructing this INSERT query using the table name specified
-			query = query + "(" + str(key) + ")VALUES(" + str(value) + ")" #Create an INSERT query for this KeyValuePair
+			
+			print(type(key))
+			
+			if(type(value) is int): #If the value of the current field is an intager
+				query = query + "(" + str(key) + ")VALUES(" + str(value) + ") --Generated Integer Query\n" #Create an INSERT query for this KeyValuePair as an int query
+			elif(type(value) is str):
+				query = query + "(" + str(key) + ")VALUES('" + str(value) + "') --Generated String Query\n" #Create an INSERT query for this KeyValuePair as a string query
+			else:
+				query = query + "--Failed to generate query of unkown type" #Create an INSERT query for this KeyValuePair
+				
 			query_list.append(query) #Append the query we created to the query_list
             
 	return query_list #Return the list of queries that we have created
@@ -74,7 +83,7 @@ def WriteQueryFile(query_list):
 		fileContents = ("--This SQL query file was built with the SQL Builder python script\n\n")
 		
 		for query in query_list:
-			fileContents = fileContents + (str(query) + " --Generated Query\n")
+			fileContents = fileContents + (str(query))
 		
 		builderOutputFile.write(fileContents)
 		
