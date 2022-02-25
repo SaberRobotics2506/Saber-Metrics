@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.*
+import com.example.frc_scouting.R
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class DataEntryActivity : AppCompatActivity() {
     //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
         Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
-        return;
+        return
     }
 
     private fun errorDropdown(dropdown: Spinner)
@@ -80,6 +81,14 @@ class DataEntryActivity : AppCompatActivity() {
         return false
     }
 
+    private fun incrementListeners()
+    {
+        val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
+        val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
+        val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
+        val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)
+
+    }
     private fun whatsThisListeners()
     {
         // get reference to what's this buttons
