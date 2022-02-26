@@ -21,7 +21,7 @@
     <string name="Help">\?</string>
     <string name="teamNumberTXT">Team #</string>
     <string name="matchNumberTXT">Match #</string>
-    <string name="submit">Submit Data</string>
+    <string name="submit">Save Data</string>
     <string name="scouterTXT">Your Name</string>
     <string name="regionalOffText">Duluth</string>
     <string name="regionalOnText">Milwaukee</string>

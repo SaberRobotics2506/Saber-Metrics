@@ -10,7 +10,7 @@
         android:id="@+id/lowMissTeleopUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginStart="11dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="24dp"
         android:text="-"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
@@ -335,6 +335,18 @@
         app:layout_constraintTop_toBottomOf="@+id/verticalDivider" />
 
     <View
+        android:id="@+id/horizontalDivider3"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lowMissAutoUpBtn" />
+
+    <View
         android:id="@+id/horizontalDivider2"
         android:layout_width="409dp"
         android:layout_height="1dp"
@@ -555,14 +567,11 @@
     <View
         android:id="@+id/divider2"
         android:layout_width="1dp"
-        android:layout_height="393dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginBottom="156dp"
+        android:layout_height="348dp"
         android:background="?android:attr/listDivider"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="182dp"
         tools:visibility="visible" />
 
     <Button
@@ -712,5 +721,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
+
+    <TextView
+        android:id="@+id/defPlaysText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Defense Plays: "
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <TextView
+        android:id="@+id/defPlaysNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Button
+        android:id="@+id/defPlaysIncrementBtn"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:text="+"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="566dp" />
+
+    <Button
+        android:id="@+id/defPlaysDecrementBtn"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:text="-"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="566dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb attempt:"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="160dp"
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="539dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
