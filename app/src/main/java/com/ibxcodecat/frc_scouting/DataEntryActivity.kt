@@ -81,13 +81,41 @@ class DataEntryActivity : AppCompatActivity() {
         return false
     }
 
-    private fun incrementListeners()
+    private fun numberManipulationListeners()
     {
+        // Increment buttons
         val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
         val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
         val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
         val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)
 
+        // Decrement buttons
+        val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
+        val highAutoMissDecrement = findViewById<Button>(R.id.hiMissAutoDownBtn)
+        val lowAutoMakesDecrement = findViewById<Button>(R.id.lowMakeAutoDownBtn)
+        val lowAutoMissDecrement = findViewById<Button>(R.id.lowMissAutoDownBtn)
+
+        // Goal integer variables
+        var highAutoMakesNum: Int = 0
+        var highAutoMissNum: Int = 0
+        var lowAutoMakesNum: Int = 0
+        var lowAutoMissNum: Int = 0
+
+        // Text boxes
+        val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
+        val hAI = findViewById<TextView>(R.id.hiAutoMissNumText)
+        val lAM = findViewById<TextView>(R.id.lowAutoMakesNumText)
+        val lAI = findViewById<TextView>(R.id.lowAutoMissNumText)
+        val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
+        val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
+        val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+        val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
+
+        // Listeners
+        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; hAM.text = highAutoMakesNum.toString()}
+        highAutoMissIncrement.setOnClickListener{highAutoMissNum++}
+        lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++}
+        lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++}
     }
     private fun whatsThisListeners()
     {

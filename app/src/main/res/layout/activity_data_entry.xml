@@ -18,7 +18,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/makesNumLabel7"
+        android:id="@+id/lowTeleopMissNumText"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="43dp"
@@ -53,7 +53,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/makesNumLabel6"
+        android:id="@+id/lowTeleopMakesNumText"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="44dp"
@@ -88,7 +88,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/makesNumLabel5"
+        android:id="@+id/highTeleopMissNumText"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="43dp"
@@ -123,7 +123,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/makesNumLabel4"
+        android:id="@+id/highTeleopMakesNumText"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="44dp"
@@ -198,7 +198,7 @@
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoHighMissNumText" />
+        app:layout_constraintTop_toBottomOf="@+id/hiAutoMissNumText" />
 
     <TextView
         android:id="@+id/lowAutoMissesText"
@@ -212,7 +212,7 @@
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoLowMakeNumText" />
+        app:layout_constraintTop_toBottomOf="@+id/lowAutoMakesNumText" />
 
     <Button
         android:id="@+id/lowMissAutoUpBtn"
@@ -261,7 +261,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/autoLowMakeNumText"
+        android:id="@+id/lowAutoMakesNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -274,7 +274,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lowAutoMakesText" />
 
     <TextView
-        android:id="@+id/autoLowMissNumText"
+        android:id="@+id/lowAutoMissNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -577,7 +577,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/autoHighMissNumText"
+        android:id="@+id/hiAutoMissNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -590,7 +590,7 @@
         app:layout_constraintTop_toBottomOf="@+id/hiAutoMissText" />
 
     <TextView
-        android:id="@+id/autoHighMakeNumText"
+        android:id="@+id/hiAutoMakeNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -648,7 +648,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/makesNumLabel4" />
+        app:layout_constraintTop_toBottomOf="@+id/highTeleopMakesNumText" />
 
     <TextView
         android:id="@+id/hiAutoMissText3"
@@ -661,7 +661,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/makesNumLabel6" />
+        app:layout_constraintTop_toBottomOf="@+id/lowTeleopMakesNumText" />
 
     <Button
         android:id="@+id/hiMissAutoDownBtn"
@@ -711,6 +711,6 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/makesNumLabel5" />
+        app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
