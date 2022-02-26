@@ -128,18 +128,18 @@ class DataEntryActivity : AppCompatActivity() {
         highAutoMissIncrement.setOnClickListener{highAutoMissNum++; hAI.setText(highAutoMissNum.toString())}
         lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; lAM.setText(lowAutoMakesNum.toString())}
         lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; lAI.setText(lowAutoMissNum.toString())}
-        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; hAM.setText(highAutoMakesNum.toString())}
-        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; hAI.setText(highAutoMissNum.toString())}
-        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; lAM.setText(lowAutoMakesNum.toString())}
-        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; lAI.setText(lowAutoMissNum.toString())}
+        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; hAM.setText(highAutoMakesNum.toString())}
+        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; if(highAutoMissNum < 0) highAutoMissNum = 0; hAI.setText(highAutoMissNum.toString())}
+        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; lAM.setText(lowAutoMakesNum.toString())}
+        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; if(lowAutoMissNum < 0) lowAutoMissNum = 0; lAI.setText(lowAutoMissNum.toString())}
         highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; hTM.setText(highTeleopMakesNum.toString())}
         highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; hTI.setText(highTeleopMissNum.toString())}
         lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; lTM.setText(lowTeleopMakesNum.toString())}
         lowTeleopMissIncrement.setOnClickListener{lowTeleopMissNum++; lTI.setText(lowTeleopMissNum.toString())}
-        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; hTM.setText(highTeleopMakesNum.toString())}
-        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; hTI.setText(highTeleopMissNum.toString())}
-        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; lTM.setText(lowTeleopMakesNum.toString())}
-        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; lTI.setText(lowTeleopMissNum.toString())}
+        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; hTM.setText(highTeleopMakesNum.toString())}
+        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; hTI.setText(highTeleopMissNum.toString())}
+        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; lTM.setText(lowTeleopMakesNum.toString())}
+        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; lTI.setText(lowTeleopMissNum.toString())}
     }
     private fun whatsThisListeners()
     {
