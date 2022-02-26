@@ -7,14 +7,14 @@
     tools:context="com.ibxcodecat.frc_scouting.DataEntryActivity">
 
     <Button
-        android:id="@+id/hiMakeIncrementBtn7"
+        android:id="@+id/lowMissTeleopUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="16dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeIncrementBtn6"
+        app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -26,23 +26,23 @@
         android:layout_marginEnd="43dp"
         android:text="0"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeIncrementBtn7"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeDecrementBtn7"
+        app:layout_constraintEnd_toStartOf="@+id/lowMissTeleopUpBtn"
+        app:layout_constraintStart_toEndOf="@+id/lowMissTeleopDownBtn"
         app:layout_constraintTop_toBottomOf="@+id/hiAutoMissText3" />
 
     <Button
-        android:id="@+id/hiMakeDecrementBtn7"
+        android:id="@+id/lowMissTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="21dp"
         android:text="-"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeDecrementBtn6"
+        app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/hiMakeIncrementBtn6"
+        android:id="@+id/lowMakeTeleopUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="2dp"
@@ -61,12 +61,12 @@
         android:layout_marginEnd="42dp"
         android:text="0"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeIncrementBtn6"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeDecrementBtn6"
+        app:layout_constraintEnd_toStartOf="@+id/lowMakeTeleopUpBtn"
+        app:layout_constraintStart_toEndOf="@+id/lowMakeTeleopDownBtn"
         app:layout_constraintTop_toBottomOf="@+id/highMakesText" />
 
     <Button
-        android:id="@+id/hiMakeDecrementBtn6"
+        android:id="@+id/lowMakeTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginStart="10dp"
@@ -77,14 +77,14 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/hiMakeIncrementBtn5"
+        android:id="@+id/hiMissTeleopUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="15dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeIncrementBtn4"
+        app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -96,23 +96,23 @@
         android:layout_marginEnd="43dp"
         android:text="0"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeIncrementBtn5"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeDecrementBtn5"
+        app:layout_constraintEnd_toStartOf="@+id/hiMissTeleopUpBtn"
+        app:layout_constraintStart_toEndOf="@+id/hiMissTeleopDownBtn"
         app:layout_constraintTop_toBottomOf="@+id/hiAutoMissText2" />
 
     <Button
-        android:id="@+id/hiMakeDecrementBtn5"
+        android:id="@+id/hiMissTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="26dp"
         android:text="-"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeDecrementBtn4"
+        app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/hiMakeIncrementBtn4"
+        android:id="@+id/hiMakeTeleopUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="4dp"
@@ -131,12 +131,12 @@
         android:layout_marginEnd="42dp"
         android:text="0"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeIncrementBtn4"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeDecrementBtn4"
+        app:layout_constraintEnd_toStartOf="@+id/hiMakeTeleopUpBtn"
+        app:layout_constraintStart_toEndOf="@+id/hiMakeTeleopDownBtn"
         app:layout_constraintTop_toBottomOf="@+id/highMakesText4" />
 
     <Button
-        android:id="@+id/hiMakeDecrementBtn4"
+        android:id="@+id/hiMakeTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginStart="10dp"
