@@ -34,12 +34,11 @@
         android:id="@+id/lowMissTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginStart="11dp"
         android:layout_marginTop="24dp"
         android:text="-"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="212dp" />
 
     <Button
         android:id="@+id/lowMakeTeleopUpBtn"
@@ -69,12 +68,11 @@
         android:id="@+id/lowMakeTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
         android:text="-"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highMakesText"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="211dp" />
 
     <Button
         android:id="@+id/hiMissTeleopUpBtn"
@@ -104,12 +102,11 @@
         android:id="@+id/hiMissTeleopDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginStart="11dp"
         android:layout_marginTop="26dp"
         android:text="-"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="212dp" />
 
     <Button
         android:id="@+id/hiMakeTeleopUpBtn"
@@ -123,67 +120,25 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/highTeleopMakesNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="42dp"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeTeleopUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeTeleopDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/highMakesText4" />
-
-    <Button
-        android:id="@+id/hiMakeTeleopDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
-        android:text="-"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/highMakesText4"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/hiAutoMakesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="35dp"
-        android:text="Successful Attempts"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoText" />
-
-    <TextView
         android:id="@+id/highMakesText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="40dp"
         android:text="Successful Attempts"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiTeleText" />
 
     <TextView
         android:id="@+id/highMakesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="40dp"
         android:text="Successful Attempts"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiTeleText2" />
 
     <TextView
@@ -192,11 +147,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="35dp"
         android:text="Low Goal"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiAutoMissNumText" />
 
@@ -206,11 +158,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="66dp"
         android:text="Misses"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowAutoMakesNumText" />
 
@@ -219,22 +168,20 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="8dp"
         android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeAutoUpBtn"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="150dp" />
 
     <Button
         android:id="@+id/lowMakeAutoUpBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="8dp"
         android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowAutoMakesText"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="150dp" />
 
     <TextView
         android:id="@+id/lowAutoMakesText"
@@ -242,10 +189,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="35dp"
         android:text="Successful Attempts"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowAutoGoalText" />
 
@@ -285,17 +230,6 @@
         app:layout_constraintEnd_toStartOf="@+id/lowMissAutoUpBtn"
         app:layout_constraintStart_toEndOf="@+id/hiMakeAutoDownBtn"
         app:layout_constraintTop_toBottomOf="@+id/lowAutoMissesText" />
-
-    <Button
-        android:id="@+id/lowMissAutoDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
-        android:text="-"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lowMakeAutoDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
         android:id="@+id/layout"
@@ -345,6 +279,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowMissAutoUpBtn" />
+
+    <Button
+        android:id="@+id/hiMakeTeleopDownBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/decrement"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="124dp" />
 
     <View
         android:id="@+id/horizontalDivider2"
@@ -507,6 +451,140 @@
         app:layout_constraintTop_toBottomOf="@+id/taxiHelp"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scrollbars="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verticalDivider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/autoTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/autoGroupLabelText"
+                android:textAlignment="textEnd"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/teliopTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/teleopGroupLabelText"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hiAutoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/high_goal"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/autoTitleText" />
+
+            <TextView
+                android:id="@+id/hiAutoMissText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/misses"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hiAutoText" />
+
+            <Button
+                android:id="@+id/hiMissAutoUpBtn"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/increment"
+                app:layout_constraintStart_toEndOf="@+id/hiAutoMissNumText"
+                app:layout_constraintTop_toTopOf="@+id/hiAutoMissNumText"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/hiAutoMissNumText"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/defaultValue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/hiMissAutoDownBtn"
+                app:layout_constraintTop_toTopOf="@+id/hiMissAutoDownBtn" />
+
+            <Button
+                android:id="@+id/hiMissAutoDownBtn"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/decrement"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hiAutoMissText"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/hiAutoMakesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/sucesses"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hiMissAutoUpBtn" />
+
+            <Button
+                android:id="@+id/hiMakeAutoDownBtn"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/decrement"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hiAutoMakesText"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/hiAutoMakeNumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/defaultValue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/hiMakeAutoDownBtn"
+                app:layout_constraintTop_toTopOf="@+id/hiMakeAutoDownBtn" />
+
+            <Button
+                android:id="@+id/highMakeAutoUpBtn"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/increment"
+                app:layout_constraintStart_toEndOf="@+id/hiAutoMakeNumText"
+                app:layout_constraintTop_toTopOf="@+id/hiAutoMakeNumText"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
     <EditText
         android:id="@+id/comments"
         android:layout_width="350dp"
@@ -540,186 +618,57 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="23dp"
-        android:text="@string/autoGroupLabelText"
-        android:textAlignment="textEnd"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:text="@string/teleopGroupLabelText"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="1dp"
-        android:layout_height="348dp"
-        android:background="?android:attr/listDivider"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="182dp"
-        tools:visibility="visible" />
-
     <Button
-        android:id="@+id/hiMakeAutoDownBtn"
+        android:id="@+id/lowMissAutoDownBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:text="-"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoMakesText"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/hiAutoMissNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="43dp"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMissAutoUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeAutoDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoMissText" />
-
-    <TextView
-        android:id="@+id/hiAutoMakeNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="43dp"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeAutoUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeAutoDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoMakesText" />
-
-    <Button
-        android:id="@+id/hiMissAutoUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="8dp"
-        android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeAutoUpBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/hiMakeAutoUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="8dp"
-        android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoMakesText"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/hiAutoMissText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="66dp"
-        android:text="Misses"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:text="@string/decrement"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="655dp" />
 
     <TextView
         android:id="@+id/hiAutoMissText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="83dp"
         android:text="Misses"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highTeleopMakesNumText" />
 
     <TextView
         android:id="@+id/hiAutoMissText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="82dp"
         android:text="Misses"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowTeleopMakesNumText" />
-
-    <Button
-        android:id="@+id/hiMissAutoDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="26dp"
-        android:text="-"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeAutoDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/hiAutoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:text="High Goal"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/hiTeleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="75dp"
         android:text="High Goal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/teliopTitleText" />
 
     <TextView
         android:id="@+id/hiTeleText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="75dp"
         android:text="Low Goal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
 
     <TextView
@@ -768,5 +717,14 @@
         android:layout_height="17dp"
         tools:layout_editor_absoluteX="242dp"
         tools:layout_editor_absoluteY="539dp" />
+
+    <TextView
+        android:id="@+id/highTeleopMakesNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultValue"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="317dp"
+        tools:layout_editor_absoluteY="499dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
