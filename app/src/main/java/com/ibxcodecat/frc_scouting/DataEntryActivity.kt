@@ -84,7 +84,7 @@ class DataEntryActivity : AppCompatActivity() {
     private fun numberManipulationListeners()
     {
         // Increment buttons
-        val highAutoMakesIncrement = findViewById<Button>(R.id.highMakeAutoUpBtn)
+        val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
         val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
         val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
         val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)

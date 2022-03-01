@@ -39,10 +39,4 @@
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
-    <string name="high_goal">High Goal</string>
-    <string name="misses">Misses</string>
-    <string name="decrement">-</string>
-    <string name="increment">+</string>
-    <string name="defaultValue">0</string>
-    <string name="sucesses">Sucesses</string>
 </resources>
