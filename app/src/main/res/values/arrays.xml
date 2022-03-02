@@ -171,4 +171,19 @@
         <item>Match 98</item>
         <item>Match 99</item>
     </string-array>
+
+    <string-array name="climbLevel">
+        <item>Select level</item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+    </string-array>
+
+    <string-array name="climbAttempt">
+        <item>Select</item>
+        <item>Attempted</item>
+        <item>Succeeded</item>
+        <item>Failed</item>
+    </string-array>
 </resources>

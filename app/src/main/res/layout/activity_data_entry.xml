@@ -764,7 +764,7 @@
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/climbAttText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -774,49 +774,52 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/climbAttDropdown"
         android:layout_width="160dp"
         android:layout_height="17dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        android:entries="@array/climbAttempt"
+        app:layout_constraintStart_toEndOf="@+id/climbAttText"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/climbLvlDropdown"
         android:layout_width="160dp"
         android:layout_height="17dp"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        android:entries="@array/climbLevel"
+        app:layout_constraintStart_toEndOf="@+id/climbLvlText"
+        app:layout_constraintTop_toBottomOf="@+id/climbAttDropdown" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/climbResultDropdown"
         android:layout_width="160dp"
         android:layout_height="17dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+        android:entries="@array/winLossTie"
+        app:layout_constraintStart_toEndOf="@+id/climbResultText"
+        app:layout_constraintTop_toBottomOf="@+id/climbLvlDropdown" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/climbLvlText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="2dp"
         android:text="Climb level:"
         app:layout_constraintStart_toEndOf="@id/defPlaysNumText"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/climbAttText" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/climbResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:text="Game result:"
         app:layout_constraintStart_toEndOf="@id/defPlaysNumText"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/climbLvlText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
