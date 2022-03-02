@@ -92,6 +92,7 @@ class DataEntryActivity : AppCompatActivity() {
         val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
         val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
         val lowTeleopMissIncrement = findViewById<Button>(R.id.lowMissTeleopUpBtn)
+        val defensePlaysIncrement = findViewById<Button>(R.id.defPlaysIncrementBtn)
 
         // Decrement buttons
         val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
@@ -102,6 +103,7 @@ class DataEntryActivity : AppCompatActivity() {
         val highTeleopMissDecrement = findViewById<Button>(R.id.hiMissTeleopDownBtn)
         val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
         val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
+        val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Goal integer variables
         var highAutoMakesNum: Int = 0
@@ -112,6 +114,7 @@ class DataEntryActivity : AppCompatActivity() {
         var highTeleopMissNum: Int = 0
         var lowTeleopMakesNum: Int = 0
         var lowTeleopMissNum: Int = 0
+        var defPlaysNum: Int = 0
 
         // Text boxes
         val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
@@ -122,6 +125,7 @@ class DataEntryActivity : AppCompatActivity() {
         val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
         val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
         val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
+        val defense = findViewById<TextView>(R.id.defPlaysNumText)
 
         // Listeners
         highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; hAM.setText(highAutoMakesNum.toString())}
@@ -140,6 +144,8 @@ class DataEntryActivity : AppCompatActivity() {
         highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; hTI.setText(highTeleopMissNum.toString())}
         lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; lTM.setText(lowTeleopMakesNum.toString())}
         lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; lTI.setText(lowTeleopMissNum.toString())}
+        defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
+        defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
     }
     private fun whatsThisListeners()
     {
