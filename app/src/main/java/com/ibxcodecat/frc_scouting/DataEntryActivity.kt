@@ -194,6 +194,13 @@ class DataEntryActivity : AppCompatActivity() {
                 val teleopHighGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
                 val teleopHighGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
 
+                val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
+                val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
+                val climbLevel = findViewById<Spinner>(R.id.climbLvlDropdown)
+
+                val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
+
+
                 val dataToSerialize = SerializationData(
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
@@ -209,7 +216,11 @@ class DataEntryActivity : AppCompatActivity() {
                     teleopLowGoalMake.text.toString().toInt(),
                     teleopLowGoalMiss.text.toString().toInt(),
                     teleopHighGoalMake.text.toString().toInt(),
-                    teleopHighGoalMiss.text.toString().toInt()
+                    teleopHighGoalMiss.text.toString().toInt(),
+                    defensivePlays.text.toString().toInt(),
+                    climbAttempt.selectedItemPosition,
+                    climbLevel.selectedItemPosition,
+                    gameResult.selectedItemPosition
                 )
 
                 val fileSystem = FileSystem()
