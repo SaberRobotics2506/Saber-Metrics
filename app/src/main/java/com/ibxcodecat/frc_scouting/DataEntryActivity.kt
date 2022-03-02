@@ -1,13 +1,13 @@
 package com.ibxcodecat.frc_scouting
 
 //Import AndroidX
-import androidx.appcompat.app.AppCompatActivity
 
 //Import Android Components
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -17,12 +17,13 @@ class DataEntryActivity : AppCompatActivity() {
 
         whatsThisListeners()
         submissionListener()
+        numberManipulationListeners()
     }
 
     //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
         Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
-        return;
+        return
     }
 
     private fun errorDropdown(dropdown: Spinner)
@@ -80,6 +81,66 @@ class DataEntryActivity : AppCompatActivity() {
         return false
     }
 
+    private fun numberManipulationListeners()
+    {
+        // Increment buttons
+        val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
+        val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
+        val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
+        val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)
+        val highTeleopMakesIncrement = findViewById<Button>(R.id.hiMakeTeleopUpBtn)
+        val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
+        val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
+        val lowTeleopMissIncrement = findViewById<Button>(R.id.lowMissTeleopUpBtn)
+
+        // Decrement buttons
+        val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
+        val highAutoMissDecrement = findViewById<Button>(R.id.hiMissAutoDownBtn)
+        val lowAutoMakesDecrement = findViewById<Button>(R.id.lowMakeAutoDownBtn)
+        val lowAutoMissDecrement = findViewById<Button>(R.id.lowMissAutoDownBtn)
+        val highTeleopMakesDecrement = findViewById<Button>(R.id.hiMakeTeleopDownBtn)
+        val highTeleopMissDecrement = findViewById<Button>(R.id.hiMissTeleopDownBtn)
+        val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
+        val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
+
+        // Goal integer variables
+        var highAutoMakesNum: Int = 0
+        var highAutoMissNum: Int = 0
+        var lowAutoMakesNum: Int = 0
+        var lowAutoMissNum: Int = 0
+        var highTeleopMakesNum: Int = 0
+        var highTeleopMissNum: Int = 0
+        var lowTeleopMakesNum: Int = 0
+        var lowTeleopMissNum: Int = 0
+
+        // Text boxes
+        val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
+        val hAI = findViewById<TextView>(R.id.hiAutoMissNumText)
+        val lAM = findViewById<TextView>(R.id.lowAutoMakesNumText)
+        val lAI = findViewById<TextView>(R.id.lowAutoMissNumText)
+        val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
+        val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
+        val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+        val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
+
+        // Listeners
+        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; hAM.setText(highAutoMakesNum.toString())}
+        highAutoMissIncrement.setOnClickListener{highAutoMissNum++; hAI.setText(highAutoMissNum.toString())}
+        lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; lAM.setText(lowAutoMakesNum.toString())}
+        lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; lAI.setText(lowAutoMissNum.toString())}
+        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; hAM.setText(highAutoMakesNum.toString())}
+        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; if(highAutoMissNum < 0) highAutoMissNum = 0; hAI.setText(highAutoMissNum.toString())}
+        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; lAM.setText(lowAutoMakesNum.toString())}
+        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; if(lowAutoMissNum < 0) lowAutoMissNum = 0; lAI.setText(lowAutoMissNum.toString())}
+        highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; hTM.setText(highTeleopMakesNum.toString())}
+        highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; hTI.setText(highTeleopMissNum.toString())}
+        lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; lTM.setText(lowTeleopMakesNum.toString())}
+        lowTeleopMissIncrement.setOnClickListener{lowTeleopMissNum++; lTI.setText(lowTeleopMissNum.toString())}
+        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; hTM.setText(highTeleopMakesNum.toString())}
+        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; hTI.setText(highTeleopMissNum.toString())}
+        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; lTM.setText(lowTeleopMakesNum.toString())}
+        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; lTI.setText(lowTeleopMissNum.toString())}
+    }
     private fun whatsThisListeners()
     {
         // get reference to what's this buttons
@@ -117,6 +178,16 @@ class DataEntryActivity : AppCompatActivity() {
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
 
+                val autoLowGoalMake = findViewById<TextView>(R.id.lowAutoMakesNumText)
+                val autoLowGoalMiss = findViewById<TextView>(R.id.lowAutoMissNumText)
+                val autoHighGoalMake = findViewById<TextView>(R.id.hiAutoMakeNumText)
+                val autoHighGoalMiss = findViewById<TextView>(R.id.hiAutoMissNumText)
+
+                val teleopLowGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+                val teleopLowGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
+                val teleopHighGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+                val teleopHighGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
+
                 val dataToSerialize = SerializationData(
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
@@ -125,6 +196,14 @@ class DataEntryActivity : AppCompatActivity() {
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),
+                    autoLowGoalMake.text.toString().toInt(),
+                    autoLowGoalMiss.text.toString().toInt(),
+                    autoHighGoalMake.text.toString().toInt(),
+                    autoHighGoalMiss.text.toString().toInt(),
+                    teleopLowGoalMake.text.toString().toInt(),
+                    teleopLowGoalMiss.text.toString().toInt(),
+                    teleopHighGoalMake.text.toString().toInt(),
+                    teleopHighGoalMiss.text.toString().toInt()
                 )
 
                 val fileSystem = FileSystem()
