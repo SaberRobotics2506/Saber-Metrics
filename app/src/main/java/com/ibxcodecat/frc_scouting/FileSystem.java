@@ -22,7 +22,7 @@ public class FileSystem
         }
 
         //Create a new file that points to the root directory, with the given name:
-        File file = new File(context.getExternalFilesDir(null), serializationData.getTeam() + "-" + serializationData.getMatch() + ".scout");
+        File file = new File(context.getExternalFilesDir(null), serializationData.getTeamNumber() + "-" + serializationData.getMatchNumber() + ".scout");
 
         //This point and below is responsible for the write operation
         FileOutputStream outputStream;
