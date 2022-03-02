@@ -11,29 +11,24 @@ data class SerializationData (
 
     val allianceScore: Int = -1,
 
-    val comments: String = "Empty Field"
-    
-    /*
-
-    Not Yet Implemented
+    val comments: String = "Empty Field",
 
     val autoLowGoalSuccess: Int = -1,
     val autoLowGoalFail: Int = -1,
     val autoHighGoalSuccess: Int = -1,
     val autoHighGoalFail: Int = -1,
 
-    val taxi: Boolean = false,
+    val teleopLowGoalSuccess: Int = -1,
+    val teleopLowGoalFail: Int = -1,
+    val teleopHighGoalSuccess: Int = -1,
+    val teleopHighGoalFail: Int = -1,
 
-    val telopLowGoalSuccess: Int = -1,
-    val telopLowGoalFail: Int = -1,
-    val telopHighGoalSuccess: Int = -1,
-    val telopHighGoalFail: Int = -1,
+    /*
+
+    Not Yet Implemented
 
     val defensePlays: Int = -1,
-
     val endGameStatus: Int = -1,
-
     val winLossTie: Char,
-
      */
 )

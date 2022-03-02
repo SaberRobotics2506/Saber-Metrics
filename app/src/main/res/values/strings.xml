@@ -21,7 +21,7 @@
     <string name="Help">\?</string>
     <string name="teamNumberTXT">Team #</string>
     <string name="matchNumberTXT">Match #</string>
-    <string name="submit">Submit Data</string>
+    <string name="submit">Save Data</string>
     <string name="scouterTXT">Your Name</string>
     <string name="regionalOffText">Duluth</string>
     <string name="regionalOnText">Milwaukee</string>
@@ -29,6 +29,13 @@
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
     <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
+    <string name="autoGroupLabelText">Autonomous</string>
+    <string name="teleopGroupLabelText">Teleop</string>
+    <string name="autoHighMakeText">Successful Attempts</string>
+    <string name="autoHighMissText">Misses</string>
+    <string name="autoLowMakeText">Successful Attempts</string>
+    <string name="autoLowMissText">Misses</string>
+
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
