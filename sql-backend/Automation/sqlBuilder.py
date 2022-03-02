@@ -53,20 +53,35 @@ def BuildInsertQueries(data):
 	# EXAMPLE QUERY: INSERT INTO MatchMaster1 (ScoutedBy)VALUES(John Doe)
     
 	query_list = [] #Define an empty list to store SQL querries in
-	TABLE_NAME = "MatchMaster1" #Store the name of the table to be referenced again later when creating the query
+	TABLE_NAME = "[Scouting 2022].[dbo].[MatchMaster1]" #Store the name of the table to be referenced again later when creating the query
 	
 	for json_dictionary in data: #For each JSON dictionary in the data list...
-		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file
-			query = "INSERT INTO " + TABLE_NAME #Start constructing this INSERT query using the table name specified
+		
+		query = "INSERT INTO " + TABLE_NAME + "(" #Start constructing this INSERT query using the table name specified
+		
+		for key, value in json_dictionary.items(): #Loop through all keys and values in the dictionary for this JSON file	
+			query = query + str(key) + ","
+		
+		query = query[:-1] #Exclude last comma generated in string
+		query = query + ")VALUES("
+		
+		for key, value in json_dictionary.items():
+			if(type(value) is int): #If the value of the current field is an intager...
+				query = query + str(value) + "," #Append an int to values to the query
+			elif(type(value) is str): #If the value of the current field is a string...
+				query = query + "'" + str(value) + "'," #Append a string value to the query
+			elif(type(value) is bool): #If the value of the current field is a boolean...
+				if(value == False):
+					query= query + "0," #Append an int representing "false" to the query
+				else:
+					query = query + "1," #Append an int representing "true" to the query
+			else: #If we have no idea what to do...
+				query = "--Failed to generate complete query of unkown type. Process aborted!\n" #Create an INSERT query for this KeyValuePair	
+		
+		query = query[:-1] #Exclude last comma generated in string
+		query = query + ")" #Add final closing parenthiss to query
 			
-			if(type(value) is int): #If the value of the current field is an intager
-				query = query + "(" + str(key) + ")VALUES(" + str(value) + ") --Generated Integer Query\n" #Create an INSERT query for this KeyValuePair as an int query
-			elif(type(value) is str):
-				query = query + "(" + str(key) + ")VALUES('" + str(value) + "') --Generated String Query\n" #Create an INSERT query for this KeyValuePair as a string query
-			else:
-				query = query + "--Failed to generate query of unkown type" #Create an INSERT query for this KeyValuePair
-				
-			query_list.append(query) #Append the query we created to the query_list
+		query_list.append(query) #Append the query we created to the query_list
             
 	return query_list #Return the list of queries that we have created
 	
@@ -81,7 +96,7 @@ def WriteQueryFile(query_list):
 		fileContents = ("--This SQL query file was built with the SQL Builder python script\n\n")
 		
 		for query in query_list:
-			fileContents = fileContents + (str(query))
+			fileContents = fileContents + (str(query)) + "-- Generated Query for *.scout file\n"
 		
 		builderOutputFile.write(fileContents)
 		
