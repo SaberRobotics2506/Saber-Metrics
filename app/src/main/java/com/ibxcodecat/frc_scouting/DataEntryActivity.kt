@@ -178,6 +178,16 @@ class DataEntryActivity : AppCompatActivity() {
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
 
+                val autoLowGoalMake = findViewById<TextView>(R.id.lowAutoMakesNumText)
+                val autoLowGoalMiss = findViewById<TextView>(R.id.lowAutoMissNumText)
+                val autoHighGoalMake = findViewById<TextView>(R.id.hiAutoMakeNumText)
+                val autoHighGoalMiss = findViewById<TextView>(R.id.hiAutoMissNumText)
+
+                val teleopLowGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+                val teleopLowGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
+                val teleopHighGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
+                val teleopHighGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
+
                 val dataToSerialize = SerializationData(
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
@@ -186,6 +196,14 @@ class DataEntryActivity : AppCompatActivity() {
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),
+                    autoLowGoalMake.text.toString().toInt(),
+                    autoLowGoalMiss.text.toString().toInt(),
+                    autoHighGoalMake.text.toString().toInt(),
+                    autoHighGoalMiss.text.toString().toInt(),
+                    teleopLowGoalMake.text.toString().toInt(),
+                    teleopLowGoalMiss.text.toString().toInt(),
+                    teleopHighGoalMake.text.toString().toInt(),
+                    teleopHighGoalMiss.text.toString().toInt()
                 )
 
                 val fileSystem = FileSystem()
