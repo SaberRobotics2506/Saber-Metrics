@@ -182,8 +182,8 @@
 
     <string-array name="climbAttempt">
         <item>Select</item>
-        <item>Attempted</item>
-        <item>Succeeded</item>
+        <item>Did not attempt</item>
         <item>Failed</item>
+        <item>Succeeded</item>
     </string-array>
 </resources>

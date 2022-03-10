@@ -9,12 +9,20 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
+var highAutoMakesNum: Int = 0
+var highAutoMissNum: Int = 0
+var lowAutoMakesNum: Int = 0
+var lowAutoMissNum: Int = 0
+var highTeleopMakesNum: Int = 0
+var highTeleopMissNum: Int = 0
+var lowTeleopMakesNum: Int = 0
+var lowTeleopMissNum: Int = 0
+
 class DataEntryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_entry)
-
         whatsThisListeners()
         submissionListener()
         numberManipulationListeners()
@@ -62,6 +70,7 @@ class DataEntryActivity : AppCompatActivity() {
         val score = findViewById<EditText>(R.id.score)
         val comments = findViewById<EditText>(R.id.comments)
 
+        resetInputVariables()
         resetTextFormatting(scoutedBy, score, comments)
         resetDropdownFormatting(teamNumber, matchNumber)
 
@@ -106,14 +115,6 @@ class DataEntryActivity : AppCompatActivity() {
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Goal integer variables
-        var highAutoMakesNum: Int = 0
-        var highAutoMissNum: Int = 0
-        var lowAutoMakesNum: Int = 0
-        var lowAutoMissNum: Int = 0
-        var highTeleopMakesNum: Int = 0
-        var highTeleopMissNum: Int = 0
-        var lowTeleopMakesNum: Int = 0
-        var lowTeleopMissNum: Int = 0
         var defPlaysNum: Int = 0
 
         // Text boxes
@@ -128,24 +129,35 @@ class DataEntryActivity : AppCompatActivity() {
         val defense = findViewById<TextView>(R.id.defPlaysNumText)
 
         // Listeners
-        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; hAM.setText(highAutoMakesNum.toString())}
-        highAutoMissIncrement.setOnClickListener{highAutoMissNum++; hAI.setText(highAutoMissNum.toString())}
-        lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; lAM.setText(lowAutoMakesNum.toString())}
-        lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; lAI.setText(lowAutoMissNum.toString())}
-        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; hAM.setText(highAutoMakesNum.toString())}
-        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; if(highAutoMissNum < 0) highAutoMissNum = 0; hAI.setText(highAutoMissNum.toString())}
-        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; lAM.setText(lowAutoMakesNum.toString())}
-        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; if(lowAutoMissNum < 0) lowAutoMissNum = 0; lAI.setText(lowAutoMissNum.toString())}
-        highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; hTM.setText(highTeleopMakesNum.toString())}
-        highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; hTI.setText(highTeleopMissNum.toString())}
-        lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; lTM.setText(lowTeleopMakesNum.toString())}
-        lowTeleopMissIncrement.setOnClickListener{lowTeleopMissNum++; lTI.setText(lowTeleopMissNum.toString())}
-        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; hTM.setText(highTeleopMakesNum.toString())}
-        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; hTI.setText(highTeleopMissNum.toString())}
-        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; lTM.setText(lowTeleopMakesNum.toString())}
-        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; lTI.setText(lowTeleopMissNum.toString())}
+        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
+        highAutoMissIncrement.setOnClickListener{highAutoMissNum++; if(highAutoMissNum == 1) hAI.setText(highAutoMissNum.toString() + " miss") else hAI.setText(highAutoMissNum.toString() + " misses")}
+        lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; if(lowAutoMakesNum == 1) lAM.setText(lowAutoMakesNum.toString() + " bucket") else lAM.setText(lowAutoMakesNum.toString() + " buckets")}
+        lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; if(lowAutoMissNum == 1) lAI.setText(lowAutoMissNum.toString() + " miss") else lAI.setText(lowAutoMissNum.toString() + " misses")}
+        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
+        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; if(highAutoMissNum < 0) highAutoMissNum = 0; if(highAutoMakesNum == 1) hAI.setText(highAutoMakesNum.toString() + " miss") else hAI.setText(highAutoMissNum.toString() + " misses")}
+        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; if(highAutoMakesNum == 1) lAM.setText(lowAutoMakesNum.toString() + " bucket") else lAM.setText(lowAutoMakesNum.toString() + " buckets")}
+        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; if(lowAutoMissNum < 0) lowAutoMissNum = 0; if(lowAutoMissNum == 1) lAI.setText(lowAutoMissNum.toString() + " miss") else lAI.setText(lowAutoMissNum.toString() + " misses")}
+        highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
+        highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
+        lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
+        lowTeleopMissIncrement.setOnClickListener{lowTeleopMissNum++; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
+        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
+        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
+        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
         defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
         defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
+    }
+    private fun resetInputVariables()
+    {
+        highAutoMakesNum = 0
+        highAutoMissNum = 0
+        lowAutoMakesNum = 0
+        lowAutoMissNum = 0
+        highTeleopMakesNum = 0
+        highTeleopMissNum = 0
+        lowTeleopMakesNum = 0
+        lowTeleopMissNum = 0
     }
     private fun whatsThisListeners()
     {
@@ -184,16 +196,6 @@ class DataEntryActivity : AppCompatActivity() {
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
 
-                val autoLowGoalMake = findViewById<TextView>(R.id.lowAutoMakesNumText)
-                val autoLowGoalMiss = findViewById<TextView>(R.id.lowAutoMissNumText)
-                val autoHighGoalMake = findViewById<TextView>(R.id.hiAutoMakeNumText)
-                val autoHighGoalMiss = findViewById<TextView>(R.id.hiAutoMissNumText)
-
-                val teleopLowGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
-                val teleopLowGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
-                val teleopHighGoalMake = findViewById<TextView>(R.id.lowTeleopMakesNumText)
-                val teleopHighGoalMiss = findViewById<TextView>(R.id.lowTeleopMissNumText)
-
                 val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
                 val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
                 val climbLevel = findViewById<Spinner>(R.id.climbLvlDropdown)
@@ -209,14 +211,14 @@ class DataEntryActivity : AppCompatActivity() {
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),
-                    autoLowGoalMake.text.toString().toInt(),
-                    autoLowGoalMiss.text.toString().toInt(),
-                    autoHighGoalMake.text.toString().toInt(),
-                    autoHighGoalMiss.text.toString().toInt(),
-                    teleopLowGoalMake.text.toString().toInt(),
-                    teleopLowGoalMiss.text.toString().toInt(),
-                    teleopHighGoalMake.text.toString().toInt(),
-                    teleopHighGoalMiss.text.toString().toInt(),
+                    lowAutoMakesNum,
+                    lowAutoMissNum,
+                    highAutoMakesNum,
+                    highAutoMissNum,
+                    lowTeleopMakesNum,
+                    lowTeleopMissNum,
+                    highTeleopMakesNum,
+                    highTeleopMissNum,
                     defensivePlays.text.toString().toInt(),
                     climbAttempt.selectedItemPosition,
                     climbLevel.selectedItemPosition,
