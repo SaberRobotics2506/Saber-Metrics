@@ -295,7 +295,7 @@
         android:layout_marginTop="3dp"
         android:text="@string/Help"
         app:layout_constraintStart_toEndOf="@+id/taxiSelector"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/makeNumText"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <ToggleButton
@@ -308,7 +308,7 @@
         android:textOn="@string/taxiOnText"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/makeNumText"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -384,7 +384,7 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/makeNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -397,7 +397,7 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/missNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
@@ -434,7 +434,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/makeNumText" />
 
     <TextView
         android:id="@+id/lowAutoMakesNumText"
@@ -605,7 +605,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/missNumText" />
 
     <TextView
         android:id="@+id/hiTeleText2"
