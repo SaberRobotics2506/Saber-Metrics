@@ -46,6 +46,19 @@ def ReadJSON():
 	
 	return data_list #Returns a list of dictionaries representing each files' JSON Data
 
+
+def RemoveBadCharacters(string):
+    # This function is responsible for removing bad SQL characters like ' and "
+    
+    output = "" # Define an output string
+    for char in string: # Loop through each character in our string
+        if(char != "'" and char != "\""): # If the string does not contain an invalid character
+            output = output + char # Add the current character to our output
+            
+    
+    print(output)
+    return output # Return the output string
+    
 def BuildInsertQueries(data):
 	# This function builds SQL queries from each dictionary KeyValuePair in a list of dictionaries
 	# This function will loop over every JSON dictionary in the list of dictionaries and then loop over Each KeyValuePair in the dictionary
@@ -69,7 +82,7 @@ def BuildInsertQueries(data):
 			if(type(value) is int): #If the value of the current field is an intager...
 				query = query + str(value) + "," #Append an int to values to the query
 			elif(type(value) is str): #If the value of the current field is a string...
-				query = query + "'" + str(value) + "'," #Append a string value to the query
+				query = query + "'" + RemoveBadCharacters(str(value)) + "'," #Append a string value to the query
 			elif(type(value) is bool): #If the value of the current field is a boolean...
 				if(value == False):
 					query= query + "0," #Append an int representing "false" to the query
@@ -84,7 +97,7 @@ def BuildInsertQueries(data):
 		query_list.append(query) #Append the query we created to the query_list
             
 	return query_list #Return the list of queries that we have created
-	
+    
 def WriteQueryFile(query_list):
 
 	# This function loops through all the queries in the query list and appends them to a string
