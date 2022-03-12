@@ -55,8 +55,6 @@ def RemoveBadCharacters(string):
         if(char != "'" and char != "\""): # If the string does not contain an invalid character
             output = output + char # Add the current character to our output
             
-    
-    print(output)
     return output # Return the output string
     
 def BuildInsertQueries(data):
