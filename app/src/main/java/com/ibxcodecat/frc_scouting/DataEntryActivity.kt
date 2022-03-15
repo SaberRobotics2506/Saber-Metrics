@@ -93,43 +93,43 @@ class DataEntryActivity : AppCompatActivity() {
     private fun numberManipulationListeners()
     {
         // Increment buttons
-        val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
+        /*val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
         val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
         val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
         val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)
         val highTeleopMakesIncrement = findViewById<Button>(R.id.hiMakeTeleopUpBtn)
         val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
         val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
-        val lowTeleopMissIncrement = findViewById<Button>(R.id.lowMissTeleopUpBtn)
+        val lowTeleopMissIncrement = findViewById<Button>(R.id.lowMissTeleopUpBtn)*/
         val defensePlaysIncrement = findViewById<Button>(R.id.defPlaysIncrementBtn)
 
         // Decrement buttons
-        val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
+        /*val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
         val highAutoMissDecrement = findViewById<Button>(R.id.hiMissAutoDownBtn)
         val lowAutoMakesDecrement = findViewById<Button>(R.id.lowMakeAutoDownBtn)
         val lowAutoMissDecrement = findViewById<Button>(R.id.lowMissAutoDownBtn)
         val highTeleopMakesDecrement = findViewById<Button>(R.id.hiMakeTeleopDownBtn)
         val highTeleopMissDecrement = findViewById<Button>(R.id.hiMissTeleopDownBtn)
         val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
-        val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
+        val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)*/
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Goal integer variables
         var defPlaysNum: Int = 0
 
         // Text boxes
-        val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
+        /*val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
         val hAI = findViewById<TextView>(R.id.hiAutoMissNumText)
         val lAM = findViewById<TextView>(R.id.lowAutoMakesNumText)
         val lAI = findViewById<TextView>(R.id.lowAutoMissNumText)
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
         val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
         val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
-        val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
+        val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)*/
         val defense = findViewById<TextView>(R.id.defPlaysNumText)
 
         // Listeners
-        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
+        /*highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
         highAutoMissIncrement.setOnClickListener{highAutoMissNum++; if(highAutoMissNum == 1) hAI.setText(highAutoMissNum.toString() + " miss") else hAI.setText(highAutoMissNum.toString() + " misses")}
         lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; if(lowAutoMakesNum == 1) lAM.setText(lowAutoMakesNum.toString() + " bucket") else lAM.setText(lowAutoMakesNum.toString() + " buckets")}
         lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; if(lowAutoMissNum == 1) lAI.setText(lowAutoMissNum.toString() + " miss") else lAI.setText(lowAutoMissNum.toString() + " misses")}
@@ -144,7 +144,7 @@ class DataEntryActivity : AppCompatActivity() {
         highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
         highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
         lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
-        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}*/
         defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
         defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
     }

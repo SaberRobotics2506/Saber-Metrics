@@ -5,14 +5,14 @@
     <!--Strings for LaunchActivity-->
     <string name="Welcome_Title">Saber Metrics</string>
     <string name="Welcome_Message">
-        Welcome to Saber-Metrics!
+        Welcome to Saber Metrics!
         \n\n
-        This app was developed by me (Nathan) to send scouting data to our SQL database over Bluetooth.
+        This app was developed by Nathan and Dominic to send scouting data to our SQL database over Bluetooth.
         If at any point while using the app you have a question feel free to contact me.
         \n\n
-        I genuinely hope that the FIRST robotics 2022 season goes well for you all and that you all have a great time at competition!
+        We hope that the robotics 2022 season is going well for you guys and that you all have a great time at competition!
         \n\n
-        Tap \"Let\'s Go!\" bellow to start entering data!
+        Tap \"Let\'s Go!\" below to start entering data!
     </string>
     <string name="Lets_Go">Let\'s Go</string>
 
@@ -28,7 +28,7 @@
     <string name="taxiOnText">Robot did taxi</string>
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
-    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
+    <string name="comments">Enter comments here</string>
     <string name="autoGroupLabelText">Autonomous</string>
     <string name="teleopGroupLabelText">Teleop</string>
     <string name="autoHighMakeText">Successful Attempts</string>
