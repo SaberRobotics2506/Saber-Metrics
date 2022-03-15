@@ -29,8 +29,8 @@ class CounterComponent : Fragment() {
         //Listeners to manipulate the numbers
         makeDecBtn.setOnClickListener{makeNum--; if(makeNum < 0) makeNum = 0; if(makeNum == 1) makeText.setText(makeNum.toString() + " bucket") else makeText.setText(makeNum.toString() + " buckets")}
         makeIncBtn.setOnClickListener{makeNum++; if(makeNum == 1) makeText.setText(makeNum.toString() + " bucket") else makeText.setText(makeNum.toString() + " buckets")}
-        missDecBtn.setOnClickListener{missNum--; if(missNum < 0) missNum = 0; if(missNum == 1) missText.setText(missNum.toString() + "miss") else missText.setText(missNum.toString() + " misses")}
-        missIncBtn.setOnClickListener{missNum++; if(missNum == 1) missText.setText(missNum.toString() + "miss") else missText.setText(missNum.toString() + " misses")}
+        missDecBtn.setOnClickListener{missNum--; if(missNum < 0) missNum = 0; if(missNum == 1) missText.setText(missNum.toString() + " miss") else missText.setText(missNum.toString() + " misses")}
+        missIncBtn.setOnClickListener{missNum++; if(missNum == 1) missText.setText(missNum.toString() + " miss") else missText.setText(missNum.toString() + " misses")}
     }
 
     override fun onCreateView(inflater : LayoutInflater, container : ViewGroup?,

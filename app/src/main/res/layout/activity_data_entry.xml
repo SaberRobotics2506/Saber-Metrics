@@ -300,13 +300,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="35dp"
         android:text="Low Goal"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="366dp" />
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
 
     <TextView
         android:id="@+id/hiTeleText"
@@ -440,8 +440,12 @@
         android:id="@+id/fragmentContainerView"
         android:name="com.ibxcodecat.frc_scouting.CounterComponent"
         android:layout_width="240dp"
-        android:layout_height="120dp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="280dp" />
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hiAutoText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
