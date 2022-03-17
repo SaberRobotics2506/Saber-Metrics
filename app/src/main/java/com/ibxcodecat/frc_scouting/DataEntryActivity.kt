@@ -6,8 +6,10 @@ package com.ibxcodecat.frc_scouting
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+
 
 var highAutoMakesNum: Int = 0
 var highAutoMissNum: Int = 0
@@ -92,11 +94,9 @@ class DataEntryActivity : AppCompatActivity() {
 
     private fun numberManipulationListeners()
     {
-        // Increment buttons
-        val highAutoMakesIncrement = findViewById<Button>(R.id.hiMakeAutoUpBtn)
-        val highAutoMissIncrement = findViewById<Button>(R.id.hiMissAutoUpBtn)
-        val lowAutoMakesIncrement = findViewById<Button>(R.id.lowMakeAutoUpBtn)
-        val lowAutoMissIncrement = findViewById<Button>(R.id.lowMissAutoUpBtn)
+        // Increment buttons and dropdowns
+        val highAutoMakes = findViewById<Spinner>(R.id.autoHighMakesSpinner)
+        val lowAutoMakes = findViewById<Spinner>(R.id.autoLowMakesSpinner)
         val highTeleopMakesIncrement = findViewById<Button>(R.id.hiMakeTeleopUpBtn)
         val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
         val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
@@ -104,10 +104,6 @@ class DataEntryActivity : AppCompatActivity() {
         val defensePlaysIncrement = findViewById<Button>(R.id.defPlaysIncrementBtn)
 
         // Decrement buttons
-        val highAutoMakesDecrement = findViewById<Button>(R.id.hiMakeAutoDownBtn)
-        val highAutoMissDecrement = findViewById<Button>(R.id.hiMissAutoDownBtn)
-        val lowAutoMakesDecrement = findViewById<Button>(R.id.lowMakeAutoDownBtn)
-        val lowAutoMissDecrement = findViewById<Button>(R.id.lowMissAutoDownBtn)
         val highTeleopMakesDecrement = findViewById<Button>(R.id.hiMakeTeleopDownBtn)
         val highTeleopMissDecrement = findViewById<Button>(R.id.hiMissTeleopDownBtn)
         val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
@@ -118,25 +114,25 @@ class DataEntryActivity : AppCompatActivity() {
         var defPlaysNum: Int = 0
 
         // Text boxes
-        val hAM = findViewById<TextView>(R.id.hiAutoMakeNumText)
-        val hAI = findViewById<TextView>(R.id.hiAutoMissNumText)
-        val lAM = findViewById<TextView>(R.id.lowAutoMakesNumText)
-        val lAI = findViewById<TextView>(R.id.lowAutoMissNumText)
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
         val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
         val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
         val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
         val defense = findViewById<TextView>(R.id.defPlaysNumText)
+        highAutoMakes.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parentView: AdapterView<*>?,
+                selectedItemView: View?,
+                position: Int,
+                id: Long
+            ) {
+                highAutoMakesNum = highAutoMakes.selectedItem.toString().toInt()
+            }
 
-        // Listeners
-        highAutoMakesIncrement.setOnClickListener{highAutoMakesNum++; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
-        highAutoMissIncrement.setOnClickListener{highAutoMissNum++; if(highAutoMissNum == 1) hAI.setText(highAutoMissNum.toString() + " miss") else hAI.setText(highAutoMissNum.toString() + " misses")}
-        lowAutoMakesIncrement.setOnClickListener{lowAutoMakesNum++; if(lowAutoMakesNum == 1) lAM.setText(lowAutoMakesNum.toString() + " bucket") else lAM.setText(lowAutoMakesNum.toString() + " buckets")}
-        lowAutoMissIncrement.setOnClickListener{lowAutoMissNum++; if(lowAutoMissNum == 1) lAI.setText(lowAutoMissNum.toString() + " miss") else lAI.setText(lowAutoMissNum.toString() + " misses")}
-        highAutoMakesDecrement.setOnClickListener{highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; if(highAutoMakesNum == 1) hAM.setText(highAutoMakesNum.toString() + " bucket") else hAM.setText(highAutoMakesNum.toString() + " buckets")}
-        highAutoMissDecrement.setOnClickListener{highAutoMissNum--; if(highAutoMissNum < 0) highAutoMissNum = 0; if(highAutoMakesNum == 1) hAI.setText(highAutoMakesNum.toString() + " miss") else hAI.setText(highAutoMissNum.toString() + " misses")}
-        lowAutoMakesDecrement.setOnClickListener{lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; if(highAutoMakesNum == 1) lAM.setText(lowAutoMakesNum.toString() + " bucket") else lAM.setText(lowAutoMakesNum.toString() + " buckets")}
-        lowAutoMissDecrement.setOnClickListener{lowAutoMissNum--; if(lowAutoMissNum < 0) lowAutoMissNum = 0; if(lowAutoMissNum == 1) lAI.setText(lowAutoMissNum.toString() + " miss") else lAI.setText(lowAutoMissNum.toString() + " misses")}
+            override fun onNothingSelected(parentView: AdapterView<*>?) {
+                // your code here
+            }
+        })
         highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
         highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
         lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
