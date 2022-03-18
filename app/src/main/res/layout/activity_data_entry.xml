@@ -359,7 +359,7 @@
         android:gravity="start|top"
         android:hint="@string/comments"
         android:importantForAutofill="no"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:minHeight="32dp"
         android:textColorHint="#757575"
         android:visibility="visible"
