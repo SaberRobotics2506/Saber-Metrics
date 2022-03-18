@@ -119,20 +119,6 @@ class DataEntryActivity : AppCompatActivity() {
         val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
         val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
         val defense = findViewById<TextView>(R.id.defPlaysNumText)
-        highAutoMakes.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parentView: AdapterView<*>?,
-                selectedItemView: View?,
-                position: Int,
-                id: Long
-            ) {
-                highAutoMakesNum = highAutoMakes.selectedItem.toString().toInt()
-            }
-
-            override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // your code here
-            }
-        })
         highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
         highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
         lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
@@ -197,7 +183,8 @@ class DataEntryActivity : AppCompatActivity() {
                 val climbLevel = findViewById<Spinner>(R.id.climbLvlDropdown)
 
                 val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
-
+                highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
+                lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
 
                 val dataToSerialize = SerializationData(
                     teamNumber.selectedItem.toString().toInt(),
