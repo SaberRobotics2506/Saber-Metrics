@@ -363,7 +363,7 @@
         android:textColorHint="#757575"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/submit"
-        app:layout_constraintStart_toEndOf="@+id/climbResultDropdown"
+        app:layout_constraintStart_toEndOf="@+id/gameResultDropdown"
         tools:ignore="TouchTargetSizeCheck"
         tools:visibility="visible" />
 
@@ -550,62 +550,18 @@
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/climbAttText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@id/defPlaysIncrementBtn"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
-
     <Spinner
-        android:id="@+id/climbAttDropdown"
-        style="@android:style/Widget.Material.Light.Spinner"
+        android:id="@+id/climbAttemptDropdown"
         android:layout_width="250dp"
         android:layout_height="22dp"
-        android:layout_marginStart="7dp"
         android:layout_marginTop="8dp"
-        android:entries="@array/climbAttempt"
-        app:layout_constraintStart_toEndOf="@+id/climbAttText"
+        android:entries="@array/climb"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3"
-        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="149dp" />
 
     <Spinner
-        android:id="@+id/climbLvlDropdown"
-        style="@android:style/Widget.Material.Light.Spinner"
-        android:layout_width="250dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="12dp"
-        android:entries="@array/climbLevel"
-        app:layout_constraintStart_toEndOf="@+id/climbLvlText"
-        app:layout_constraintTop_toBottomOf="@+id/climbAttDropdown"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/climbLvlText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="14dp"
-        android:text="@string/climb_level"
-        app:layout_constraintStart_toEndOf="@+id/defPlaysIncrementBtn"
-        app:layout_constraintTop_toBottomOf="@+id/climbAttText" />
-
-    <TextView
-        android:id="@+id/climbResultText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="2dp"
-        android:text="@string/game_result"
-        app:layout_constraintBottom_toTopOf="@+id/climbResultDropdown"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/climbResultDropdown"
-        style="@android:style/Widget.Material.Light.Spinner"
+        android:id="@+id/gameResultDropdown"
         android:layout_width="150dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
