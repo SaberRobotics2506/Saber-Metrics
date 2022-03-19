@@ -556,9 +556,9 @@
         android:layout_height="22dp"
         android:layout_marginTop="8dp"
         android:entries="@array/climb"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3"
-        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck"
-        tools:layout_editor_absoluteX="149dp" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/gameResultDropdown"
