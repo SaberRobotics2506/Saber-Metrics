@@ -39,4 +39,15 @@
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
+    <string name="low_goal">Low Goal</string>
+    <string name="Inc_Button">+</string>
+    <string name="telop_misses">0 misses</string>
+    <string name="game_result">Game result:</string>
+    <string name="climb_level">Climb level:</string>
+    <string name="dec_Button">-</string>
+    <string name="defense_plays">Defense Plays:</string>
+    <string name="low_goal">Low Goal</string>
+    <string name="high_goal">High Goal</string>
+    <string name="makes">Makes</string>
+    <string name="_0_buckets">0 buckets</string>
 </resources>
