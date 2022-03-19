@@ -14,9 +14,7 @@ data class SerializationData (
     val Comments: String = "Empty Field",
 
     val AutoLowGoalMake: Int = -1,
-    val AutoLowGoalMiss: Int = -1,
     val AutoHighGoalMake: Int = -1,
-    val AutoHighGoalMiss: Int = -1,
 
     val TelopLowGoalMake: Int = -1,
     val TelopLowGoalMiss: Int = -1,
@@ -24,7 +22,6 @@ data class SerializationData (
     val TelopHighGoalMiss: Int = -1,
 
     val DefensePlays: Int = -1,
-    val EndGameStatus: Int = -1,
-    val EndGameSuccess: Int = -1,
+    val ClimbAttemptResult: Int = -1,
     val WinLossTie: Int = -1,
 )
