@@ -23,12 +23,8 @@ data class SerializationData (
     val TelopHighGoalMake: Int = -1,
     val TelopHighGoalMiss: Int = -1,
 
-    /*
-
-    Not Yet Implemented
-
-    val defensePlays: Int = -1,
-    val endGameStatus: Int = -1,
-    val winLossTie: Char,
-     */
+    val DefensePlays: Int = -1,
+    val EndGameStatus: Int = -1,
+    val EndGameSuccess: Int = -1,
+    val WinLossTie: Int = -1,
 )
