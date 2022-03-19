@@ -28,14 +28,13 @@
     <string name="taxiOnText">Robot did taxi</string>
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
-    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
+    <string name="comments">Comments… Lorsem ipsum dolar sit amet</string>
     <string name="autoGroupLabelText">Autonomous</string>
     <string name="teleopGroupLabelText">Teleop</string>
     <string name="autoHighMakeText">Successful Attempts</string>
     <string name="autoHighMissText">Misses</string>
     <string name="autoLowMakeText">Successful Attempts</string>
     <string name="autoLowMissText">Misses</string>
-
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
@@ -46,7 +45,6 @@
     <string name="climb_level">Climb level:</string>
     <string name="dec_Button">-</string>
     <string name="defense_plays">Defense Plays:</string>
-    <string name="low_goal">Low Goal</string>
     <string name="high_goal">High Goal</string>
     <string name="makes">Makes</string>
     <string name="_0_buckets">0 buckets</string>

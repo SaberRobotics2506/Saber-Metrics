@@ -24,7 +24,6 @@ data class SerializationData (
     val TelopHighGoalMiss: Int = -1,
 
     val DefensePlays: Int = -1,
-    val EndGameStatus: Int = -1,
-    val EndGameSuccess: Int = -1,
+    val ClimbResult: Int = -1,
     val WinLossTie: Int = -1,
 )

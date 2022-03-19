@@ -95,8 +95,6 @@ class DataEntryActivity : AppCompatActivity() {
     private fun numberManipulationListeners()
     {
         // Increment buttons and dropdowns
-        val highAutoMakes = findViewById<Spinner>(R.id.autoHighMakesSpinner)
-        val lowAutoMakes = findViewById<Spinner>(R.id.autoLowMakesSpinner)
         val highTeleopMakesIncrement = findViewById<Button>(R.id.hiMakeTeleopUpBtn)
         val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
         val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
@@ -180,7 +178,6 @@ class DataEntryActivity : AppCompatActivity() {
 
                 val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
                 val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
-                val climbLevel = findViewById<Spinner>(R.id.climbLvlDropdown)
 
                 val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
                 highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
@@ -204,7 +201,6 @@ class DataEntryActivity : AppCompatActivity() {
                     highTeleopMissNum,
                     defensivePlays.text.toString().toInt(),
                     climbAttempt.selectedItemPosition,
-                    climbLevel.selectedItemPosition,
                     gameResult.selectedItemPosition
                 )
 
