@@ -279,6 +279,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:checked="true"
         android:textColor="#455A64"
         android:textOff="@string/regionalOffText"
         android:textOn="@string/regionalOnText"
