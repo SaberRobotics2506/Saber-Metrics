@@ -204,6 +204,7 @@ class DataEntryActivity : AppCompatActivity() {
 
                 if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
                 {
+                    resetInputVariables()
                     Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
 
                     val switchActivityIntent = Intent(this, SubmittedActivity::class.java)

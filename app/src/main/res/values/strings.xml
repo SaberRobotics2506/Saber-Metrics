@@ -7,12 +7,12 @@
     <string name="Welcome_Message">
         Welcome to Saber-Metrics!
         \n\n
-        This app was developed by me (Nathan) to send scouting data to our SQL database over Bluetooth.
-        If at any point while using the app you have a question feel free to contact me.
+        This app was developed by Nathan and Dominic to gather data from competition.
+        If at any point while using the app you have a question feel free to contact one of us.
         \n\n
-        I genuinely hope that the FIRST robotics 2022 season goes well for you all and that you all have a great time at competition!
+        We genuinely hope that the 2022 season goes well and you guys have a great time at competition!
         \n\n
-        Tap \"Let\'s Go!\" bellow to start entering data!
+        Tap \"Let\'s Go!\" below to start entering data!
     </string>
     <string name="Lets_Go">Let\'s Go</string>
 
