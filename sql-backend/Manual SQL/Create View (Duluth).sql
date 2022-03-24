@@ -1,7 +1,7 @@
 --This query is to create a view of the match data. A SQL View is more or less a saved query, that will automatically populate a table of the desired information.
 --So MatchMaster has all of the raw data(each robot per each match has its own row)
 --And this View has a compiled result set of each robot(each TeamNumber has compiled information for all their matches)
-CREATE VIEW DataView1
+CREATE VIEW DuluthDataView
 AS
 
 --Outer query selects everything from the inner query, and adds a separate column for the super score
