@@ -1,4 +1,0 @@
-DefensePlays Int,
-EndGameStatus Int,
-EndGameSuccess Int,
-WinLossTie VarChar(1)

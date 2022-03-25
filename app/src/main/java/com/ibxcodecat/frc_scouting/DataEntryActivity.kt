@@ -26,6 +26,10 @@ class DataEntryActivity : AppCompatActivity() {
         numberManipulationListeners()
     }
 
+
+    // Global integer variables
+    private var defPlaysNum: Int = 0
+
     //GUI formatting helper methods
     private fun errorDropdown(dropdown: Spinner) { dropdown.setBackgroundColor(Color.RED) }
     private fun resetDropdownFormatting(dropdown: Spinner) { dropdown.setBackgroundColor(Color.WHITE) }
@@ -103,8 +107,6 @@ class DataEntryActivity : AppCompatActivity() {
         val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
-        // Goal integer variables
-        var defPlaysNum: Int = 0
 
         // Text boxes
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
@@ -195,16 +197,27 @@ class DataEntryActivity : AppCompatActivity() {
                     lowTeleopMissNum,
                     highTeleopMakesNum,
                     highTeleopMissNum,
-                    defensivePlays.text.toString().toInt(),
+                    defPlaysNum,
                     climbAttempt.selectedItemPosition,
                     gameResult.selectedItemPosition
                 )
 
                 val fileSystem = FileSystem()
+                var fileWritten: Boolean = false
 
-                if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
+                try
+                {
+                    fileWritten = fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity) //This line is fucked up
+                }
+                catch (ex: Exception)
+                {
+                    Toast.makeText(this@DataEntryActivity, "There was a problem serializing form data. :(" + ex.stackTraceToString(), Toast.LENGTH_LONG).show()
+                }
+
+                if(fileWritten)
                 {
                     resetInputVariables()
+
                     Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
 
                     val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
