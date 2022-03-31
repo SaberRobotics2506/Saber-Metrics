@@ -1,11 +1,15 @@
 package com.ibxcodecat.frc_scouting
 
+//Import AndroidX
+
 //Import Android Components
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+
 
 var highAutoMakesNum: Int = 0
 var highAutoMissNum: Int = 0
@@ -26,69 +30,66 @@ class DataEntryActivity : AppCompatActivity() {
         numberManipulationListeners()
     }
 
-
-    // Global integer variables
-    private var defPlaysNum: Int = 0
-
-    //GUI formatting helper methods
-    private fun errorDropdown(dropdown: Spinner) { dropdown.setBackgroundColor(Color.RED) }
-    private fun resetDropdownFormatting(dropdown: Spinner) { dropdown.setBackgroundColor(Color.WHITE) }
-    private fun errorTextFormatting(text: EditText) { text.setTextColor(Color.RED); text.setHintTextColor(Color.RED) }
-    private fun resetTextFormatting(scoutedBy: EditText) { scoutedBy.setTextColor(Color.BLACK); scoutedBy.setHintTextColor(Color.BLACK) }
-
-    //Used to override the back button pre determined functionality to prevent fields from being pre-populated with previous data
+    //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
         Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
         return
     }
 
+    private fun errorDropdown(dropdown: Spinner)
+    {
+        dropdown.setBackgroundColor(Color.RED)
+    }
+
+    private fun resetDropdownFormatting(teamNumber: Spinner, matchNumber: Spinner)
+    {
+        teamNumber.setBackgroundColor(Color.WHITE)
+        matchNumber.setBackgroundColor(Color.WHITE)
+    }
+
+    private fun errorTextFormatting(text: EditText)
+    {
+        text.setTextColor(Color.RED)
+        text.setHintTextColor(Color.RED)
+    }
+
+    private fun resetTextFormatting(scoutedBy: EditText, score: EditText, comments: EditText)
+    {
+        scoutedBy.setTextColor(Color.BLACK)
+        scoutedBy.setHintTextColor(Color.BLACK)
+        score.setTextColor(Color.BLACK)
+        score.setHintTextColor(Color.BLACK)
+        comments.setTextColor(Color.BLACK)
+        comments.setHintTextColor(Color.BLACK)
+    }
+
     private fun checkData(): Boolean
     {
-        //Store all of our dropdowns in an array
-        val dropdowns = arrayOf(
-            findViewById<Spinner>(R.id.teamNumber),
-            findViewById<Spinner>(R.id.matchNumber),
-            findViewById<Spinner>(R.id.climbAttemptDropdown),
-            findViewById<Spinner>(R.id.gameResultDropdown)
-        )
+        val teamNumber = findViewById<Spinner>(R.id.teamNumber)
+        val matchNumber = findViewById<Spinner>(R.id.matchNumber)
 
-        //Loop through each item in our array of dropdowns and reset the error formatting
-        for(dropdown : Spinner in dropdowns) { resetDropdownFormatting(dropdown) }
-
-        //Loop through our array of dropdowns
-        for(dropdown : Spinner in dropdowns)
-        {
-            //If the first item is selected (the prompt) the dropdwon is formatted as invalid
-            if(dropdown.selectedItemPosition == 0)
-            {
-                errorDropdown(dropdown)
-                return false //Invalid data, exit this evaluation
-            }
-        }
-
-        //Store all of our editable text fields independently
         val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
         val score = findViewById<EditText>(R.id.score)
         val comments = findViewById<EditText>(R.id.comments)
 
-        //Store all of our editable text fields in an array
-        val textFields = arrayOf( scoutedBy, score, comments )
+        resetInputVariables()
+        resetTextFormatting(scoutedBy, score, comments)
+        resetDropdownFormatting(teamNumber, matchNumber)
 
-        //Loop through each of our text fields and reset their error formatting
-        for(textField : EditText in textFields) { resetTextFormatting(textField) }
+        val validator = DataValidator()
 
-        val validator = DataValidator() //Create our data validation object
-
-        //Verify each human editable text field and throw an error when necessary
-        when(validator.CheckData(scoutedBy.text.toString(), score.text.toString(), comments.text.toString()))
+        when(validator.CheckData(teamNumber.selectedItem.toString(), matchNumber.selectedItemPosition, scoutedBy.text.toString(), score.text.toString(), comments.text.toString()))
         {
+            DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber)
+            DataValidator.DataError.MatchNumberError -> errorDropdown(matchNumber)
+
             DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
             DataValidator.DataError.ScoreError -> errorTextFormatting(score)
             DataValidator.DataError.CommentsError -> errorTextFormatting(comments)
-            else -> { return true } //All data is valid
+            else -> { return true }
         }
 
-        return false //The data was not valid
+        return false
     }
 
     private fun numberManipulationListeners()
@@ -107,6 +108,8 @@ class DataEntryActivity : AppCompatActivity() {
         val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
+        // Goal integer variables
+        var defPlaysNum: Int = 0
 
         // Text boxes
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
@@ -125,7 +128,6 @@ class DataEntryActivity : AppCompatActivity() {
         defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
         defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
     }
-
     private fun resetInputVariables()
     {
         highAutoMakesNum = 0
@@ -137,7 +139,6 @@ class DataEntryActivity : AppCompatActivity() {
         lowTeleopMakesNum = 0
         lowTeleopMissNum = 0
     }
-
     private fun whatsThisListeners()
     {
         // get reference to what's this buttons
@@ -176,10 +177,9 @@ class DataEntryActivity : AppCompatActivity() {
                 val comments = findViewById<EditText>(R.id.comments)
 
                 val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
+                val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
 
-                val climbAttempt = findViewById<Spinner>(R.id.climbAttemptDropdown)
-
-                val gameResult = findViewById<Spinner>(R.id.gameResultDropdown)
+                val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
                 highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
                 lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
 
@@ -192,32 +192,22 @@ class DataEntryActivity : AppCompatActivity() {
                     score.text.toString().toInt(),
                     comments.text.toString(),
                     lowAutoMakesNum,
+                    lowAutoMissNum,
                     highAutoMakesNum,
+                    highAutoMissNum,
                     lowTeleopMakesNum,
                     lowTeleopMissNum,
                     highTeleopMakesNum,
                     highTeleopMissNum,
-                    defPlaysNum,
+                    defensivePlays.text.toString().toInt(),
                     climbAttempt.selectedItemPosition,
                     gameResult.selectedItemPosition
                 )
 
                 val fileSystem = FileSystem()
-                var fileWritten: Boolean = false
 
-                try
+                if(fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity))
                 {
-                    fileWritten = fileSystem.WriteGSON(dataToSerialize, this@DataEntryActivity) //This line is fucked up
-                }
-                catch (ex: Exception)
-                {
-                    Toast.makeText(this@DataEntryActivity, "There was a problem serializing form data. :(" + ex.stackTraceToString(), Toast.LENGTH_LONG).show()
-                }
-
-                if(fileWritten)
-                {
-                    resetInputVariables()
-
                     Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
 
                     val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
@@ -225,12 +215,12 @@ class DataEntryActivity : AppCompatActivity() {
                 }
                 else
                 {
-                    Toast.makeText(this@DataEntryActivity, "We have tried our best to save your data, and we have failed :(", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@DataEntryActivity, "We have tried, and we have failed :(", Toast.LENGTH_LONG).show()
                 }
             }
             else
             {
-                Toast.makeText(this@DataEntryActivity, "Either the code boy doesn't believe you or your data is in fact invalid...", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@DataEntryActivity, "Either Nathan doesn't believe you or your data is invalid...", Toast.LENGTH_LONG).show()
             }
         }
     }

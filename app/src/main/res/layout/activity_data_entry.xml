@@ -196,7 +196,7 @@
         android:layout_height="1dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/comments"
         app:layout_constraintEnd_toEndOf="parent"
@@ -248,28 +248,29 @@
 
     <EditText
         android:id="@+id/score"
-        android:layout_width="102dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="7dp"
         android:ems="10"
         android:hint="@string/scoreTXT"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        android:textSize="14dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintStart_toEndOf="@+id/comments" />
 
     <Button
         android:id="@+id/scoreHelp"
         android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="7dp"
         android:text="@string/Help"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/score"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -279,7 +280,6 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:checked="true"
         android:textColor="#455A64"
         android:textOff="@string/regionalOffText"
         android:textOn="@string/regionalOnText"
@@ -351,36 +351,36 @@
 
     <EditText
         android:id="@+id/comments"
-        android:layout_width="425dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="400dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/comments"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="textMultiLine|text"
         android:minHeight="32dp"
         android:textColorHint="#757575"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/submit"
-        app:layout_constraintStart_toEndOf="@+id/gameResultDropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/submit"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/comments"
         tools:visibility="visible" />
 
     <TextView
@@ -551,25 +551,59 @@
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <TextView
+        android:id="@+id/climbAttText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/defPlaysIncrementBtn"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
+
     <Spinner
-        android:id="@+id/climbAttemptDropdown"
-        android:layout_width="250dp"
+        android:id="@+id/climbAttDropdown"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="300dp"
         android:layout_height="22dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:entries="@array/climb"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/climbAttText"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <Spinner
-        android:id="@+id/gameResultDropdown"
-        android:layout_width="150dp"
+        android:id="@+id/climbAttDropdown2"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="300dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/climbTime"
+        app:layout_constraintStart_toEndOf="@+id/climbAttText"
+        app:layout_constraintTop_toBottomOf="@+id/climbAttDropdown"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/climbResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="6dp"
+        android:text="@string/game_result"
+        app:layout_constraintBottom_toTopOf="@+id/score"
+        app:layout_constraintStart_toEndOf="@+id/comments" />
+
+    <Spinner
+        android:id="@+id/climbResultDropdown"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="135dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="6dp"
         android:entries="@array/winLossTie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scoreHelp"
+        app:layout_constraintStart_toEndOf="@+id/climbResultText"
         tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

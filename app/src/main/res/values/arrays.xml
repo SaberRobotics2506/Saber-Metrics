@@ -10,48 +10,63 @@
     <string-array name="teams">
         <item>Team #</item>
         <item>93</item>
-        <item>537</item>
-        <item>706</item>
-        <item>930</item>
-        <item>1091</item>
-        <item>1259</item>
-        <item>1306</item>
+        <item>167</item>
+        <item>876</item>
         <item>1675</item>
-        <item>1714</item>
         <item>1732</item>
-        <item>1739</item>
-        <item>1792</item>
-        <item>2062</item>
-        <item>2077</item>
-        <item>2194</item>
-        <item>2202</item>
+        <item>2052</item>
+        <item>2175</item>
+        <item>2227</item>
+        <item>2239</item>
+        <item>2264</item>
+        <item>2501</item>
+        <item>2503</item>
         <item>2506</item>
-        <item>2574</item>
-        <item>2830</item>
+        <item>2526</item>
+        <item>2531</item>
+        <item>2861</item>
+        <item>2977</item>
+        <item>3058</item>
+        <item>3102</item>
+        <item>3122</item>
+        <item>3134</item>
         <item>3197</item>
-        <item>3418</item>
-        <item>3596</item>
-        <item>4786</item>
-        <item>4787</item>
-        <item>5096</item>
-        <item>5148</item>
-        <item>6223</item>
-        <item>6381</item>
-        <item>6421</item>
+        <item>3275</item>
+        <item>3276</item>
+        <item>3291</item>
+        <item>3294</item>
+        <item>3740</item>
+        <item>4009</item>
+        <item>4181</item>
+        <item>4230</item>
+        <item>4238</item>
+        <item>4511</item>
+        <item>4607</item>
+        <item>4656</item>
+        <item>4674</item>
+        <item>4728</item>
+        <item>4741</item>
+        <item>5125</item>
+        <item>5143</item>
+        <item>5253</item>
+        <item>5348</item>
+        <item>5464</item>
+        <item>5653</item>
+        <item>5690</item>
+        <item>5826</item>
+        <item>5847</item>
+        <item>6047</item>
+        <item>6146</item>
+        <item>6160</item>
+        <item>6217</item>
+        <item>6318</item>
         <item>6574</item>
-        <item>6643</item>
-        <item>6823</item>
-        <item>7237</item>
-        <item>7417</item>
-        <item>7900</item>
-        <item>7915</item>
-        <item>8531</item>
-        <item>8700</item>
-        <item>8701</item>
-        <item>8779</item>
-        <item>8802</item>
-        <item>8803</item>
-        <item>8847</item>
+        <item>7048</item>
+        <item>7068</item>
+        <item>7311</item>
+        <item>7797</item>
+        <item>7893</item>
+        <item>8836</item>
     </string-array>
 
     <string-array name="matches">
@@ -158,13 +173,21 @@
     </string-array>
 
     <string-array name="climb">
-        <item>Select</item>
+        <item>Select climb attempt</item>
         <item>Did not attempt</item>
-        <item>Failed attempt</item>
-        <item>Success - Lvl 1</item>
-        <item>Success - Lvl 2</item>
-        <item>Success - Lvl 3</item>
-        <item>Success - Lvl 4</item>
+        <item>Failed</item>
+        <item>Succeeded - Lvl 1</item>
+        <item>Succeeded - Lvl 2</item>
+        <item>Succeeded - Lvl 3</item>
+        <item>Succeeded - Lvl 4</item>
+    </string-array>
+
+    <string-array name="climbTime">
+        <item>Select traversal time</item>
+        <item>10 secs or less</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>40 secs or more</item>
     </string-array>
 
     <string-array name="autoScoring">

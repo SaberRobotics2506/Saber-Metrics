@@ -7,10 +7,10 @@
     <string name="Welcome_Message">
         Welcome to Saber-Metrics!
         \n\n
-        This app was developed by Nathan and Dominic to gather data from competition.
-        If at any point while using the app you have a question feel free to contact one of us.
+        This app was developed by Dominic and Nathan to send scouting data to our SQL database over Bluetooth.
+        If at any point while using the app you have a question feel free to contact me.
         \n\n
-        We genuinely hope that the 2022 season goes well and you guys have a great time at competition!
+        I genuinely hope that the Robo 2022 season goes well and that we all have a great time at competition!
         \n\n
         Tap \"Let\'s Go!\" below to start entering data!
     </string>
@@ -28,7 +28,7 @@
     <string name="taxiOnText">Robot did taxi</string>
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
-    <string name="comments">Comments... Lorsem ipsum dolar sit amet</string>
+    <string name="comments">Enter comments about the match, the robot etc.</string>
     <string name="autoGroupLabelText">Autonomous</string>
     <string name="teleopGroupLabelText">Teleop</string>
     <string name="autoHighMakeText">Successful Attempts</string>
@@ -36,13 +36,12 @@
     <string name="autoLowMakeText">Successful Attempts</string>
     <string name="autoLowMissText">Misses</string>
 
-
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
     <string name="low_goal">Low Goal</string>
     <string name="Inc_Button">+</string>
     <string name="telop_misses">0 misses</string>
-    <string name="game_result">Game result:</string>
+    <string name="game_result">Game\nresult:</string>
     <string name="climb_level">Climb level:</string>
     <string name="dec_Button">-</string>
     <string name="defense_plays">Defense Plays:</string>
