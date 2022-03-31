@@ -173,13 +173,21 @@
     </string-array>
 
     <string-array name="climb">
-        <item>Select</item>
+        <item>Select climb attempt</item>
         <item>Did not attempt</item>
         <item>Failed</item>
         <item>Succeeded - Lvl 1</item>
         <item>Succeeded - Lvl 2</item>
         <item>Succeeded - Lvl 3</item>
         <item>Succeeded - Lvl 4</item>
+    </string-array>
+
+    <string-array name="climbTime">
+        <item>Select traversal time</item>
+        <item>10 secs or less</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>40 secs or more</item>
     </string-array>
 
     <string-array name="autoScoring">

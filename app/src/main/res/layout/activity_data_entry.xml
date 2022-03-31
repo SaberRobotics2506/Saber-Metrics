@@ -563,13 +563,25 @@
     <Spinner
         android:id="@+id/climbAttDropdown"
         style="@android:style/Widget.Material.Light.Spinner"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="22dp"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:entries="@array/climb"
         app:layout_constraintStart_toEndOf="@+id/climbAttText"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/climbAttDropdown2"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="300dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/climbTime"
+        app:layout_constraintStart_toEndOf="@+id/climbAttText"
+        app:layout_constraintTop_toBottomOf="@+id/climbAttDropdown"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <TextView
