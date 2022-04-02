@@ -20,6 +20,9 @@ var highTeleopMissNum: Int = 0
 var lowTeleopMakesNum: Int = 0
 var lowTeleopMissNum: Int = 0
 var defPlaysNum: Int = 0
+var selectedMatch: Int = 0
+val teamNumberArray = Array(83){IntArray(5) {0} } //Rows are matches, columns are the tablet numbers
+val tabletID: Int = 2; //placeholder value
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -128,6 +131,12 @@ class DataEntryActivity : AppCompatActivity() {
         lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
         defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
         defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
+    }
+
+    private fun matchTeamPresetListeners()
+    {
+        val matchNumDrop = findViewById<Spinner>(R.id.matchNumber)
+        matchNumDrop.setOnItemClickListener()
     }
     private fun resetInputVariables()
     {
