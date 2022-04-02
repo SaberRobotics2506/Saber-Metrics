@@ -19,6 +19,7 @@ var highTeleopMakesNum: Int = 0
 var highTeleopMissNum: Int = 0
 var lowTeleopMakesNum: Int = 0
 var lowTeleopMissNum: Int = 0
+var defPlaysNum: Int = 0
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -80,7 +81,7 @@ class DataEntryActivity : AppCompatActivity() {
 
         when(validator.CheckData(matchNumber.selectedItemPosition.toString(), scoutedBy.text.toString(), score.text.toString(), comments.text.toString()))
         {
-            //DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber) 'To be removed once pre-set team functionality is in place, other teamNumber references have been removed
+            //DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber) To be removed when pre-set teams come in place
             DataValidator.DataError.MatchNumberError -> errorDropdown(matchNumber)
 
             DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
@@ -109,7 +110,7 @@ class DataEntryActivity : AppCompatActivity() {
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Goal integer variables
-        var defPlaysNum: Int = 0
+
 
         // Text boxes
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
@@ -179,7 +180,7 @@ class DataEntryActivity : AppCompatActivity() {
                 val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
                 val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
 
-                val climbResult = findViewById<Spinner>(R.id.climbResultDropdown)
+                val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
                 val traversalTime = findViewById<Spinner>(R.id.climbTimeDropdown)
                 highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
                 lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
@@ -187,27 +188,20 @@ class DataEntryActivity : AppCompatActivity() {
                 val dataToSerialize = SerializationData(
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
-
                     scoutedBy.text.toString(),
                     regionalToggle.text.toString(),
-
                     taxiToggle.isChecked,
-
                     score.text.toString().toInt(),
-
                     comments.text.toString(),
-
                     lowAutoMakesNum,
                     highAutoMakesNum,
-
                     lowTeleopMakesNum,
                     lowTeleopMissNum,
                     highTeleopMakesNum,
                     highTeleopMissNum,
-
-                    defensivePlays.text.toString().toInt(),
+                    defPlaysNum,
                     climbAttempt.selectedItemPosition,
-                    climbResult.selectedItemPosition,
+                    gameResult.selectedItemPosition,
                     traversalTime.selectedItemPosition
                 )
 
