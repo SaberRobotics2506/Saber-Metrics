@@ -26,4 +26,5 @@ data class SerializationData (
     val DefensePlays: Int = -1,
     val ClimbResult: Int = -1,
     val WinLossTie: Int = -1,
+    val TraversalTime: Int = -1,
 )

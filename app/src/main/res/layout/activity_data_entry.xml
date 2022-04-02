@@ -573,7 +573,7 @@
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <Spinner
-        android:id="@+id/climbAttDropdown2"
+        android:id="@+id/climbTimeDropdown"
         style="@android:style/Widget.Material.Light.Spinner"
         android:layout_width="300dp"
         android:layout_height="22dp"
