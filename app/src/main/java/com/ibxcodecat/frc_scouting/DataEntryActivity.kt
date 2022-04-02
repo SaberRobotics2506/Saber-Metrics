@@ -139,6 +139,7 @@ class DataEntryActivity : AppCompatActivity() {
         highTeleopMissNum = 0
         lowTeleopMakesNum = 0
         lowTeleopMissNum = 0
+        defPlaysNum = 0
     }
     private fun whatsThisListeners()
     {
