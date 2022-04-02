@@ -8,7 +8,7 @@ public class DataValidator {
     final int MAX_SCORE = 200;
 
     //Checks data in DataEntryActivity, returns -1 for pass, and a positive int for the problematic field
-    public enum DataError {MatchNumberError, ScoutedByError, ScoreError, CommentsError, NONE }
+    public enum DataError {MatchNumberError, ScoutedByError, ScoreError, CommentsError, ClimbAttemptError, GameResultError, NameError, NONE }
 
     public DataError CheckData(String matchNumber, String scoutedBy, String score, String comments)
     {
