@@ -21,7 +21,7 @@ var lowTeleopMakesNum: Int = 0
 var lowTeleopMissNum: Int = 0
 var defPlaysNum: Int = 0
 var selectedMatch: Int = 0
-val teamNumberArray = Array(83){IntArray(5) {0} } //Rows are matches, columns are the tablet numbers
+val teamNumberArray = IntArray(42)
 val tabletID: Int = 2; //placeholder value
 
 class DataEntryActivity : AppCompatActivity() {
