@@ -1,0 +1,8 @@
+[user]
+  name = IBXCODECAT
+  email = nathan.schmitt7@gmail.com
+  signingkey = FDA749286D9D6201
+[gpg]
+  program = gpg
+[commit]
+  gpgsign = true

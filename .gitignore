@@ -85,3 +85,4 @@ lint/tmp/
 # lint/reports/
 
 *.scout #Ignore all .scout files (data set)
+*.mom
