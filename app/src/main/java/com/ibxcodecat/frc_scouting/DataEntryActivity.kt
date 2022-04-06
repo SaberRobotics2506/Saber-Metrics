@@ -19,6 +19,10 @@ var highTeleopMakesNum: Int = 0
 var highTeleopMissNum: Int = 0
 var lowTeleopMakesNum: Int = 0
 var lowTeleopMissNum: Int = 0
+var defPlaysNum: Int = 0
+var selectedMatch: Int = 0
+val teamNumberArray = IntArray(42)
+val tabletID: Int = 2; //placeholder value
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -78,9 +82,9 @@ class DataEntryActivity : AppCompatActivity() {
 
         val validator = DataValidator()
 
-        when(validator.CheckData(teamNumber.selectedItem.toString(), matchNumber.selectedItemPosition, scoutedBy.text.toString(), score.text.toString(), comments.text.toString()))
+        when(validator.CheckData(matchNumber.selectedItemPosition.toString(), scoutedBy.text.toString(), score.text.toString(), comments.text.toString()))
         {
-            DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber)
+            //DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber) To be removed when pre-set teams come in place
             DataValidator.DataError.MatchNumberError -> errorDropdown(matchNumber)
 
             DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
@@ -109,7 +113,7 @@ class DataEntryActivity : AppCompatActivity() {
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Goal integer variables
-        var defPlaysNum: Int = 0
+
 
         // Text boxes
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
@@ -128,6 +132,12 @@ class DataEntryActivity : AppCompatActivity() {
         defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
         defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
     }
+
+    private fun matchTeamPresetListeners()
+    {
+        val matchNumDrop = findViewById<Spinner>(R.id.matchNumber)
+        matchNumDrop.setOnItemClickListener()
+    }
     private fun resetInputVariables()
     {
         highAutoMakesNum = 0
@@ -138,6 +148,7 @@ class DataEntryActivity : AppCompatActivity() {
         highTeleopMissNum = 0
         lowTeleopMakesNum = 0
         lowTeleopMissNum = 0
+        defPlaysNum = 0
     }
     private fun whatsThisListeners()
     {
@@ -180,6 +191,7 @@ class DataEntryActivity : AppCompatActivity() {
                 val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
 
                 val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
+                val traversalTime = findViewById<Spinner>(R.id.climbTimeDropdown)
                 highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
                 lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
 
@@ -192,16 +204,15 @@ class DataEntryActivity : AppCompatActivity() {
                     score.text.toString().toInt(),
                     comments.text.toString(),
                     lowAutoMakesNum,
-                    lowAutoMissNum,
                     highAutoMakesNum,
-                    highAutoMissNum,
                     lowTeleopMakesNum,
                     lowTeleopMissNum,
                     highTeleopMakesNum,
                     highTeleopMissNum,
-                    defensivePlays.text.toString().toInt(),
+                    defPlaysNum,
                     climbAttempt.selectedItemPosition,
-                    gameResult.selectedItemPosition
+                    gameResult.selectedItemPosition,
+                    traversalTime.selectedItemPosition
                 )
 
                 val fileSystem = FileSystem()
