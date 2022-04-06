@@ -274,19 +274,6 @@
         app:layout_constraintStart_toEndOf="@+id/score"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <ToggleButton
-        android:id="@+id/regionalSelector"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:textColor="#455A64"
-        android:textOff="@string/regionalOffText"
-        android:textOn="@string/regionalOnText"
-        app:layout_constraintStart_toEndOf="@+id/verticalDivider"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
-
     <Button
         android:id="@+id/taxiHelp"
         android:layout_width="40dp"
@@ -315,12 +302,11 @@
         android:id="@+id/regionalHelp"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
-        app:layout_constraintStart_toEndOf="@+id/regionalSelector"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="557dp" />
 
     <EditText
         android:id="@+id/scoutedBy"

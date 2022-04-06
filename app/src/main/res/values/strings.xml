@@ -23,8 +23,7 @@
     <string name="matchNumberTXT">Match #</string>
     <string name="submit">Save Data</string>
     <string name="scouterTXT">Your Name</string>
-    <string name="regionalOffText">Duluth</string>
-    <string name="regionalOnText">Milwaukee</string>
+    <string name="regionalText">Houston</string>
     <string name="taxiOnText">Robot did taxi</string>
     <string name="taxiOffText">Robot did not taxi</string>
     <string name="scoreTXT">Score</string>
