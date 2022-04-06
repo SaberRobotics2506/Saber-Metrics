@@ -1,6 +1,7 @@
 import requests
 import time
 import os
+import json
 
 api_key = ''
 
@@ -45,16 +46,24 @@ def AssembleMatchScrapes(match_keys):
 	
 	scrapes = []
 	
-	for key in match_keys: 	
+	for key in match_keys:
+		print("Assembling API scrape from key: " + str(key))
 		scrape = "/match/" + str(key) + "/simple"
+		print("Appending: " + str(scrape))
 		scrapes.append(scrape)
-		
+	
+	time.sleep(1)
+	print("\n\n")
 	return scrapes
-
 	
 #Fetch a list of match keys from an event specified by the event key
 def FetchMatchKeys(event_key):
+	print("Fetching match keys...")
 	match_keys = getTBA("event/" + event_key + "/matches/keys")
+	print(match_keys)
+	print("Done!")
+	time.sleep(1)
+	print("\n\n")
 	return match_keys
 	
 #Fetch match data by scraping the TBA API for each match
@@ -70,23 +79,81 @@ def FetchMatchData(match_scrapes):
 		
 		current_stage = current_stage + 1
 		printProgressBar(current_stage, total_stages, prefix = 'Fetching: ' + str(scrape), suffix = 'Complete ', length = 50)
-		
+	
+	print(match_data)
+	
+	time.sleep(1)
+	print("\n\n")
 	return match_data
 
-def GetAlliance(match_data):
-	print (match_data)
+def ParseMatchData(match_data):
+	
+	parsed_data = []
+	
+	for data in match_data:
+		print("Dumping: " + str(data))
+		data = json.dumps(data)
+		print("Parsing: " + str(data))
+		parsed_data.append(json.loads(str(data)))
+		print("Done!")
+	
+	time.sleep(1)
+	print("\n\n")
+	return parsed_data
+	
+def ExtractRedTeams(parsed_data):
+	
+	red_teams = []
+	
+	for i in range(len(parsed_data)):
+		print("Finding red alliance entry at index " + str(i) + "...")
+		entry = parsed_data[i]
+		print("Reading: " + str(entry))
+		red_teams.append(entry["alliances"]["red"]["team_keys"])
+		print("Appending: " + str(red_teams[i]))
+		print("Done!")
+	
+	time.sleep(1)
+	print("\n\n")
+	return red_teams
 
-
-print("Fetching match keys...")
+def ExtractBlueTeams(parsed_data):
+	
+	blue_teams = []
+	
+	for i in range(len(parsed_data)):
+		print("Finding blue alliance entry at index " + str(i) + "...")
+		entry = parsed_data[i]
+		print("Reading: " + str(entry))
+		blue_teams.append(entry["alliances"]["red"]["team_keys"])
+		print("Appending: " + str(blue_teams[i]))
+		print("Done!")
+	
+	time.sleep(1)
+	print("\n\n")
+	return blue_teams
+	
+def SerializeTeams(red_teams, blue_teams):
+	with open('red.teams', 'w', encoding='utf-8') as filestream:
+		print("Opened filestream " + str(filestream))
+		json.dump(red_teams, filestream, ensure_ascii=False, indent=4)
+		print("File Written: 'red.teams' with contents " + str(red_teams))
+	print("Closed Filestream: " + str(filestream))
+	
+	with open('blue.teams', 'w', encoding='utf-8') as filestream:
+		print("Opened filestream " + str(filestream))
+		json.dump(red_teams, filestream, ensure_ascii=False, indent=4)
+		print("File Written: 'blue.teams' with contents " + str(blue_teams))
+		print("Closed Filestream: " + str(filestream))
+	
+	print("\n\n")
+	
 match_keys = FetchMatchKeys("2022wimi")
-print("Done!\n")
-
 match_scrapes = AssembleMatchScrapes(match_keys)
 match_data = FetchMatchData(match_scrapes)
+parsed_data = ParseMatchData(match_data)
 
-for data in match_data:
-	GetAlliance(data)
+red_teams = ExtractRedTeams(parsed_data)
+blue_teams = ExtractBlueTeams(parsed_data)
 
-print(str(match_keys) + " match keys")
-print(str(match_scrapes) + " match scrapes")
-print(str(match_data) + " match data")
+SerializeTeams(red_teams, blue_teams)
