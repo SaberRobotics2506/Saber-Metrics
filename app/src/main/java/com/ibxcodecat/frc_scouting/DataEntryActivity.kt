@@ -21,6 +21,7 @@ var lowTeleopMakesNum: Int = 0
 var lowTeleopMissNum: Int = 0
 var defPlaysNum: Int = 0
 var selectedMatch: Int = 0
+val regionalText: String = "Houston"
 val teamNumberArray = IntArray(42)
 val tabletID: Int = 2; //placeholder value
 
@@ -136,7 +137,7 @@ class DataEntryActivity : AppCompatActivity() {
     private fun matchTeamPresetListeners()
     {
         val matchNumDrop = findViewById<Spinner>(R.id.matchNumber)
-        matchNumDrop.setOnItemClickListener()
+        //matchNumDrop.setOnItemClickListener()
     }
     private fun resetInputVariables()
     {
@@ -156,7 +157,6 @@ class DataEntryActivity : AppCompatActivity() {
         val teamNumberHelp = findViewById<Button>(R.id.teamNumberHelp)
         val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp)
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
-        val regionalHelp = findViewById<Button>(R.id.regionalHelp)
         val taxiHelp = findViewById<Button>(R.id.taxiHelp)
         val scoreHelp = findViewById<Button>(R.id.scoreHelp)
 
@@ -164,7 +164,6 @@ class DataEntryActivity : AppCompatActivity() {
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting.", Toast.LENGTH_LONG).show() }
         matchNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the match number for the match you are currently scouting.", Toast.LENGTH_LONG).show() }
         scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is your name num nuts!", Toast.LENGTH_LONG).show() }
-        regionalHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Are you in Milwaukee or Duluth?", Toast.LENGTH_LONG).show() }
         taxiHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot drive across the line during autonomous?", Toast.LENGTH_LONG).show() }
         scoreHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the total alliance score for the robot ou are scouting!", Toast.LENGTH_LONG).show() }
     }
@@ -182,7 +181,6 @@ class DataEntryActivity : AppCompatActivity() {
                 val teamNumber = findViewById<Spinner>(R.id.teamNumber)
                 val matchNumber = findViewById<Spinner>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
-                val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
                 val taxiToggle = findViewById<ToggleButton>(R.id.taxiSelector)
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
@@ -199,7 +197,7 @@ class DataEntryActivity : AppCompatActivity() {
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
                     scoutedBy.text.toString(),
-                    regionalToggle.text.toString(),
+                    regionalText,
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),
