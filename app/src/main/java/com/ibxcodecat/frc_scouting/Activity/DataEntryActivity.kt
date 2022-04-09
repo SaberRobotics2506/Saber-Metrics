@@ -203,7 +203,6 @@ class DataEntryActivity : AppCompatActivity() {
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
 
-                val defensivePlays = findViewById<TextView>(R.id.defPlaysNumText)
                 val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
 
                 val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
