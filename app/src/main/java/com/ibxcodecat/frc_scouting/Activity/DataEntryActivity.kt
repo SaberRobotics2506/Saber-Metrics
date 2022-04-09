@@ -13,6 +13,8 @@ import com.ibxcodecat.frc_scouting.R
 import com.ibxcodecat.frc_scouting.Data.SerializationData
 import com.ibxcodecat.frc_scouting.Classes.FileSystem
 
+import java.io.File
+
 
 var highAutoMakesNum: Int = 0
 var highAutoMissNum: Int = 0
@@ -25,13 +27,14 @@ var lowTeleopMissNum: Int = 0
 var defPlaysNum: Int = 0
 var selectedMatch: Int = 0
 val teamNumberArray = IntArray(42)
-val tabletID: Int = 2; //placeholder value
+val tabletID: String = null; //placeholder value, will be read from file when data entry activity starts
 
 class DataEntryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_entry)
+        if()
         whatsThisListeners()
         submissionListener()
         numberManipulationListeners()
