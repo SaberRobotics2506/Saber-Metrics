@@ -1,8 +1,10 @@
-package com.ibxcodecat.frc_scouting;
+package com.ibxcodecat.frc_scouting.Classes;
 
 import android.os.Environment;
 
 import com.google.gson.Gson;
+import com.ibxcodecat.frc_scouting.Activity.DataEntryActivity;
+import com.ibxcodecat.frc_scouting.Data.SerializationData;
 
 import java.io.File;
 import java.io.FileOutputStream;

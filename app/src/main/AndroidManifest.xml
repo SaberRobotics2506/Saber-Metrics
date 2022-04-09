@@ -27,18 +27,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FRCScouting">
         <activity
-            android:name="com.ibxcodecat.frc_scouting.SubmittedActivity"
+            android:name="com.ibxcodecat.frc_scouting.Activity.SubmittedActivity"
             android:exported="false"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.ibxcodecat.frc_scouting.DataEntryActivity"
+            android:name="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity"
             android:exported="false"
             android:label="@string/Data_Collection_Title"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.ibxcodecat.frc_scouting.LaunchActivity"
+            android:name="com.ibxcodecat.frc_scouting.Activity.LaunchActivity"
             android:exported="true"
             android:label="@string/Welcome_Title"
             android:configChanges="orientation"

@@ -1,4 +1,4 @@
-package com.ibxcodecat.frc_scouting;
+package com.ibxcodecat.frc_scouting.Classes;
 
 /// This class is for validating data that could be inacurate due to human error
 public class DataValidator {

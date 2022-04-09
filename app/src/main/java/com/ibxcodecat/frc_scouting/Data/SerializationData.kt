@@ -1,4 +1,4 @@
-package com.ibxcodecat.frc_scouting
+package com.ibxcodecat.frc_scouting.Data
 
 data class SerializationData (
     val TeamNumber: Int = -1,

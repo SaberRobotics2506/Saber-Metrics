@@ -1,4 +1,4 @@
-package com.ibxcodecat.frc_scouting
+package com.ibxcodecat.frc_scouting.Activity
 
 //Import AndroidX
 
@@ -6,9 +6,12 @@ package com.ibxcodecat.frc_scouting
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.ibxcodecat.frc_scouting.Classes.DataValidator
+import com.ibxcodecat.frc_scouting.R
+import com.ibxcodecat.frc_scouting.Data.SerializationData
+import com.ibxcodecat.frc_scouting.Classes.FileSystem
 
 
 var highAutoMakesNum: Int = 0
@@ -121,23 +124,36 @@ class DataEntryActivity : AppCompatActivity() {
         val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
         val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
         val defense = findViewById<TextView>(R.id.defPlaysNumText)
-        highTeleopMakesIncrement.setOnClickListener{highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
-        highTeleopMissIncrement.setOnClickListener{highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
-        lowTeleopMakesIncrement.setOnClickListener{lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
-        lowTeleopMissIncrement.setOnClickListener{lowTeleopMissNum++; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
-        highTeleopMakesDecrement.setOnClickListener{highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; if(highTeleopMakesNum == 1) hTM.setText(highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
-        highTeleopMissDecrement.setOnClickListener{highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; if(highTeleopMissNum == 1) hTI.setText(highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
-        lowTeleopMakesDecrement.setOnClickListener{lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; if(lowTeleopMakesNum == 1) lTM.setText(lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
-        lowTeleopMissDecrement.setOnClickListener{lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
-        defensePlaysIncrement.setOnClickListener{defPlaysNum++; defense.setText(defPlaysNum.toString())}
-        defensePlaysDecrement.setOnClickListener{defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(defPlaysNum.toString())}
+        highTeleopMakesIncrement.setOnClickListener{
+            highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(
+            highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
+        highTeleopMissIncrement.setOnClickListener{
+            highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(
+            highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
+        lowTeleopMakesIncrement.setOnClickListener{
+            lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(
+            lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
+        lowTeleopMissIncrement.setOnClickListener{
+            lowTeleopMissNum++; if(lowTeleopMissNum == 1) lTI.setText(
+            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+        highTeleopMakesDecrement.setOnClickListener{
+            highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; if(highTeleopMakesNum == 1) hTM.setText(
+            highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
+        highTeleopMissDecrement.setOnClickListener{
+            highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; if(highTeleopMissNum == 1) hTI.setText(
+            highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
+        lowTeleopMakesDecrement.setOnClickListener{
+            lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; if(lowTeleopMakesNum == 1) lTM.setText(
+            lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
+        lowTeleopMissDecrement.setOnClickListener{
+            lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(
+            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+        defensePlaysIncrement.setOnClickListener{ defPlaysNum++; defense.setText(defPlaysNum.toString())}
+        defensePlaysDecrement.setOnClickListener{
+            defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(
+            defPlaysNum.toString())}
     }
 
-    private fun matchTeamPresetListeners()
-    {
-        val matchNumDrop = findViewById<Spinner>(R.id.matchNumber)
-        matchNumDrop.setOnItemClickListener()
-    }
     private fun resetInputVariables()
     {
         highAutoMakesNum = 0
@@ -182,7 +198,6 @@ class DataEntryActivity : AppCompatActivity() {
                 val teamNumber = findViewById<Spinner>(R.id.teamNumber)
                 val matchNumber = findViewById<Spinner>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
-                val regionalToggle = findViewById<ToggleButton>(R.id.regionalSelector)
                 val taxiToggle = findViewById<ToggleButton>(R.id.taxiSelector)
                 val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
@@ -199,7 +214,7 @@ class DataEntryActivity : AppCompatActivity() {
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
                     scoutedBy.text.toString(),
-                    regionalToggle.text.toString(),
+                    "Houston",
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),

@@ -1,4 +1,4 @@
-package com.ibxcodecat.frc_scouting
+package com.ibxcodecat.frc_scouting.Activity
 
 //imports
 import android.content.Intent

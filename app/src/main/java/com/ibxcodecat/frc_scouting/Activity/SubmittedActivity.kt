@@ -1,10 +1,11 @@
-package com.ibxcodecat.frc_scouting
+package com.ibxcodecat.frc_scouting.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.Button
+import com.ibxcodecat.frc_scouting.R
 
 class SubmittedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
