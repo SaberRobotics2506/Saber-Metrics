@@ -298,16 +298,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="TextContrastCheck" />
 
-    <Button
-        android:id="@+id/regionalHelp"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/Help"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck"
-        tools:layout_editor_absoluteX="557dp" />
-
     <EditText
         android:id="@+id/scoutedBy"
         android:layout_width="@dimen/text_box_width"
@@ -377,6 +367,10 @@
         android:layout_marginEnd="23dp"
         android:text="@string/autoGroupLabelText"
         android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
@@ -389,6 +383,8 @@
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
         android:text="@string/teleopGroupLabelText"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -417,6 +413,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="35dp"
         android:text="@string/low_goal"
+        android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintHorizontal_bias="0.92"
@@ -465,6 +462,8 @@
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
         android:text="@string/makes"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/hiAutoText"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
@@ -503,6 +502,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/defense_plays"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 
