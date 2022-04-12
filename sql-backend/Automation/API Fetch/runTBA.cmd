@@ -9,4 +9,4 @@ python TBA-Scraper.py
 
 start notepad "red.teams"
 start notepad "blue.teams"
-pause
+exit
