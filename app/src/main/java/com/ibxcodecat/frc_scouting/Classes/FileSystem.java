@@ -1,16 +1,57 @@
 package com.ibxcodecat.frc_scouting.Classes;
 
+import android.content.Context;
 import android.os.Environment;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.ibxcodecat.frc_scouting.Activity.DataEntryActivity;
 import com.ibxcodecat.frc_scouting.Data.SerializationData;
+import com.ibxcodecat.frc_scouting.Data.TeamData;
+
+import org.w3c.dom.CDATASection;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class FileSystem
 {
+    public TeamData ReadJSONFromAssets(Context context, String redFile, String blueFile)
+    {
+        String redJSONString, blueJSONString;
+
+        try {
+
+            InputStream redInputStream = context.getAssets().open(redFile);
+            int redSize = redInputStream.available();
+            byte[] redBuffer = new byte[redSize];
+            redInputStream.read(redBuffer);
+            redInputStream.close();
+
+            InputStream blueInputStream = context.getAssets().open(blueFile);
+            int blueSize = blueInputStream.available();
+            byte[] blueBuffer = new byte[blueSize];
+            blueInputStream.read(blueBuffer);
+            blueInputStream.close();
+
+            redJSONString = new String(redBuffer, "UTF-8");
+            blueJSONString = new String(blueBuffer, "UTF-8");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        Gson gson = new Gson();
+
+        int[] redData = gson.fromJson(redJSONString, int[].class);
+        int[] blueData = gson.fromJson(blueJSONString, int[].class);
+
+        return new TeamData(redData, blueData);
+    }
+
     public boolean WriteGSON(SerializationData serializationData, DataEntryActivity context)
     {
         Gson gson = new Gson();
