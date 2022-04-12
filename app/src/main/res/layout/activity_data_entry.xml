@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/dark_gray"
     tools:context="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity">
 
     <Button
@@ -14,6 +14,8 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -39,6 +41,8 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -50,6 +54,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -75,6 +81,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -86,6 +94,8 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -112,6 +122,8 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -123,6 +135,8 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -148,6 +162,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="57dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -226,6 +242,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
@@ -247,6 +265,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -275,6 +295,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="7dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/score"
         tools:ignore="TouchTargetSizeCheck" />
@@ -286,6 +308,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/taxiSelector"
         app:layout_constraintTop_toBottomOf="@id/AutoText"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
@@ -326,6 +350,8 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/scoutedBy"
         app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -357,7 +383,9 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="8dp"
         android:text="@string/submit"
+        android:textColor="@color/buttonTextColor"
         android:visibility="visible"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -385,8 +413,8 @@
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
         android:text="@string/teleopGroupLabelText"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
@@ -414,8 +442,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="35dp"
         android:text="@string/low_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
@@ -452,8 +480,8 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="32dp"
         android:text="@string/high_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taxiSelector" />
 
@@ -464,9 +492,9 @@
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
         android:text="@string/makes"
+        android:textAlignment="center"
         android:textColor="@color/light_grey"
         android:textStyle="bold"
-        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/hiAutoText"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent" />
@@ -479,8 +507,8 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="75dp"
         android:text="@string/high_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -493,8 +521,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="75dp"
         android:text="@string/low_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
@@ -516,8 +544,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:textColor="@color/light_grey"
         android:layout_marginTop="8dp"
+        android:textColor="@color/light_grey"
         app:layout_constraintStart_toEndOf="@+id/defPlaysText"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 
@@ -528,6 +556,8 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="8dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/defPlaysDecrementBtn"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -539,6 +569,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -548,8 +580,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:textColor="@color/light_grey"
         android:layout_marginTop="8dp"
+        android:textColor="@color/light_grey"
         app:layout_constraintStart_toEndOf="@id/defPlaysIncrementBtn"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 

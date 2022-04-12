@@ -13,5 +13,8 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
-    <color name="light_grey">#C8C8C8</color>
+    <color name="light_grey">#FFC8C8C8</color>
+    <color name="yellow_A400">#FFFFEA00</color>
+    <color name="yellow_A700">#FFFFD600</color>
+    <color name="buttonTextColor">@color/black</color>
 </resources>
