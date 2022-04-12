@@ -14,6 +14,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -39,6 +40,7 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -50,6 +52,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -75,6 +78,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -86,6 +90,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -112,6 +117,7 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -123,6 +129,7 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -148,6 +155,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="57dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -227,6 +235,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
@@ -248,6 +257,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -276,6 +286,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="7dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/score"
         tools:ignore="TouchTargetSizeCheck" />
@@ -287,6 +298,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/taxiSelector"
         app:layout_constraintTop_toBottomOf="@id/AutoText"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
@@ -327,6 +339,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/scoutedBy"
         app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -358,6 +371,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="8dp"
         android:text="@string/submit"
+        android:textColor="@color/buttonTextColor"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -533,6 +547,7 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="8dp"
         android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/defPlaysDecrementBtn"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -544,6 +559,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
