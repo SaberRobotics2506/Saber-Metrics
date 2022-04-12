@@ -3,6 +3,7 @@ package com.ibxcodecat.frc_scouting.Activity
 //Import AndroidX
 
 //Import Android Components
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -12,8 +13,11 @@ import com.ibxcodecat.frc_scouting.Classes.DataValidator
 import com.ibxcodecat.frc_scouting.R
 import com.ibxcodecat.frc_scouting.Data.SerializationData
 import com.ibxcodecat.frc_scouting.Classes.FileSystem
+import com.ibxcodecat.frc_scouting.Data.Data
+import com.ibxcodecat.frc_scouting.Data.TeamData
 
 import java.io.File
+import java.lang.Exception
 
 
 var highAutoMakesNum: Int = 0
@@ -31,6 +35,20 @@ val tabletID: String = "null"; //placeholder value, will be read from file when 
 
 class DataEntryActivity : AppCompatActivity() {
 
+    //region android_methods
+
+    override fun onStart() {
+        super.onStart()
+
+        try {
+            getTeamData()
+        }
+        catch (ex: Exception)
+        {
+            Toast.makeText(this@DataEntryActivity, ex.stackTraceToString(), Toast.LENGTH_LONG).show()
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_entry)
@@ -45,7 +63,9 @@ class DataEntryActivity : AppCompatActivity() {
         Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
         return
     }
+    //endregion
 
+    //region page_formatting
     private fun errorDropdown(dropdown: Spinner)
     {
         dropdown.setBackgroundColor(Color.RED)
@@ -72,6 +92,17 @@ class DataEntryActivity : AppCompatActivity() {
         comments.setTextColor(Color.BLACK)
         comments.setHintTextColor(Color.BLACK)
     }
+    //endregion
+
+    private fun getTeamData(): TeamData?
+    {
+        val fileSystem = FileSystem()
+        val data = fileSystem.ReadJSONFromAssets(this@DataEntryActivity, Data.redTeamFile, Data.blueTeamFile)
+        //Toast.makeText(this@DataEntryActivity, data.redTeamNumbers.toString(), Toast.LENGTH_LONG).show()
+
+        return TeamData(data.redTeamNumbers, data.blueTeamNumbers)
+
+    }
 
     private fun checkData(): Boolean
     {
@@ -92,7 +123,6 @@ class DataEntryActivity : AppCompatActivity() {
         {
             //DataValidator.DataError.TeamNumberError -> errorDropdown(teamNumber) To be removed when pre-set teams come in place
             DataValidator.DataError.MatchNumberError -> errorDropdown(matchNumber)
-
             DataValidator.DataError.ScoutedByError -> errorTextFormatting(scoutedBy)
             DataValidator.DataError.ScoreError -> errorTextFormatting(score)
             DataValidator.DataError.CommentsError -> errorTextFormatting(comments)
@@ -102,6 +132,8 @@ class DataEntryActivity : AppCompatActivity() {
         return false
     }
 
+    //region number_manipulators
+    @SuppressLint("SetTextI18n")
     private fun numberManipulationListeners()
     {
         // Increment buttons and dropdowns
@@ -117,9 +149,6 @@ class DataEntryActivity : AppCompatActivity() {
         val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
         val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
         val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
-
-        // Goal integer variables
-
 
         // Text boxes
         val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
@@ -156,6 +185,7 @@ class DataEntryActivity : AppCompatActivity() {
             defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(
             defPlaysNum.toString())}
     }
+    //endregion
 
     private fun resetInputVariables()
     {
@@ -169,6 +199,8 @@ class DataEntryActivity : AppCompatActivity() {
         lowTeleopMissNum = 0
         defPlaysNum = 0
     }
+
+    //region whats_this
     private fun whatsThisListeners()
     {
         // get reference to what's this buttons
@@ -185,7 +217,9 @@ class DataEntryActivity : AppCompatActivity() {
         taxiHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot drive across the line during autonomous?", Toast.LENGTH_LONG).show() }
         scoreHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the total alliance score for the robot ou are scouting!", Toast.LENGTH_LONG).show() }
     }
+    //endregion
 
+    //region form_submission
     private fun submissionListener()
     {
         //Get reference to form submission button
@@ -250,4 +284,5 @@ class DataEntryActivity : AppCompatActivity() {
             }
         }
     }
+    //endregion
 }
