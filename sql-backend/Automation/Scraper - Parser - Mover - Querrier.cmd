@@ -30,5 +30,3 @@ echo Executing "SQL Builder/run-py.cmd"
 cd "SQL Builder"
 start /W /max run-py.cmd
 cd ..
-
-pause
