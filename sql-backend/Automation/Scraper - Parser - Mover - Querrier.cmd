@@ -26,6 +26,11 @@ cd "VB Scripts"
 start /W /max TeamMover.vbs
 cd ..
 
+echo Executing "VB Scripts/GSON_Converter.vbs"
+cd "VB Scripts"
+start /W /max GSON_Converter.vbs
+cd ..
+
 echo Executing "SQL Builder/run-py.cmd"
 cd "SQL Builder"
 start /W /max run-py.cmd
