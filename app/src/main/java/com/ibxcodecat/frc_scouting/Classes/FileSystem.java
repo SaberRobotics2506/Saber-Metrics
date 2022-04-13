@@ -18,6 +18,11 @@ import java.io.InputStream;
 
 public class FileSystem
 {
+    //<summary>
+    //Responsible for Reading the JSON assets ported into the app prior to compilation and parsing
+    //the JSON data using GSON into int[].class objects to construct a TeamData object
+    //</summary>
+    //<returns>A TeamData object</returns>
     public TeamData ReadJSONFromAssets(Context context, String redFile, String blueFile)
     {
         String redJSONString, blueJSONString;
@@ -52,6 +57,10 @@ public class FileSystem
         return new TeamData(redData, blueData);
     }
 
+    //<summary>
+    //Converts the SerializationData object to a JSON String using GSON and writes it to the disk
+    //</summary>
+    //<returns>void</returns>
     public boolean WriteGSON(SerializationData serializationData, DataEntryActivity context)
     {
         Gson gson = new Gson();
