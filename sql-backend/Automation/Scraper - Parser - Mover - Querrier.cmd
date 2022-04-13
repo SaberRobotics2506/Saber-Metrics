@@ -21,8 +21,8 @@ cd "API Fetch"
 start /W /max runTBA.cmd
 cd ..
 
-echo Executing "VB Team Mover/TeamMover.vbs"
-cd "VB Team Mover"
+echo Executing "VB Scripts/TeamMover.vbs"
+cd "VB Scripts"
 start /W /max TeamMover.vbs
 cd ..
 
