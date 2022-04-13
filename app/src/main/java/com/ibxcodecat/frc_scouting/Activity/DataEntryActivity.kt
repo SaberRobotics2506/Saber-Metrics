@@ -7,17 +7,18 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.provider.SyncStateContract
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.ibxcodecat.frc_scouting.Classes.DataValidator
 import com.ibxcodecat.frc_scouting.R
 import com.ibxcodecat.frc_scouting.Data.SerializationData
 import com.ibxcodecat.frc_scouting.Classes.FileSystem
-import com.ibxcodecat.frc_scouting.Data.Data
+import com.ibxcodecat.frc_scouting.Data.Constants
 import com.ibxcodecat.frc_scouting.Data.TeamData
 
-import java.io.File
 import java.lang.Exception
+import kotlin.system.exitProcess
 
 
 var highAutoMakesNum: Int = 0
@@ -41,11 +42,11 @@ class DataEntryActivity : AppCompatActivity() {
         super.onStart()
 
         try {
-            getTeamData()
+            val data = loadAutofillData()
         }
         catch (ex: Exception)
         {
-            Toast.makeText(this@DataEntryActivity, ex.stackTraceToString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@DataEntryActivity, ex.toString(), Toast.LENGTH_LONG).show()
         }
 
     }
@@ -94,14 +95,17 @@ class DataEntryActivity : AppCompatActivity() {
     }
     //endregion
 
-    private fun getTeamData(): TeamData?
-    {
+    private fun loadAutofillData(): TeamData {
         val fileSystem = FileSystem()
-        val data = fileSystem.ReadJSONFromAssets(this@DataEntryActivity, Data.redTeamFile, Data.blueTeamFile)
-        //Toast.makeText(this@DataEntryActivity, data.redTeamNumbers.toString(), Toast.LENGTH_LONG).show()
+        val loadedData = fileSystem.ReadJSONFromAssets( this@DataEntryActivity,  Constants.redTeamFile, Constants.blueTeamFile )
 
-        return TeamData(data.redTeamNumbers, data.blueTeamNumbers)
+        if(loadedData == null)
+        {
+            Toast.makeText(this@DataEntryActivity, "There was a problem loading autofill data, please contact Nathan or Dominic", Toast.LENGTH_LONG).show()
+            exitProcess(1)
+        }
 
+        return loadedData
     }
 
     private fun checkData(): Boolean
