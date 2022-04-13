@@ -49,7 +49,7 @@ def AssembleMatchScrapes(match_keys):
 	for key in match_keys:
 		print("Assembling API scrape from key: " + str(key))
 		scrape = "/match/" + str(key) + "/simple"
-		print("Appending: " + str(scrape))
+		print("Appending [ " + str(scrape) + " ] to scrape list...")
 		scrapes.append(scrape)
 	
 	time.sleep(1)
@@ -58,7 +58,7 @@ def AssembleMatchScrapes(match_keys):
 	
 #Fetch a list of match keys from an event specified by the event key
 def FetchMatchKeys(event_key):
-	print("Fetching match keys...")
+	print("Fetching match keys from upstream...")
 	match_keys = getTBA("event/" + event_key + "/matches/keys")
 	print(match_keys)
 	print("Done!")
@@ -78,7 +78,8 @@ def FetchMatchData(match_scrapes):
 		match_data.append(getTBA(scrape))
 		
 		current_stage = current_stage + 1
-		printProgressBar(current_stage, total_stages, prefix = 'Fetching: ' + str(scrape), suffix = 'Complete ', length = 50)
+		printProgressBar(current_stage, total_stages, prefix = 'Downloading: ' + str(scrape), suffix = 'Complete ', length = 50)
+		
 	
 	print(match_data)
 	

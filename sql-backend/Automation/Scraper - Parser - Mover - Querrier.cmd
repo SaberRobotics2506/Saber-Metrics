@@ -16,9 +16,9 @@ cd %~dp0
 cls
 
 
-echo Running API Fetch/runTBA.cmd...
+echo Executing "API Fetch/TBA-Scraper.py"
 cd "API Fetch"
-start /W /max runTBA.cmd
+python TBA-Scraper.py
 cd ..
 
 echo Executing "VB Scripts/TeamMover.vbs"
@@ -31,7 +31,9 @@ cd "VB Scripts"
 start /W /max GSON_Converter.vbs
 cd ..
 
-echo Executing "SQL Builder/run-py.cmd"
+echo Executing "SQL Builder/sqlBuilder.py"
 cd "SQL Builder"
-start /W /max run-py.cmd
+python sqlBuilder.py
 cd ..
+
+pause > nul
