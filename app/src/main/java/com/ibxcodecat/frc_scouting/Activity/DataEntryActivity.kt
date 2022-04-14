@@ -32,7 +32,6 @@ var lowTeleopMissNum: Int = 0
 var defPlaysNum: Int = 0
 var selectedMatch: Int = 0
 val teamNumberArray = IntArray(42)
-val tabletID: String = "null"; //placeholder value, will be read from file when data entry activity starts
 
 class DataEntryActivity : AppCompatActivity() {
 
@@ -102,7 +101,6 @@ class DataEntryActivity : AppCompatActivity() {
         if(loadedData == null)
         {
             Toast.makeText(this@DataEntryActivity, "There was a problem loading autofill data, please contact Nathan or Dominic", Toast.LENGTH_LONG).show()
-            exitProcess(1)
         }
 
         return loadedData

@@ -4,6 +4,10 @@ import android.content.Context;
 import android.os.Environment;
 
 import com.google.gson.Gson;
+
+import org.json.JSONObject;
+import org.json.JSONException;
+
 import com.google.gson.JsonObject;
 import com.ibxcodecat.frc_scouting.Activity.DataEntryActivity;
 import com.ibxcodecat.frc_scouting.Data.SerializationData;
@@ -51,10 +55,10 @@ public class FileSystem
 
         Gson gson = new Gson();
 
-        int[] redData = gson.fromJson(redJSONString, int[].class);
-        int[] blueData = gson.fromJson(blueJSONString, int[].class);
+        Object redObj = gson.fromJson(redJSONString, Object.class);
+        Object blueObj = gson.fromJson(blueJSONString, Object.class);
 
-        return new TeamData(redData, blueData);
+        return new TeamData(redObj, blueObj);
     }
 
     //<summary>

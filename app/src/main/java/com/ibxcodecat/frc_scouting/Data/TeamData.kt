@@ -1,7 +1,9 @@
 package com.ibxcodecat.frc_scouting.Data
 
+import java.util.*
+
 //Data object where team data is referenced and read to
-data class TeamData ( val redTeamNumbers: IntArray, val blueTeamNumbers: IntArray )
+data class TeamData ( val redTeamNumbers: Object, val blueTeamNumbers: Object )
 {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -9,16 +11,9 @@ data class TeamData ( val redTeamNumbers: IntArray, val blueTeamNumbers: IntArra
 
         other as TeamData
 
-        if (!redTeamNumbers.contentEquals(other.redTeamNumbers)) return false
-        if (!blueTeamNumbers.contentEquals(other.blueTeamNumbers)) return false
+        if (redTeamNumbers != other.redTeamNumbers) return false
+        if (blueTeamNumbers != other.blueTeamNumbers) return false
 
         return true
     }
-
-    override fun hashCode(): Int {
-        var result = redTeamNumbers.contentHashCode()
-        result = 31 * result + blueTeamNumbers.contentHashCode()
-        return result
-    }
-
 }
