@@ -102,6 +102,10 @@ class DataEntryActivity : AppCompatActivity() {
         {
             Toast.makeText(this@DataEntryActivity, "There was a problem loading autofill data, please contact Nathan or Dominic", Toast.LENGTH_LONG).show()
         }
+        else
+        {
+            Toast.makeText(this@DataEntryActivity, loadedData.toString(), Toast.LENGTH_LONG).show()
+        }
 
         return loadedData
     }
