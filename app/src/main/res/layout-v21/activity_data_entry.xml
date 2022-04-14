@@ -4,12 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< Updated upstream
-    tools:context="com.ibxcodecat.frc_scouting.DataEntryActivity">
-=======
-    android:background="@color/light_grey"
+    android:background="@color/dark_gray"
     tools:context="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity">
->>>>>>> Stashed changes
 
     <Button
         android:id="@+id/lowMissTeleopUpBtn"
@@ -18,11 +14,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -35,6 +27,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="43dp"
         android:text="@string/telop_misses"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/lowMissTeleopUpBtn"
         app:layout_constraintStart_toEndOf="@+id/lowMissTeleopDownBtn"
@@ -47,11 +40,7 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
@@ -63,11 +52,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -80,6 +65,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="42dp"
         android:text="@string/_0_buckets"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/lowMakeTeleopUpBtn"
         app:layout_constraintStart_toEndOf="@+id/lowMakeTeleopDownBtn"
@@ -92,11 +78,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:text="@string/dec_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -108,11 +90,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopUpBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -125,6 +103,7 @@
         android:layout_marginTop="26dp"
         android:layout_marginEnd="43dp"
         android:text="@string/telop_misses"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/hiMissTeleopUpBtn"
         app:layout_constraintHorizontal_bias="0.505"
@@ -138,11 +117,7 @@
         android:layout_marginStart="11dp"
         android:layout_marginTop="12dp"
         android:text="@string/dec_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
         tools:ignore="TouchTargetSizeCheck" />
@@ -154,11 +129,7 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="16dp"
         android:text="@string/Inc_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -171,6 +142,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="42dp"
         android:text="@string/_0_buckets"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/hiMakeTeleopUpBtn"
         app:layout_constraintStart_toEndOf="@+id/hiMakeTeleopDownBtn"
@@ -183,11 +155,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="57dp"
         android:text="@string/dec_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
         tools:ignore="TouchTargetSizeCheck" />
@@ -198,6 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
+        android:textColor="@color/light_grey"
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
@@ -256,6 +225,7 @@
         android:layout_marginTop="16dp"
         android:background="#00000000"
         android:entries="@array/teams"
+        android:textColor="@color/light_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -266,11 +236,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Help"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
@@ -292,11 +258,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -312,7 +274,7 @@
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:textColor="@color/light_grey"
         android:textSize="14dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/submit"
@@ -325,11 +287,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="7dp"
         android:text="@string/Help"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/score"
         tools:ignore="TouchTargetSizeCheck" />
@@ -341,13 +299,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:text="@string/Help"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/taxiSelector"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/AutoText"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <ToggleButton
@@ -360,7 +314,7 @@
         android:textOn="@string/taxiOnText"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/AutoText"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -373,7 +327,7 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:textColor="@color/light_grey"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/matchNumber"
@@ -386,11 +340,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="8dp"
         android:text="@string/Help"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/scoutedBy"
         app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
@@ -407,7 +357,7 @@
         android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
         android:minHeight="32dp"
-        android:textColorHint="#757575"
+        android:textColor="@color/light_grey"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -422,10 +372,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="8dp"
         android:text="@string/submit"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -434,14 +381,16 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/AutoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="23dp"
         android:text="@string/autoGroupLabelText"
         android:textAlignment="textEnd"
+        android:textColor="@color/light_grey"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
@@ -453,7 +402,9 @@
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
         android:text="@string/teleopGroupLabelText"
+        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
@@ -481,6 +432,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="35dp"
         android:text="@string/low_goal"
+        android:textColor="@color/light_grey"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintHorizontal_bias="0.92"
@@ -518,6 +470,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="32dp"
         android:text="@string/high_goal"
+        android:textColor="@color/light_grey"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taxiSelector" />
@@ -529,6 +482,8 @@
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
         android:text="@string/makes"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/hiAutoText"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
@@ -542,7 +497,9 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="75dp"
         android:text="@string/high_goal"
+        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -555,7 +512,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="75dp"
         android:text="@string/low_goal"
+        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
@@ -567,6 +526,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/defense_plays"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
 
@@ -575,6 +536,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
+        android:textColor="@color/light_grey"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/defPlaysText"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
@@ -586,11 +548,7 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="8dp"
         android:text="@string/Inc_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/defPlaysDecrementBtn"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -602,11 +560,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/dec_Button"
-<<<<<<< Updated upstream
-=======
-        android:textColor="@color/light_grey"
-        app:backgroundTint="@color/yellow_A400"
->>>>>>> Stashed changes
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -616,6 +570,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
+        android:textColor="@color/light_grey"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@id/defPlaysIncrementBtn"
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
@@ -651,6 +606,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="6dp"
         android:text="@string/game_result"
+        android:textColor="@color/light_grey"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintStart_toEndOf="@+id/comments" />
 
