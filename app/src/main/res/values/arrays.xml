@@ -9,64 +9,7 @@
 
     <string-array name="teams">
         <item>Team #</item>
-        <item>93</item>
-        <item>167</item>
-        <item>876</item>
-        <item>1675</item>
-        <item>1732</item>
-        <item>2052</item>
-        <item>2175</item>
-        <item>2227</item>
-        <item>2239</item>
-        <item>2264</item>
-        <item>2501</item>
-        <item>2503</item>
-        <item>2506</item>
-        <item>2526</item>
-        <item>2531</item>
-        <item>2861</item>
-        <item>2977</item>
-        <item>3058</item>
-        <item>3102</item>
-        <item>3122</item>
-        <item>3134</item>
-        <item>3197</item>
-        <item>3275</item>
-        <item>3276</item>
-        <item>3291</item>
-        <item>3294</item>
-        <item>3740</item>
-        <item>4009</item>
-        <item>4181</item>
-        <item>4230</item>
-        <item>4238</item>
-        <item>4511</item>
-        <item>4607</item>
-        <item>4656</item>
-        <item>4674</item>
-        <item>4728</item>
-        <item>4741</item>
-        <item>5125</item>
-        <item>5143</item>
-        <item>5253</item>
-        <item>5348</item>
-        <item>5464</item>
-        <item>5653</item>
-        <item>5690</item>
-        <item>5826</item>
-        <item>5847</item>
-        <item>6047</item>
-        <item>6146</item>
-        <item>6160</item>
-        <item>6217</item>
-        <item>6318</item>
-        <item>6574</item>
-        <item>7048</item>
-        <item>7068</item>
-        <item>7311</item>
-        <item>7797</item>
-        <item>7893</item>
-        <item>8836</item>
+        <item>Joe Mamma</item>
     </string-array>
 
     <string-array name="matches">
@@ -170,6 +113,47 @@
         <item>Match 97</item>
         <item>Match 98</item>
         <item>Match 99</item>
+        <item>Match 100</item>
+        <item>Match 101</item>
+        <item>Match 102</item>
+        <item>Match 103</item>
+        <item>Match 104</item>
+        <item>Match 105</item>
+        <item>Match 106</item>
+        <item>Match 107</item>
+        <item>Match 108</item>
+        <item>Match 109</item>
+        <item>Match 110</item>
+        <item>Match 111</item>
+        <item>Match 112</item>
+        <item>Match 113</item>
+        <item>Match 114</item>
+        <item>Match 115</item>
+        <item>Match 116</item>
+        <item>Match 117</item>
+        <item>Match 118</item>
+        <item>Match 119</item>
+        <item>Match 120</item>
+        <item>Match 121</item>
+        <item>Match 122</item>
+        <item>Match 123</item>
+        <item>Match 124</item>
+        <item>Match 125</item>
+        <item>Match 126</item>
+        <item>Match 127</item>
+        <item>Match 128</item>
+        <item>Match 129</item>
+        <item>Match 130</item>
+        <item>Match 131</item>
+        <item>Match 132</item>
+        <item>Match 133</item>
+        <item>Match 134</item>
+        <item>Match 135</item>
+        <item>Match 136</item>
+        <item>Match 137</item>
+        <item>Match 138</item>
+        <item>Match 139</item>
+        <item>Match 140</item>
     </string-array>
 
     <string-array name="climb">
