@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
     android:scaleX="1"
     android:scaleY="1"
     android:translationY="-25px"
@@ -27,7 +28,10 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_main" />
+        layout="@layout/content_main"
+        android:background="#1c1c1c"
+        app:layout_anchor="@+id/welcome"
+        app:layout_anchorGravity="center" />
 
     <TextView
         android:id="@+id/welcome"
@@ -35,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="@string/Welcome_Message"
         android:textAlignment="center"
+        android:textColor="@color/light_grey"
         android:textSize="20sp"
         android:typeface="normal"
         android:visibility="visible"
