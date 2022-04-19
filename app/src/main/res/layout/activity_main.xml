@@ -31,7 +31,7 @@
         layout="@layout/content_main"
         android:background="#1c1c1c"
         app:layout_anchor="@+id/welcome"
-        app:layout_anchorGravity="center" />
+        app:layout_anchorGravity="top|center" />
 
     <TextView
         android:id="@+id/welcome"

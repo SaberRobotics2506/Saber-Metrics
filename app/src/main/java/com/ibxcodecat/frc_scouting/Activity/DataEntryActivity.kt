@@ -45,7 +45,7 @@ class DataEntryActivity : AppCompatActivity() {
         }
         catch (ex: Exception)
         {
-            Toast.makeText(this@DataEntryActivity, ex.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@DataEntryActivity, "Oh no, something appears to have gone wrong! Let Nathan or Dominic know! \n\n " + ex.toString(), Toast.LENGTH_LONG).show()
         }
 
     }
@@ -104,7 +104,7 @@ class DataEntryActivity : AppCompatActivity() {
         }
         else
         {
-            Toast.makeText(this@DataEntryActivity, loadedData.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this@DataEntryActivity, "Autofill data successfully loaded!", Toast.LENGTH_LONG).show()
         }
 
         return loadedData
