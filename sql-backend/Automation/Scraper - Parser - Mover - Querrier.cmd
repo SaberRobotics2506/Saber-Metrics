@@ -21,15 +21,16 @@ cd "API Fetch"
 python TBA-Scraper.py
 cd ..
 
+echo Executing "VB Scripts/GSON_Converter.vbs"
+cd "VB Scripts"
+start /W /max GSON_Converter.vbs
+cd ..
+
 echo Executing "VB Scripts/TeamMover.vbs"
 cd "VB Scripts"
 start /W /max TeamMover.vbs
 cd ..
 
-echo Executing "VB Scripts/GSON_Converter.vbs"
-cd "VB Scripts"
-start /W /max GSON_Converter.vbs
-cd ..
 
 echo Executing "SQL Builder/sqlBuilder.py"
 cd "SQL Builder"

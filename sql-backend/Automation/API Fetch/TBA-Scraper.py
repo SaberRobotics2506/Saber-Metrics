@@ -47,23 +47,14 @@ def AssembleMatchScrapes(match_keys):
 	scrapes = []
 	
 	for key in match_keys:
-		print("Assembling API scrape from key: " + str(key))
 		scrape = "/match/" + str(key) + "/simple"
-		print("Appending [ " + str(scrape) + " ] to scrape list...")
 		scrapes.append(scrape)
 	
-	time.sleep(1)
-	print("\n\n")
 	return scrapes
 	
 #Fetch a list of match keys from an event specified by the event key
 def FetchMatchKeys(event_key):
-	print("Fetching match keys from upstream...")
 	match_keys = getTBA("event/" + event_key + "/matches/keys")
-	print(match_keys)
-	print("Done!")
-	time.sleep(1)
-	print("\n\n")
 	return match_keys
 	
 #Fetch match data by scraping the TBA API for each match
@@ -79,12 +70,7 @@ def FetchMatchData(match_scrapes):
 		
 		current_stage = current_stage + 1
 		printProgressBar(current_stage, total_stages, prefix = 'Downloading: ' + str(scrape), suffix = 'Complete ', length = 50)
-		
 	
-	print(match_data)
-	
-	time.sleep(1)
-	print("\n\n")
 	return match_data
 
 def ParseMatchData(match_data):
@@ -92,14 +78,9 @@ def ParseMatchData(match_data):
 	parsed_data = []
 	
 	for data in match_data:
-		print("Dumping: " + str(data))
 		data = json.dumps(data)
-		print("Parsing: " + str(data))
 		parsed_data.append(json.loads(str(data)))
-		print("Done!")
 	
-	time.sleep(1)
-	print("\n\n")
 	return parsed_data
 	
 def ExtractRedTeams(parsed_data):
@@ -107,15 +88,10 @@ def ExtractRedTeams(parsed_data):
 	red_teams = []
 	
 	for i in range(len(parsed_data)):
-		print("Finding red alliance entry at index " + str(i) + "...")
 		entry = parsed_data[i]
-		print("Reading: " + str(entry))
 		red_teams.append(entry["alliances"]["red"]["team_keys"])
-		print("Appending: " + str(red_teams[i]))
-		print("Done!")
 	
 	time.sleep(1)
-	print("\n\n")
 	return red_teams
 
 def ExtractBlueTeams(parsed_data):
@@ -123,31 +99,49 @@ def ExtractBlueTeams(parsed_data):
 	blue_teams = []
 	
 	for i in range(len(parsed_data)):
-		print("Finding blue alliance entry at index " + str(i) + "...")
 		entry = parsed_data[i]
-		print("Reading: " + str(entry))
 		blue_teams.append(entry["alliances"]["red"]["team_keys"])
-		print("Appending: " + str(blue_teams[i]))
-		print("Done!")
 	
-	time.sleep(1)
-	print("\n\n")
 	return blue_teams
 	
+RED_FILE = "red.teams"
+BLUE_FILE = "blue.teams"
+
 def SerializeTeams(red_teams, blue_teams):
-	with open('red.teams', 'w', encoding='utf-8') as filestream:
-		print("Opened filestream " + str(filestream))
+	with open(RED_FILE, 'w', encoding='utf-8') as filestream:
 		json.dump(red_teams, filestream, ensure_ascii=False, indent=4)
-		print("File Written: 'red.teams' with contents " + str(red_teams))
-	print("Closed Filestream: " + str(filestream))
+		
+	with open(BLUE_FILE, 'w', encoding='utf-8') as filestream:
+		json.dump(blue_teams, filestream, ensure_ascii=False, indent=4)
+				
+
+# This function is responsible for correcting the JSON format into GSON
+# By replacing the square brackets with curly brackets		
+def CorrectJSONBrackets():
 	
-	with open('blue.teams', 'w', encoding='utf-8') as filestream:
-		print("Opened filestream " + str(filestream))
-		json.dump(red_teams, filestream, ensure_ascii=False, indent=4)
-		print("File Written: 'blue.teams' with contents " + str(blue_teams))
-		print("Closed Filestream: " + str(filestream))
+	RED_FILE = "red.teams"
+	BLUE_FILE = "blue.teams"
 	
-	print("\n\n")
+	with open(RED_FILE, 'r') as filestream:
+		red_contents = filestream.readlines()
+		filestream.close()
+		
+	with open(BLUE_FILE, 'r') as filestream:
+		blue_contents = filestream.readlines()
+		filestream.close()
+		
+	red_contents = "{" + str(red_contents[1:-2]) + "}"
+	blue_contents = "{" + str(blue_contents[1:-2]) + "}"
+	
+	print("Deez Nuts")
+	
+	with open(RED_FILE, 'w', encoding='utf-8') as filestream:
+		filestream.write(red_contents)
+		filestream.close()
+		
+	with open(BLUE_FILE, 'w', encoding='utf-8') as filestream:
+		filestream.write(blue_contents)
+		filestream.close()
 	
 match_keys = FetchMatchKeys("2022wimi")
 match_scrapes = AssembleMatchScrapes(match_keys)
@@ -158,3 +152,4 @@ red_teams = ExtractRedTeams(parsed_data)
 blue_teams = ExtractBlueTeams(parsed_data)
 
 SerializeTeams(red_teams, blue_teams)
+CorrectJSONBrackets()

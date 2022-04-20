@@ -8,7 +8,6 @@ import subprocess
 
 #Imports from os
 import os
-import time
 from os import listdir
 
 #Imports from os.path
@@ -42,11 +41,9 @@ def ReadJSON():
 				with open(file) as json_data: #Read json data of file into "json_data"
 					data = json.load(json_data) #Save loaded json data to a "data" dictionary
 					data_list.append(data) #Append the data dictionary to the list we defined above
-					print("Read data: [ " + str(data) + " ]")
 			except:
 				print("Unable to read \"*.scout\" file becasue it is not in a valid JSON format | ERROR") #Print an error message to the console'
 	
-	print("Created Data List: " + str(data_list))
 	return data_list #Returns a list of dictionaries representing each files' JSON Data
 
 
@@ -59,11 +56,7 @@ def RemoveBadCharacters(string):
 	for char in string: # Loop through each character in our string
 		if(char != "'" and char != "\""): # If the string does not contain an invalid character
 			output = output + char # Add the current character to our output
-			print("Appending Character [ " + str(char) + " ] to statement...")
-		else:
-			print("Invalid Character: " + str(char) + "! Will not append!")
-			
-	print("Operation Complete! Resulting Data Entry: [ " + str(output) + " ] ")
+
 	return output # Return the output string
 	
 def BuildInsertQueries(data):
@@ -101,10 +94,8 @@ def BuildInsertQueries(data):
 		query = query[:-1] #Exclude last comma generated in string
 		query = query + ")" #Add final closing parenthiss to query
 		
-		print("Generated SQL Query [ " + str(query) + " ] Appending...")
 		query_list.append(query) #Append the query we created to the query_list
 			
-	print("Resulting Query List: " + str(query_list))
 	return query_list #Return the list of queries that we have created
 	
 def WriteQueryFile(query_list):
@@ -118,18 +109,13 @@ def WriteQueryFile(query_list):
 		fileContents = ("--This SQL query file was built with the SQL Builder python script\n\n")
 		
 		for query in query_list:
-			print("Writing Query [ " + str(query) + " ] to TSQL query batch...\n\n")
 			fileContents = fileContents + (str(query)) + "-- Generated Query for *.scout file\n\n"
 		
-		print("Resulting File Contents: " + str(fileContents) + "\n\n")
 		builderOutputFile.write(fileContents)
 		
 ####################MAIN####################
-time.sleep(1)
 data = ReadJSON()
-time.sleep(1)
 queries = BuildInsertQueries(data)
-time.sleep(1)
 WriteQueryFile(queries)
 
 print("Complete! Press any key to close this window!")
