@@ -19,16 +19,10 @@ GSONCBlueFile.Close
 strBlueFileContents = Replace(strBlueFileContents, chr(34), "") 'chr(34) is the double quote character
 strBlueFileContents = Replace(strBlueFileContents, "frc", "")
 
-If GSONCFileInteractor.FileExists(GSONCFileInteractor.GetAbsolutePathName(".") & "\red.teams") Then
-	Set GSONCRedWriteOut = GSONCFileInteractor.OpenTextFile(GSONCFileInteractor.GetAbsolutePathName(".") & "\red.teams", 2)
-Else
-	Set GSONCRedWriteOut = GSONCFileInteractor.CreateTextFile(GSONCFileInteractor.GetAbsolutePathName(".") & "\red.teams", 2)
-End If
+Set GSONCRedWriteOut = GSONCFileInteractor.OpenTextFile(Replace(GSONCFileInteractor.GetAbsolutePathName("."), "VB Scripts", "API Fetch") & "\red.teams", 2)
 GSONCRedWriteOut.write strRedFileContents
+GSONCRedWriteOut.Close
 
-If GSONCFileInteractor.FileExists(GSONCFileInteractor.GetAbsolutePathName(".") & "\blue.teams") Then
-	Set GSONCBlueWriteOut = GSONCFileInteractor.OpenTextFile(GSONCFileInteractor.GetAbsolutePathName(".") & "\blue.teams", 2)
-Else
-	Set GSONCBlueWriteOut = GSONCFileInteractor.CreateTextFile(GSONCFileInteractor.GetAbsolutePathName(".") & "\blue.teams", 2)
-End If
+Set GSONCBlueWriteOut = GSONCFileInteractor.OpenTextFile(Replace(GSONCFileInteractor.GetAbsolutePathName("."), "VB Scripts", "API Fetch") & "\blue.teams", 2)
 GSONCBlueWriteOut.write strBlueFileContents
+GSONCBlueWriteOut.Close

@@ -135,17 +135,31 @@ def CorrectJSONBrackets():
 		blue_contents = filestream.readlines()
 		filestream.close()
 		
-	red_contents = "{" + str(red_contents[1:-2]) + "}"
-	blue_contents = "{" + str(blue_contents[1:-2]) + "}"
+	print(red_contents)
 	
-	print("Deez Nuts")
+	#Correct Malformed JSON Characters in red context
+	red_contents = "{" + str(red_contents[1:-2]) + "}"
+	red_contents = red_contents.replace("\\n", "\n")
+	red_contents = red_contents.replace("', '", "")
+	red_contents = red_contents.replace("['", "\n")
+	red_contents = red_contents.replace("']", "]")
+	
+	#Correct Malformed JSON CHaracters in blue context
+	blue_contents = "{" + str(blue_contents[1:-2]) + "}"
+	blue_contents = blue_contents.replace("\\n", "\n")
+	blue_contents = blue_contents.replace("', '", "")
+	blue_contents = blue_contents.replace("['", "\n")
+	blue_contents = blue_contents.replace("']", "]")
+	
+	print("===================================================")
+	print(red_contents)
 	
 	with open(RED_FILE, 'w', encoding='utf-8') as filestream:
 		filestream.write(red_contents)
 		filestream.close()
 		
 	with open(BLUE_FILE, 'w', encoding='utf-8') as filestream:
-		filestream.write(blue_contents)
+		filestream.write(blue_contents)	
 		filestream.close()
 	
 match_keys = FetchMatchKeys("2022wimi")
