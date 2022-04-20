@@ -37,7 +37,12 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         print()
 		
 #A magic function that makes a web request. The world may never know what it truly does!
-def getTBA(url): return requests.get(baseURL + url, headers=header).json()	
+def getTBA(url): 
+	try:
+		return requests.get(baseURL + url, headers=header).json()
+	except:
+		print("Error fetching data, please verify your token or check your internet connection.")
+		exit(1)
 
 teamsAtChamps = getTBA("event/2022wimi/teams")
 
