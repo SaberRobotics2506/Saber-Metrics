@@ -38,11 +38,11 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
 		
 #A magic function that makes a web request. The world may never know what it truly does!
 def getTBA(url): 
-	try:
+	try: #Attempt to make a web request...
 		return requests.get(baseURL + url, headers=header).json()
 	except:
 		print("Error fetching data, please verify your token or check your internet connection.")
-		exit(1)
+		exit(1) #Terminate the application with exit code 1 (error)
 
 teamsAtChamps = getTBA("event/2022wimi/teams")
 
@@ -124,13 +124,15 @@ def SerializeTeams(red_teams, blue_teams):
 # By replacing the square brackets with curly brackets		
 def CorrectJSONBrackets(red_teams, blue_teams):
 	
-	RED_FILE = "red.teams"
-	BLUE_FILE = "blue.teams"
+	RED_FILE = "red.teams" #the file for storing red alliance team data
+	BLUE_FILE = "blue.teams" #the file for storing blue alliance team data
 	
+	#Read the *.teams file into a a new string [red_contents]
 	with open(RED_FILE, 'r') as filestream:
 		red_contents = filestream.readlines()
 		filestream.close()
-		
+	
+	#Read the *.teams file into a a new string [blue_contents
 	with open(BLUE_FILE, 'r') as filestream:
 		blue_contents = filestream.readlines()
 		filestream.close()
@@ -150,24 +152,38 @@ def CorrectJSONBrackets(red_teams, blue_teams):
 	blue_contents = blue_contents.replace("['", "\n")
 	blue_contents = blue_contents.replace("']", "]")	
 			
+	#Give arrays thier JSON labels in the *.teams file for the red alliance
 	counter = 0 
-
 	index = red_contents.find("[")
 	
-	while(index != -1):
+	while(index != -1): #-1 = char not found
 		counter = counter + 1
 		concat = "\"Match " + str(counter) + "\": "
 		red_contents = red_contents[:index] + concat + red_contents[index:]
+		blue_contents = blue_contents[:index] + concat + blue_contents[index:]
+		
 		index = red_contents.find("[", index + len(concat) + 5, len(red_contents))
 	
-	print(red_contents)
+	
+	#Give arrays thier JSON labels in the *.teams file for the blue alliance
+	counter = 0
+	index = blue_contents.find("[")
+	
+	while(index != -1): #-1 = char not found
+		counter = counter + 1
+		concat = "\"Match " + str(counter) + "\": "
+		blue_contents = blue_contents[:index] + concat + blue_contents[index:]
+		index = blue_contents.find("[", index + len(concat) + 5, len(blue_contents))
 		
+		
+	#Write the *.teams file for the red alliance back into the file system
 	with open(RED_FILE, 'w', encoding='utf-8') as filestream:
 		filestream.write(red_contents)
 		filestream.close()
 		
+	#Write the *.teams file for the blue alliance back into the file system
 	with open(BLUE_FILE, 'w', encoding='utf-8') as filestream:
-		filestream.write(blue_contents)	
+		filestream.write(blue_contents)
 		filestream.close()
 	
 match_keys = FetchMatchKeys("2022wimi")
