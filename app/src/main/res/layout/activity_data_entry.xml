@@ -224,15 +224,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Spinner
+    <TextView
         android:id="@+id/teamNumber"
         android:layout_width="215dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:background="#CCCCCC"
-        android:entries="@array/teams"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/light_grey"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner

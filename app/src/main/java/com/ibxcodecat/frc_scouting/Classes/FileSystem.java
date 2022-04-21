@@ -16,12 +16,42 @@ import com.ibxcodecat.frc_scouting.Data.TeamData;
 import org.w3c.dom.CDATASection;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 
-public class FileSystem
-{
+public class FileSystem {
+
+    public String ReadDeviceID(Context context)
+    {
+        //Checking the availability state of the External Storage.
+        String state = Environment.getExternalStorageState();
+        if (!Environment.MEDIA_MOUNTED.equals(state)) {
+            //If it isn't mounted - we can't write into it.
+            return "";
+        }
+
+        try
+        {
+            FileInputStream inputStream = context.openFileInput(context.getExternalFilesDir(null) + "");
+
+            int size = inputStream.available();
+            BigInteger bigInt = BigInteger.valueOf(size);
+            byte[] buffer = bigInt.toByteArray();
+            inputStream.read(buffer);
+
+            return buffer.toString();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return "There was a problem reading device data. Please contact Nathan or Dominic";
+        }
+
+    }
+
     //<summary>
     //Responsible for Reading the JSON assets ported into the app prior to compilation and parsing
     //the JSON data using GSON into int[].class objects to construct a TeamData object

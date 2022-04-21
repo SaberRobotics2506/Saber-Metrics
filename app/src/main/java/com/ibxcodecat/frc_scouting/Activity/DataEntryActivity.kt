@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.provider.SyncStateContract
+import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.ibxcodecat.frc_scouting.Classes.DataValidator
@@ -42,6 +43,7 @@ class DataEntryActivity : AppCompatActivity() {
 
         try {
             val data = loadAutofillData()
+
         }
         catch (ex: Exception)
         {
@@ -58,6 +60,11 @@ class DataEntryActivity : AppCompatActivity() {
         numberManipulationListeners()
     }
 
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        loadAutofillData()
+        return super.onContextItemSelected(item)
+    }
+
     //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
         Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
@@ -71,9 +78,8 @@ class DataEntryActivity : AppCompatActivity() {
         dropdown.setBackgroundColor(Color.RED)
     }
 
-    private fun resetDropdownFormatting(teamNumber: Spinner, matchNumber: Spinner)
+    private fun resetDropdownFormatting(matchNumber: Spinner)
     {
-        teamNumber.setBackgroundColor(Color.WHITE)
         matchNumber.setBackgroundColor(Color.WHITE)
     }
 
@@ -97,6 +103,9 @@ class DataEntryActivity : AppCompatActivity() {
     private fun loadAutofillData(): TeamData {
         val fileSystem = FileSystem()
         val loadedData = fileSystem.ReadJSONFromAssets( this@DataEntryActivity,  Constants.redTeamFile, Constants.blueTeamFile )
+        val deviceID = fileSystem.ReadDeviceID(this@DataEntryActivity)
+
+        Toast.makeText(this@DataEntryActivity, deviceID, Toast.LENGTH_LONG).show()
 
         if(loadedData == null)
         {
@@ -104,7 +113,7 @@ class DataEntryActivity : AppCompatActivity() {
         }
         else
         {
-            Toast.makeText(this@DataEntryActivity, "Autofill data successfully loaded!", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this@DataEntryActivity, "Autofill data successfully loaded!", Toast.LENGTH_LONG).show()
         }
 
         return loadedData
@@ -112,7 +121,6 @@ class DataEntryActivity : AppCompatActivity() {
 
     private fun checkData(): Boolean
     {
-        val teamNumber = findViewById<Spinner>(R.id.teamNumber)
         val matchNumber = findViewById<Spinner>(R.id.matchNumber)
 
         val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
@@ -121,7 +129,7 @@ class DataEntryActivity : AppCompatActivity() {
 
         resetInputVariables()
         resetTextFormatting(scoutedBy, score, comments)
-        resetDropdownFormatting(teamNumber, matchNumber)
+        resetDropdownFormatting(matchNumber)
 
         val validator = DataValidator()
 
