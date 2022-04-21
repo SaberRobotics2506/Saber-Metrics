@@ -159,9 +159,8 @@ def CorrectJSONBrackets(red_teams, blue_teams):
 	while(index != -1): #-1 = char not found
 		counter = counter + 1
 		concat = "\"Match " + str(counter) + "\": "
-		red_contents = red_contents[:index] + concat + red_contents[index:]
-		blue_contents = blue_contents[:index] + concat + blue_contents[index:]
 		
+		red_contents = red_contents[:index] + concat + red_contents[index:]
 		index = red_contents.find("[", index + len(concat) + 5, len(red_contents))
 	
 	
@@ -172,6 +171,7 @@ def CorrectJSONBrackets(red_teams, blue_teams):
 	while(index != -1): #-1 = char not found
 		counter = counter + 1
 		concat = "\"Match " + str(counter) + "\": "
+		
 		blue_contents = blue_contents[:index] + concat + blue_contents[index:]
 		index = blue_contents.find("[", index + len(concat) + 5, len(blue_contents))
 		
