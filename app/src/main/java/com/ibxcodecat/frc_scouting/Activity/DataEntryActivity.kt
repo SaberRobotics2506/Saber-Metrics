@@ -42,7 +42,7 @@ class DataEntryActivity : AppCompatActivity() {
         super.onStart()
 
         try {
-            val data = loadAutofillData()
+            val data = loadAutofillData(findViewById<TextView>(R.id.teamNumber), selectedMatch);
 
         }
         catch (ex: Exception)
@@ -61,7 +61,7 @@ class DataEntryActivity : AppCompatActivity() {
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        loadAutofillData()
+        loadAutofillData(findViewById<TextView>(R.id.teamNumber), selectedMatch)
         return super.onContextItemSelected(item)
     }
 
@@ -100,12 +100,9 @@ class DataEntryActivity : AppCompatActivity() {
     }
     //endregion
 
-    private fun loadAutofillData(): TeamData {
+    private fun loadAutofillData(teamText: TextView, match: Int): TeamData {
         val fileSystem = FileSystem()
         val loadedData = fileSystem.ReadJSONFromAssets( this@DataEntryActivity,  Constants.redTeamFile, Constants.blueTeamFile )
-        val deviceID = fileSystem.ReadDeviceID(this@DataEntryActivity)
-
-        Toast.makeText(this@DataEntryActivity, deviceID, Toast.LENGTH_LONG).show()
 
         if(loadedData == null)
         {
@@ -113,8 +110,17 @@ class DataEntryActivity : AppCompatActivity() {
         }
         else
         {
-            //Toast.makeText(this@DataEntryActivity, "Autofill data successfully loaded!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@DataEntryActivity, "Autofill data successfully loaded!", Toast.LENGTH_LONG).show()
         }
+
+        val deviceID = fileSystem.ReadDeviceID(this@DataEntryActivity)
+
+        //when(deviceID)
+        //{
+        //    "R1" -> teamText.text = loadedData.redTeamNumbers["Match: " + match][0];
+        //}
+
+        Toast.makeText(this@DataEntryActivity, deviceID, Toast.LENGTH_LONG).show()
 
         return loadedData
     }
@@ -244,7 +250,8 @@ class DataEntryActivity : AppCompatActivity() {
 
             if(checkData())
             {
-                val teamNumber = findViewById<Spinner>(R.id.teamNumber)
+                val teamNumber = findViewById<TextView>(R.id.teamNumber)
+
                 val matchNumber = findViewById<Spinner>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
                 val taxiToggle = findViewById<ToggleButton>(R.id.taxiSelector)
@@ -259,7 +266,7 @@ class DataEntryActivity : AppCompatActivity() {
                 lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
 
                 val dataToSerialize = SerializationData(
-                    teamNumber.selectedItem.toString().toInt(),
+                    teamNumber.text.toString().toInt(),
                     matchNumber.selectedItemPosition,
                     scoutedBy.text.toString(),
                     "Houston",

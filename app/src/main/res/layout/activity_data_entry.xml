@@ -7,6 +7,18 @@
     android:background="@color/dark_gray"
     tools:context="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity">
 
+    <TextView
+        android:id="@+id/teamNumber"
+        android:layout_width="215dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/teamNumberTXT"
+        android:textColor="@color/light_grey"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/lowMissTeleopUpBtn"
         android:layout_width="42dp"
@@ -224,16 +236,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/teamNumber"
-        android:layout_width="215dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/light_grey"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Spinner
         android:id="@+id/matchNumber"
         android:layout_width="@dimen/text_box_width"
@@ -285,6 +287,19 @@
         app:backgroundTint="@color/yellow_A400"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/scoutedByHelp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:backgroundTint="@color/yellow_A400"
+        app:layout_constraintStart_toEndOf="@+id/scoutedBy"
+        app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -343,19 +358,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AutoText"
         tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/scoutedByHelp"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Help"
-        android:textColor="@color/buttonTextColor"
-        app:backgroundTint="@color/yellow_A400"
-        app:layout_constraintStart_toEndOf="@+id/scoutedBy"
-        app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/comments"

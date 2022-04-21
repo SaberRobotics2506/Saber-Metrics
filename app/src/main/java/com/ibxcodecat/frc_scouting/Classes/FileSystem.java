@@ -15,11 +15,13 @@ import com.ibxcodecat.frc_scouting.Data.TeamData;
 
 import org.w3c.dom.CDATASection;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
 
 public class FileSystem {
@@ -35,19 +37,36 @@ public class FileSystem {
 
         try
         {
-            FileInputStream inputStream = context.openFileInput(context.getExternalFilesDir(null) + "");
+            File file = new File(context.getExternalFilesDir(null), "ID.txt");
 
-            int size = inputStream.available();
-            BigInteger bigInt = BigInteger.valueOf(size);
-            byte[] buffer = bigInt.toByteArray();
-            inputStream.read(buffer);
+            FileInputStream in = new FileInputStream(file);
 
-            return buffer.toString();
+            int i = -1;
+
+            StringBuffer buffer = new StringBuffer();
+
+            while((i = in.read()) != -1)
+            {
+                buffer.append((char)i);
+            }
+
+            in.close();
+
+            String output = buffer.toString().substring(3);
+            return output;
         }
-        catch(Exception ex)
+        catch(IOException ex)
         {
             ex.printStackTrace();
-            return "There was a problem reading device data. Please contact Nathan or Dominic";
+
+            String exceptionString = "";
+
+            for(StackTraceElement element : ex.getStackTrace())
+            {
+                exceptionString += element;
+            }
+
+            return "There was a problem reading device data. Please contact Nathan or Dominic\n\nAre you reading from the wrong location again Nathan? Try: " + context.getExternalFilesDir(null) + "\n\n" + exceptionString;
         }
 
     }
