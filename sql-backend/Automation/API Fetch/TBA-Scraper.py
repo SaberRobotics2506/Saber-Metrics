@@ -122,7 +122,7 @@ def SerializeTeams(red_teams, blue_teams):
 
 # This function is responsible for correcting the JSON format into GSON
 # By replacing the square brackets with curly brackets		
-def CorrectJSONBrackets():
+def CorrectJSONBrackets(red_teams, blue_teams):
 	
 	RED_FILE = "red.teams"
 	BLUE_FILE = "blue.teams"
@@ -135,7 +135,6 @@ def CorrectJSONBrackets():
 		blue_contents = filestream.readlines()
 		filestream.close()
 		
-	print(red_contents)
 	
 	#Correct Malformed JSON Characters in red context
 	red_contents = "{" + str(red_contents[1:-2]) + "}"
@@ -149,11 +148,20 @@ def CorrectJSONBrackets():
 	blue_contents = blue_contents.replace("\\n", "\n")
 	blue_contents = blue_contents.replace("', '", "")
 	blue_contents = blue_contents.replace("['", "\n")
-	blue_contents = blue_contents.replace("']", "]")
+	blue_contents = blue_contents.replace("']", "]")	
+			
+	counter = 0 
+
+	index = red_contents.find("[")
 	
-	print("===================================================")
+	while(index != -1):
+		counter = counter + 1
+		concat = "\"Match " + str(counter) + "\": "
+		red_contents = red_contents[:index] + concat + red_contents[index:]
+		index = red_contents.find("[", index + len(concat) + 5, len(red_contents))
+	
 	print(red_contents)
-	
+		
 	with open(RED_FILE, 'w', encoding='utf-8') as filestream:
 		filestream.write(red_contents)
 		filestream.close()
@@ -171,4 +179,4 @@ red_teams = ExtractRedTeams(parsed_data)
 blue_teams = ExtractBlueTeams(parsed_data)
 
 SerializeTeams(red_teams, blue_teams)
-CorrectJSONBrackets()
+CorrectJSONBrackets(red_teams, blue_teams)
