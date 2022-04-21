@@ -19,7 +19,7 @@ from os.path import join
 BUILDER_OUTPUT_FILE_NAME = "sqlBuilderOutput.sql" #This is the filename of the build output SQL file
 CURRENT_WORKING_DIRECTORY = os.getcwd() #Get current working directory (cwd) of this file
 SEARCH_FOR_FILETYPE = ".scout" #The filetype to include in the file searches
-TABLE_NAME = "MatchMaster2" #The name of the SQL table we are writing queries for
+TABLE_NAME = "MatchMaster3" #The name of the SQL table we are writing queries for
 
 ####################FUNCTIONS####################
 

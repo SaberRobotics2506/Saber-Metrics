@@ -187,7 +187,7 @@ class DataEntryActivity : AppCompatActivity() {
                     teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
                     scoutedBy.text.toString(),
-                    regionalToggle.text.toString(),
+                    "Houston",
                     taxiToggle.isChecked,
                     score.text.toString().toInt(),
                     comments.text.toString(),

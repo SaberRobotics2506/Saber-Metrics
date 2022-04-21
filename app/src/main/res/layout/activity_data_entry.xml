@@ -281,8 +281,8 @@
         android:layout_marginTop="16dp"
         android:checked="true"
         android:textColor="#455A64"
-        android:textOff="@string/regionalOffText"
-        android:textOn="@string/regionalOnText"
+        android:textOff="I still do nothing"
+        android:textOn="click me for nothing"
         app:layout_constraintStart_toEndOf="@+id/verticalDivider"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
