@@ -17,9 +17,6 @@
 -->
 
 <p align="center">
-    <a href="https://discord.gg/WvbCRGSKre">
-        <img src="https://img.shields.io/discord/888875214459535360?color=5865F2&logo=discord&logoColor=white" alt="Discord server"/>
-    </a>
     <a href="https://github.com/IBXCODECAT/Saber-Metrics/commits/main">
         <img src="https://img.shields.io/github/commit-activity/w/IBXCODECAT/Saber-Metrics?label=commits"/>
     </a>
@@ -33,14 +30,14 @@
         <img src="https://img.shields.io/github/license/IBXCODECAT/Saber-Metrics"/>
     </a>
     <a href="https://github.com/IBXCODECAT/Saber-Metrics/actions">
-        <img src="https://img.shields.io/maintenance/yes/2022"/>
+        <img src="https://img.shields.io/maintenance/no/2022"/>
     </a>
     <br/>
     <a href="https://github.com/IBXCODECAT">
         <img src="https://img.shields.io/github/followers/IBXCODECAT?label=Follow&style=social" alt="GitHub"/>
     </a>
-    <a href="https://twitter.com/ibxcodecat">
-        <img src="https://img.shields.io/twitter/follow/ibxcodecat?label=Follow&style=social" alt="Twitter"/>
+    <a href="https://twitter.com/saberrobotics">
+        <img src="https://img.shields.io/twitter/follow/saberrobotics?label=Follow&style=social" alt="Twitter"/>
     </a>
 </p>
 
