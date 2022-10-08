@@ -1,4 +1,5 @@
-
+<h1 align="center">NOTICE: Saber Robotics is no longer maintaining this repository!</h1>
+<p align="center">Despite leaving the team, @ibxcodecat will still merge dependabot pull requests and resolve CodeQL security vulnerabilities as needed.</p>
 
 ---
 
