@@ -3,26 +3,18 @@ package com.ibxcodecat.frc_scouting.Data
 data class SerializationData (
     val TeamNumber: Int = -1,
     val MatchNumber: Int = -1,
-
     val ScoutedBy: String = "Empty Field",
-    val Regional: String = "Empty Field",
-
-    val Taxi: Boolean = false,
-
-    val AllianceScore: Int = -1,
-
     val Comments: String = "Empty Field",
-
-    val AutoLowGoalMake: Int = -1,
-    val AutoHighGoalMake: Int = -1,
-
-    val TelopLowGoalMake: Int = -1,
-    val TelopLowGoalMiss: Int = -1,
-    val TelopHighGoalMake: Int = -1,
-    val TelopHighGoalMiss: Int = -1,
-
+    val GameResult: Int = -1,
+    val AllianceScore: Int = -1,
+    val IsParked: Boolean = false,
+    val DidMobility: Boolean = false,
+    val AutoHighStep: Int = -1,
+    val AutoMidStep: Int = -1,
+    val AutoLowStep: Int = -1,
+    val AutoBalancePlatforms: Int = -1,
+    val NumCubes: Int = -1,
+    val NumCones: Int = -1,
+    val TeleBalancePlatforms: Int = -1,
     val DefensePlays: Int = -1,
-    val ClimbAttemptResult: Int = -1,
-    val WinLossTie: Int = -1,
-    val TraversalTime: Int = -1
 )

@@ -1,16 +1,14 @@
 <resources>
-    <string name="app_name">Saber Metrics</string>
+    <string name="app_name">Scouting-App</string>
     <string name="send_data">Send my data!</string>
 
     <!--Strings for LaunchActivity-->
-    <string name="Welcome_Title">Saber Metrics</string>
+    <string name="Welcome_Title">Scouting-App</string>
     <string name="Welcome_Message">
         Welcome to Saber-Metrics!
         \n\n
-        This app was developed by Dominic and Nathan to collect scouting data a user would enter, which eventually gets put into a database for analyzing.
+        This app was developed by Dominic and Nathan (stolen by Ameen and Roland) to collect scouting data a user would enter, which eventually gets put into a database for analyzing.
         If at any point while using the app you have a question feel free to contact one of us.
-        \n\n
-        It\'s been a great few months at Robo with you all and let\'s go out with a bang!
         \n\n
         Tap \"Let\'s Go!\" below to start entering data!
     </string>
@@ -24,8 +22,8 @@
     <string name="submit">Save Data</string>
     <string name="scouterTXT">Your Name</string>
     <string name="regionalText">Houston</string>
-    <string name="taxiOnText">Robot did taxi</string>
-    <string name="taxiOffText">Robot did not taxi</string>
+    <string name="mobilityOnText">Robot did do mobility</string>
+    <string name="mobilityOffText">Robot did not do mobility</string>
     <string name="scoreTXT">Score</string>
     <string name="comments">Enter comments about the match, the robot etc.</string>
     <string name="autoGroupLabelText">Autonomous</string>
@@ -34,17 +32,23 @@
     <string name="autoHighMissText">Misses</string>
     <string name="autoLowMakeText">Successful Attempts</string>
     <string name="autoLowMissText">Misses</string>
+    <string name="parkedOnText">Robot parked</string>
+    <string name="parkedOffText">Robot not parked</string>
+
 
     <!--Strings for SubmittedActivity-->
     <string name="next">New Entry</string>
-    <string name="low_goal">Low Goal</string>
+    <string name="low_goal">Low Step</string>
     <string name="Inc_Button">+</string>
     <string name="telop_misses">0 misses</string>
     <string name="game_result">Game\nresult:</string>
     <string name="climb_level">Climb level:</string>
     <string name="dec_Button">-</string>
     <string name="defense_plays">Defense Plays:</string>
-    <string name="high_goal">High Goal</string>
+    <string name="high_goal">High Step</string>
     <string name="makes">Makes</string>
-    <string name="_0_buckets">0 buckets</string>
+    <string name="_0_buckets">0 on-step</string>
+    <string name="_0_cubes">0 cubes</string>
+    <string name="_0_cones">0 cones</string>
+    <string name="middle_goal">Middle Step</string>
 </resources>

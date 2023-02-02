@@ -7,7 +7,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,18 +17,12 @@ import com.ibxcodecat.frc_scouting.Classes.FileSystem
 import com.ibxcodecat.frc_scouting.Data.Constants
 import com.ibxcodecat.frc_scouting.Data.TeamData
 
-import java.lang.Exception
-import kotlin.system.exitProcess
-
 
 var highAutoMakesNum: Int = 0
-var highAutoMissNum: Int = 0
+var midAutoMakesNum: Int = 0
 var lowAutoMakesNum: Int = 0
-var lowAutoMissNum: Int = 0
-var highTeleopMakesNum: Int = 0
-var highTeleopMissNum: Int = 0
-var lowTeleopMakesNum: Int = 0
-var lowTeleopMissNum: Int = 0
+var cubeMakesNum: Int = 0
+var conesMakesNum: Int = 0
 var defPlaysNum: Int = 0
 var selectedMatch: Int = 0
 val teamNumberArray = IntArray(42)
@@ -40,15 +33,15 @@ class DataEntryActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        try {
-            val data = loadAutofillData(findViewById<TextView>(R.id.teamNumber), selectedMatch);
-
-        }
-        catch (ex: Exception)
-        {
-            Toast.makeText(this@DataEntryActivity, "Oh no, something appears to have gone wrong! Let Nathan or Dominic know! \n\n " + ex.toString(), Toast.LENGTH_LONG).show()
-        }
+//
+//        try {
+//            val data = loadAutofillData(findViewById<TextView>(R.id.teamNumber), selectedMatch);
+//
+//        }
+//        catch (ex: Exception)
+//        {
+//            Toast.makeText(this@DataEntryActivity, "Oh no, something appears to have gone wrong! Let Nathan or Dominic know! \n\n " + ex.toString(), Toast.LENGTH_LONG).show()
+//        }
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +60,7 @@ class DataEntryActivity : AppCompatActivity() {
 
     //Used to override the back button to prevent fields from being pre-populated with previous data
     override fun onBackPressed() {
-        Toast.makeText(this@DataEntryActivity, "This feature has been disabled to save dumb users like you from their own destructive behaviour!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@DataEntryActivity, "You can not go back. If there is something you missed, your fine don't worry about it.", Toast.LENGTH_LONG).show()
         return
     }
     //endregion
@@ -80,7 +73,7 @@ class DataEntryActivity : AppCompatActivity() {
 
     private fun resetDropdownFormatting(matchNumber: Spinner)
     {
-        matchNumber.setBackgroundColor(Color.WHITE)
+        //matchNumber.setBackgroundColor(Color.BLACK)
     }
 
     private fun errorTextFormatting(text: EditText)
@@ -133,7 +126,7 @@ class DataEntryActivity : AppCompatActivity() {
         val score = findViewById<EditText>(R.id.score)
         val comments = findViewById<EditText>(R.id.comments)
 
-        resetInputVariables()
+
         resetTextFormatting(scoutedBy, score, comments)
         resetDropdownFormatting(matchNumber)
 
@@ -157,67 +150,88 @@ class DataEntryActivity : AppCompatActivity() {
     private fun numberManipulationListeners()
     {
         // Increment buttons and dropdowns
-        val highTeleopMakesIncrement = findViewById<Button>(R.id.hiMakeTeleopUpBtn)
-        val highTeleopMissIncrement = findViewById<Button>(R.id.hiMissTeleopUpBtn)
-        val lowTeleopMakesIncrement = findViewById<Button>(R.id.lowMakeTeleopUpBtn)
-        val lowTeleopMissIncrement = findViewById<Button>(R.id.lowMissTeleopUpBtn)
-        val defensePlaysIncrement = findViewById<Button>(R.id.defPlaysIncrementBtn)
+        val highAutoMakesIncrement = findViewById<Button>(R.id.hiAutoIncreaseBtn)
+        val midAutoMakesIncrement = findViewById<Button>(R.id.midAutoIncreaseBtn)
+        val lowAutoMakesIncrement = findViewById<Button>(R.id.lowAutoIncreaseBtn)
+        val squareMakesIncrement = findViewById<Button>(R.id.cubeIncreaseBtn)
+        val coneMakesIncrement = findViewById<Button>(R.id.coneIncreaseBtn)
+//        val defensePlaysIncrement = findViewById<Button>(R.id.defPlaysIncrementBtn)
 
         // Decrement buttons
-        val highTeleopMakesDecrement = findViewById<Button>(R.id.hiMakeTeleopDownBtn)
-        val highTeleopMissDecrement = findViewById<Button>(R.id.hiMissTeleopDownBtn)
-        val lowTeleopMakesDecrement = findViewById<Button>(R.id.lowMakeTeleopDownBtn)
-        val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
-        val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
+        val highAutoMakesDecrement = findViewById<Button>(R.id.hiAutoDecreaseBtn)
+        val midAutoMakesDecrement = findViewById<Button>(R.id.midAutoDecreaseBtn)
+        val lowAutoMakesDecrement = findViewById<Button>(R.id.lowAutoDecreaseBtn)
+        val squareMakesDecrement = findViewById<Button>(R.id.cubeDecreaseBtn)
+        val coneMakesDecrement = findViewById<Button>(R.id.coneDecreaseBtn)
+//        val lowTeleopMissDecrement = findViewById<Button>(R.id.lowMissTeleopDownBtn)
+//        val defensePlaysDecrement = findViewById<Button>(R.id.defPlaysDecrementBtn)
 
         // Text boxes
-        val hTM = findViewById<TextView>(R.id.highTeleopMakesNumText)
-        val hTI = findViewById<TextView>(R.id.highTeleopMissNumText)
-        val lTM = findViewById<TextView>(R.id.lowTeleopMakesNumText)
-        val lTI = findViewById<TextView>(R.id.lowTeleopMissNumText)
-        val defense = findViewById<TextView>(R.id.defPlaysNumText)
-        highTeleopMakesIncrement.setOnClickListener{
-            highTeleopMakesNum++; if(highTeleopMakesNum == 1) hTM.setText(
-            highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
-        highTeleopMissIncrement.setOnClickListener{
-            highTeleopMissNum++; if(highTeleopMissNum == 1) hTI.setText(
-            highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
-        lowTeleopMakesIncrement.setOnClickListener{
-            lowTeleopMakesNum++; if(lowTeleopMakesNum == 1) lTM.setText(
-            lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
-        lowTeleopMissIncrement.setOnClickListener{
-            lowTeleopMissNum++; if(lowTeleopMissNum == 1) lTI.setText(
-            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
-        highTeleopMakesDecrement.setOnClickListener{
-            highTeleopMakesNum--; if(highTeleopMakesNum < 0) highTeleopMakesNum = 0; if(highTeleopMakesNum == 1) hTM.setText(
-            highTeleopMakesNum.toString() + " bucket") else hTM.setText(highTeleopMakesNum.toString() + " buckets")}
-        highTeleopMissDecrement.setOnClickListener{
-            highTeleopMissNum--; if(highTeleopMissNum < 0) highTeleopMissNum = 0; if(highTeleopMissNum == 1) hTI.setText(
-            highTeleopMissNum.toString() + " miss") else hTI.setText(highTeleopMissNum.toString() + " misses")}
-        lowTeleopMakesDecrement.setOnClickListener{
-            lowTeleopMakesNum--; if(lowTeleopMakesNum < 0) lowTeleopMakesNum = 0; if(lowTeleopMakesNum == 1) lTM.setText(
-            lowTeleopMakesNum.toString() + " bucket") else lTM.setText(lowTeleopMakesNum.toString() + " buckets")}
-        lowTeleopMissDecrement.setOnClickListener{
-            lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(
-            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
-        defensePlaysIncrement.setOnClickListener{ defPlaysNum++; defense.setText(defPlaysNum.toString())}
-        defensePlaysDecrement.setOnClickListener{
-            defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(
-            defPlaysNum.toString())}
+        val hTM = findViewById<TextView>(R.id.highAutoNumText)
+        val mTM = findViewById<TextView>(R.id.midAutoNumText)
+        val lTM = findViewById<TextView>(R.id.lowAutoNumText)
+        val cubeM = findViewById<TextView>(R.id.cubeNumText)
+        val coneM = findViewById<TextView>(R.id.coneNumText)
+        val defense = findViewById<TextView>(R.id.defenseSwitch)
+
+        //auto increase/decrease
+        highAutoMakesIncrement.setOnClickListener{
+            highAutoMakesNum++; if(highAutoMakesNum == 1) hTM.setText(
+            highAutoMakesNum.toString() + " on-step") else hTM.setText(highAutoMakesNum.toString() + " on-step")}
+        midAutoMakesIncrement.setOnClickListener{
+            midAutoMakesNum++; if(midAutoMakesNum == 1) mTM.setText(
+            midAutoMakesNum.toString() + " on-step") else mTM.setText(midAutoMakesNum.toString() + " on-step")}
+        lowAutoMakesIncrement.setOnClickListener{
+            lowAutoMakesNum++; if(lowAutoMakesNum == 1) lTM.setText(
+            lowAutoMakesNum.toString() + " on-step") else lTM.setText(lowAutoMakesNum.toString() + " on-step")}
+//        lowTeleopMissIncrement.setOnClickListener{
+//            lowTeleopMissNum++; if(lowTeleopMissNum == 1) lTI.setText(
+//            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+        highAutoMakesDecrement.setOnClickListener{
+            highAutoMakesNum--; if(highAutoMakesNum < 0) highAutoMakesNum = 0; if(highAutoMakesNum == 1) hTM.setText(
+            highAutoMakesNum.toString() + " on-step") else hTM.setText(highAutoMakesNum.toString() + " on-step")}
+        midAutoMakesDecrement.setOnClickListener{
+            midAutoMakesNum--; if(midAutoMakesNum < 0) midAutoMakesNum = 0; if(midAutoMakesNum == 1) mTM.setText(
+            midAutoMakesNum.toString() + " on-step") else mTM.setText(midAutoMakesNum.toString() + " on-step")}
+        lowAutoMakesDecrement.setOnClickListener{
+            lowAutoMakesNum--; if(lowAutoMakesNum < 0) lowAutoMakesNum = 0; if(lowAutoMakesNum == 1) lTM.setText(
+            lowAutoMakesNum.toString() + " on-step") else lTM.setText(lowAutoMakesNum.toString() + " on-step")}
+        //tele increase/decrease
+        squareMakesIncrement.setOnClickListener{
+            cubeMakesNum++; if(cubeMakesNum < 0) cubeMakesNum = 0; if(cubeMakesNum == 1) cubeM.setText(
+            cubeMakesNum.toString() + " cubes") else cubeM.setText(cubeMakesNum.toString() + " cubes")}
+        squareMakesDecrement.setOnClickListener{
+            cubeMakesNum--; if(cubeMakesNum < 0) cubeMakesNum = 0; if(cubeMakesNum == 1) cubeM.setText(
+            cubeMakesNum.toString() + " cubes") else cubeM.setText(cubeMakesNum.toString() + " cubes")}
+        coneMakesIncrement.setOnClickListener{
+            conesMakesNum++; if(conesMakesNum < 0) conesMakesNum = 0; if(conesMakesNum == 1)  coneM.setText(
+            conesMakesNum.toString() + " cones") else coneM.setText(conesMakesNum.toString() + " cones")}
+        coneMakesDecrement.setOnClickListener{
+            conesMakesNum--; if(conesMakesNum < 0) conesMakesNum = 0; if(conesMakesNum == 1)  coneM.setText(
+            conesMakesNum.toString() + " cones") else coneM.setText(conesMakesNum.toString() + " cones")}
+        //defense increase/decrease
+//        defensePlaysIncrement.setOnClickListener{ defPlaysNum++; defense.setText(defPlaysNum.toString())}
+//        defensePlaysDecrement.setOnClickListener{
+//            defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(
+//            defPlaysNum.toString())}
+//        lowTeleopMissDecrement.setOnClickListener{
+//            lowTeleopMissNum--; if(lowTeleopMissNum < 0) lowTeleopMissNum = 0; if(lowTeleopMissNum == 1) lTI.setText(
+//            lowTeleopMissNum.toString() + " miss") else lTI.setText(lowTeleopMissNum.toString() + " misses")}
+//        defensePlaysIncrement.setOnClickListener{ defPlaysNum++; defense.setText(defPlaysNum.toString())}
+//        defensePlaysDecrement.setOnClickListener{
+//            defPlaysNum--; if(defPlaysNum < 0) defPlaysNum = 0; defense.setText(
+//            defPlaysNum.toString())}
     }
     //endregion
 
     private fun resetInputVariables()
     {
         highAutoMakesNum = 0
-        highAutoMissNum = 0
+        midAutoMakesNum = 0
         lowAutoMakesNum = 0
-        lowAutoMissNum = 0
-        highTeleopMakesNum = 0
-        highTeleopMissNum = 0
-        lowTeleopMakesNum = 0
-        lowTeleopMissNum = 0
-        defPlaysNum = 0
+        conesMakesNum = 0
+        cubeMakesNum = 0
+        //defPlaysNum = 0
     }
 
     //region whats_this
@@ -227,15 +241,18 @@ class DataEntryActivity : AppCompatActivity() {
         val teamNumberHelp = findViewById<Button>(R.id.teamNumberHelp)
         val matchNumberHelp = findViewById<Button>(R.id.matchNumberHelp)
         val scouterNameHelp = findViewById<Button>(R.id.scoutedByHelp)
-        val taxiHelp = findViewById<Button>(R.id.taxiHelp)
+        val taxiHelp = findViewById<Button>(R.id.mobilityHelp)
         val scoreHelp = findViewById<Button>(R.id.scoreHelp)
+        val parkedHelp = findViewById<Button>(R.id.parkedHelp)
 
         // listen for on-click and run Toast
         teamNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the team number of the team you are currently scouting.", Toast.LENGTH_LONG).show() }
         matchNumberHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the match number for the match you are currently scouting.", Toast.LENGTH_LONG).show() }
-        scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is your name num nuts!", Toast.LENGTH_LONG).show() }
+        scouterNameHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is where you put your name!", Toast.LENGTH_LONG).show() }
         taxiHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot drive across the line during autonomous?", Toast.LENGTH_LONG).show() }
-        scoreHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the total alliance score for the robot ou are scouting!", Toast.LENGTH_LONG).show() }
+        scoreHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "This is the total alliance score for the robot you are scouting!", Toast.LENGTH_LONG).show() }
+        parkedHelp.setOnClickListener { Toast.makeText(this@DataEntryActivity, "Did the robot finish inside of it's community", Toast.LENGTH_LONG).show()}
+
     }
     //endregion
 
@@ -250,39 +267,43 @@ class DataEntryActivity : AppCompatActivity() {
 
             if(checkData())
             {
-                val teamNumber = findViewById<TextView>(R.id.teamNumber)
-
+                val teamNumber = findViewById<Spinner>(R.id.teamNumber)
                 val matchNumber = findViewById<Spinner>(R.id.matchNumber)
                 val scoutedBy = findViewById<EditText>(R.id.scoutedBy)
-                val taxiToggle = findViewById<ToggleButton>(R.id.taxiSelector)
-                val score = findViewById<EditText>(R.id.score)
                 val comments = findViewById<EditText>(R.id.comments)
+                val gameResult = findViewById<Spinner>(R.id.gameResult)
+                val allianceScore = findViewById<EditText>(R.id.score)
+                val isParked = findViewById<ToggleButton>(R.id.parkedSelector)
+                val didMobility = findViewById<ToggleButton>(R.id.mobilitySelector)
+                val autoHighStep = findViewById<TextView>(R.id.highAutoNumText)
+                val autoMidStep = findViewById<TextView>(R.id.midAutoNumText)
+                val autoLowStep = findViewById<TextView>(R.id.lowAutoNumText)
+                val autoBalancePlatform = findViewById<Spinner>(R.id.autoPlatform)
+                val numCubes = findViewById<TextView>(R.id.cubeNumText)
+                val numCones = findViewById<TextView>(R.id.coneNumText)
+                val teleBalancePlatform = findViewById<Spinner>(R.id.telePlatform)
+                //val defensePlays = findViewById<Switch>(R.id.defenseSwitch)
 
-                val climbAttempt = findViewById<Spinner>(R.id.climbAttDropdown)
-
-                val gameResult = findViewById<Spinner>(R.id.climbResultDropdown)
-                val traversalTime = findViewById<Spinner>(R.id.climbTimeDropdown)
-                highAutoMakesNum = findViewById<Spinner>(R.id.autoHighMakesSpinner).selectedItemPosition
-                lowAutoMakesNum = findViewById<Spinner>(R.id.autoLowMakesSpinner).selectedItemPosition
+                //var defensePlaysInt = 0;
+                //if(defensePlays.isChecked) defensePlaysInt = 1;
 
                 val dataToSerialize = SerializationData(
-                    teamNumber.text.toString().toInt(),
+                    teamNumber.selectedItem.toString().toInt(),
                     matchNumber.selectedItemPosition,
                     scoutedBy.text.toString(),
-                    "Houston",
-                    taxiToggle.isChecked,
-                    score.text.toString().toInt(),
                     comments.text.toString(),
-                    lowAutoMakesNum,
-                    highAutoMakesNum,
-                    lowTeleopMakesNum,
-                    lowTeleopMissNum,
-                    highTeleopMakesNum,
-                    highTeleopMissNum,
-                    defPlaysNum,
-                    climbAttempt.selectedItemPosition,
                     gameResult.selectedItemPosition,
-                    traversalTime.selectedItemPosition
+                    allianceScore.text.toString().toInt(),
+                    isParked.isChecked,
+                    didMobility.isChecked,
+                    highAutoMakesNum,
+                    midAutoMakesNum,
+                    lowAutoMakesNum,
+                    autoBalancePlatform.selectedItemPosition,
+                    cubeMakesNum,
+                    conesMakesNum,
+                    teleBalancePlatform.selectedItemPosition,
+                    //defensePlaysInt
                 )
 
                 val fileSystem = FileSystem()
@@ -291,6 +312,7 @@ class DataEntryActivity : AppCompatActivity() {
                 {
                     Toast.makeText(this@DataEntryActivity, "Saved your data here: " + this@DataEntryActivity.getExternalFilesDir(null).toString(), Toast.LENGTH_LONG).show()
 
+                    resetInputVariables()
                     val switchActivityIntent = Intent(this, SubmittedActivity::class.java)
                     startActivity(switchActivityIntent)
                 }
@@ -301,7 +323,7 @@ class DataEntryActivity : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(this@DataEntryActivity, "Either Nathan doesn't believe you or your data is invalid...", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@DataEntryActivity, "Invalid Data, please try again", Toast.LENGTH_LONG).show()
             }
         }
     }

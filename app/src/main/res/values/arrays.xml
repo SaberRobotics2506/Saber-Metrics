@@ -9,7 +9,59 @@
 
     <string-array name="teams">
         <item>Team #</item>
-        <item>Joe Mamma</item>
+        <item>33</item>
+        <item>48</item>
+        <item>111</item>
+        <item>112</item>
+        <item>379</item>
+        <item>677</item>
+        <item>694</item>
+        <item>806</item>
+        <item>930</item>
+        <item>1625</item>
+        <item>1739</item>
+        <item>1781</item>
+        <item>1787</item>
+        <item>2013</item>
+        <item>2022</item>
+        <item>2077</item>
+        <item>2151</item>
+        <item>2338</item>
+        <item>2358</item>
+        <item>2451</item>
+        <item>2506</item>
+        <item>2725</item>
+        <item>2830</item>
+        <item>3061</item>
+        <item>3067</item>
+        <item>3110</item>
+        <item>3352</item>
+        <item>3390</item>
+        <item>3488</item>
+        <item>3695</item>
+        <item>3734</item>
+        <item>4327</item>
+        <item>4645</item>
+        <item>4702</item>
+        <item>4787</item>
+        <item>5125</item>
+        <item>5148</item>
+        <item>5822</item>
+        <item>5934</item>
+        <item>6651</item>
+        <item>7237</item>
+        <item>7460</item>
+        <item>7560</item>
+        <item>8029</item>
+        <item>8096</item>
+        <item>8122</item>
+        <item>8802</item>
+        <item>8847</item>
+        <item>8880</item>
+        <item>9082</item>
+
+
+
     </string-array>
 
     <string-array name="matches">
@@ -156,14 +208,11 @@
         <item>Match 140</item>
     </string-array>
 
-    <string-array name="climb">
-        <item>Select climb attempt</item>
-        <item>Did not attempt</item>
-        <item>Failed</item>
-        <item>Succeeded - Lvl 1</item>
-        <item>Succeeded - Lvl 2</item>
-        <item>Succeeded - Lvl 3</item>
-        <item>Succeeded - Lvl 4</item>
+    <string-array name="endgame">
+        <item>Select Option</item>
+        <item>Did not Dock or Engage</item>
+        <item>Did Dock, did not Engage</item>
+        <item>Did Dock, did Engage</item>
     </string-array>
 
     <string-array name="climbTime">
@@ -172,6 +221,14 @@
         <item>20 seconds</item>
         <item>30 seconds</item>
         <item>40 secs or more</item>
+    </string-array>
+
+    <string-array name="strategy">
+        <item>Select Strategy</item>
+        <item>Grid score</item>
+        <item>Defenceive</item>
+        <item>Ramp</item>
+
     </string-array>
 
     <string-array name="autoScoring">

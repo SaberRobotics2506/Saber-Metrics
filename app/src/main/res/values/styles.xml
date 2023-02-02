@@ -8,4 +8,12 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@style/TextAppearance.AppCompat">
+<!--        <item name="android:textSize">3dp</item>-->
+        <item name="titleTextColor">#FF000000</item>
+<!--        <item name="android:fontFamily">roboto</item>-->
+
+    </style>
+
 </resources>

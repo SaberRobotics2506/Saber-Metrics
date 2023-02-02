@@ -19,7 +19,8 @@ from os.path import join
 BUILDER_OUTPUT_FILE_NAME = "sqlBuilderOutput.sql" #This is the filename of the build output SQL file
 CURRENT_WORKING_DIRECTORY = os.getcwd() #Get current working directory (cwd) of this file
 SEARCH_FOR_FILETYPE = ".scout" #The filetype to include in the file searches
-TABLE_NAME = "MatchMaster3" #The name of the SQL table we are writing queries for
+TABLE_NAME = "Tests" #The name of the SQL table we are writing queries for
+DATABASE_NAME = "Scouting 2023"
 
 ####################FUNCTIONS####################
 
@@ -66,7 +67,7 @@ def BuildInsertQueries(data):
 	# EXAMPLE QUERY: INSERT INTO MatchMaster1 (ScoutedBy)VALUES(John Doe)
 	
 	query_list = [] #Define an empty list to store SQL querries in
-	database = "[Scouting 2022].[dbo].[" + str(TABLE_NAME) + "]" #Store the name of the table to be referenced again later when creating the query
+	database = "[" + str(DATABASE_NAME) + "].[dbo].[" + str(TABLE_NAME) + "]" #Store the name of the table to be referenced again later when creating the query
 	
 	for json_dictionary in data: #For each JSON dictionary in the data list...
 		

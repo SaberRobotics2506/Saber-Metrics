@@ -4,160 +4,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_gray"
-    tools:context="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity">
-
-    <Button
-        android:id="@+id/lowMissTeleopUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/Inc_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopUpBtn"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+    android:background="@color/white"
+    tools:context="com.ibxcodecat.frc_scouting.Activity.DataEntryActivity"
+    tools:layout_editor_absoluteX="83dp"
+    tools:layout_editor_absoluteY="-118dp">
 
     <TextView
-        android:id="@+id/lowTeleopMissNumText"
+        android:id="@+id/midAutoNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="43dp"
-        android:text="@string/telop_misses"
-        android:textColor="@color/light_grey"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/lowMissTeleopUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/lowMissTeleopDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/lowTeleopMakesNumText" />
-
-    <Button
-        android:id="@+id/lowMissTeleopDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/dec_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/lowMakeTeleopDownBtn"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
-
-    <Button
-        android:id="@+id/lowMakeTeleopUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/Inc_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopUpBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/lowTeleopMakesNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="42dp"
-        android:text="@string/_0_buckets"
-        android:textColor="@color/light_grey"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/lowMakeTeleopUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/lowMakeTeleopDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/hiTeleText2" />
-
-    <Button
-        android:id="@+id/lowMakeTeleopDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/dec_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiMissTeleopDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/hiMissTeleopUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/Inc_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopUpBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/highTeleopMissNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="43dp"
-        android:text="@string/telop_misses"
-        android:textColor="@color/light_grey"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMissTeleopUpBtn"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/hiMissTeleopDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/highTeleopMakesNumText" />
-
-    <Button
-        android:id="@+id/hiMissTeleopDownBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/dec_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/hiMakeTeleopDownBtn"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/hiMakeTeleopUpBtn"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/Inc_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/highTeleopMakesNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="42dp"
         android:text="@string/_0_buckets"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/hiMakeTeleopUpBtn"
-        app:layout_constraintStart_toEndOf="@+id/hiMakeTeleopDownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/hiTeleText" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/midAutoText" />
+
+    <TextView
+        android:id="@+id/lowAutoNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/_0_buckets"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/lowAutoText" />
 
     <Button
-        android:id="@+id/hiMakeTeleopDownBtn"
+        android:id="@+id/cubeIncreaseBtn"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="57dp"
+        android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintStart_toEndOf="@+id/cubeNumText"
+        app:layout_constraintTop_toTopOf="@+id/cubeNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/hiAutoIncreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintStart_toEndOf="@+id/highAutoNumText"
+        app:layout_constraintTop_toTopOf="@+id/highAutoNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/midAutoIncreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintStart_toEndOf="@+id/midAutoNumText"
+        app:layout_constraintTop_toTopOf="@+id/midAutoNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/lowAutoIncreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintStart_toEndOf="@+id/lowAutoNumText"
+        app:layout_constraintTop_toTopOf="@+id/lowAutoNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/highAutoNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/_0_buckets"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/hiAutoText" />
+
+    <TextView
+        android:id="@+id/cubeNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/_0_cubes"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AutoText" />
+
+    <TextView
+        android:id="@+id/coneNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/_0_cones"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cubeNumText" />
+
+    <Button
+        android:id="@+id/coneIncreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/Inc_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintStart_toEndOf="@+id/coneNumText"
+        app:layout_constraintTop_toTopOf="@+id/coneNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/coneDecreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         android:text="@string/dec_Button"
         android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
+        app:layout_constraintEnd_toStartOf="@+id/coneNumText"
+        app:layout_constraintTop_toTopOf="@+id/coneNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/hiAutoDecreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/highAutoNumText"
+        app:layout_constraintTop_toBottomOf="@+id/hiAutoText"
+        app:layout_constraintTop_toTopOf="@+id/highAutoNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/cubeDecreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/cubeNumText"
+        app:layout_constraintTop_toTopOf="@+id/cubeNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/lowAutoDecreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/lowAutoNumText"
+        app:layout_constraintTop_toTopOf="@+id/lowAutoNumText"
+        app:strokeWidth="1.5dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/midAutoDecreaseBtn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="@string/dec_Button"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/midAutoNumText"
+        app:layout_constraintTop_toBottomOf="@+id/midAutoText"
+        app:strokeWidth="1.5dp"
+        app:layout_constraintTop_toTopOf="@+id/midAutoNumText"
         tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
@@ -183,12 +206,9 @@
 
     <View
         android:id="@+id/horizontalDivider"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="293dp"
+        android:layout_height="3dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verticalDivider" />
 
@@ -224,7 +244,7 @@
         android:layout_marginTop="16dp"
         android:background="#00000000"
         android:entries="@array/teams"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -238,6 +258,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/teamNumber"
         app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="1.5dp"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <Spinner
@@ -260,6 +281,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/teamNumberHelp"
+        app:strokeWidth="1.5dp"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -267,16 +289,18 @@
         android:layout_width="130dp"
         android:layout_height="35dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="@string/scoreTXT"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         android:textSize="14dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toStartOf="@+id/submit"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/comments" />
 
     <Button
@@ -289,32 +313,69 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintStart_toEndOf="@+id/score"
+        app:strokeWidth="1.5dp"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/taxiHelp"
+        android:id="@+id/mobilityHelp"
         android:layout_width="40dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:text="@string/Help"
         android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/taxiSelector"
+        app:layout_constraintStart_toEndOf="@+id/mobilitySelector"
         app:layout_constraintTop_toBottomOf="@id/AutoText"
+        app:layout_constraintTop_toTopOf="@+id/mobilitySelector"
+        app:strokeWidth="1.5dp"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <ToggleButton
-        android:id="@+id/taxiSelector"
+        android:id="@+id/mobilitySelector"
         android:layout_width="235dp"
         android:layout_height="48dp"
-        android:layout_marginTop="3dp"
-        android:textColor="#455A64"
-        android:textOff="@string/taxiOffText"
-        android:textOn="@string/taxiOnText"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="168dp"
+        android:background="#FFEB3B"
+        android:textColor="#000000"
+        android:textOff="@string/mobilityOffText"
+        android:textOn="@string/mobilityOnText"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/AutoText"
         tools:ignore="TextContrastCheck" />
+
+    <ToggleButton
+        android:id="@+id/parkedSelector"
+        android:layout_width="235dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFEB3B"
+        android:textColor="#000000"
+        android:textColorHighlight="#FFD600"
+        android:textColorLink="#FFD600"
+        android:textOff="@string/parkedOffText"
+        android:textOn="@string/parkedOnText"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalDivider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telePlatform"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/parkedHelp"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/Help"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/parkedSelector"
+        app:layout_constraintTop_toTopOf="@+id/parkedSelector"
+        app:strokeWidth="1.5dp"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/scoutedBy"
@@ -326,7 +387,7 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="@+id/matchNumber"
         app:layout_constraintTop_toBottomOf="@+id/matchNumber"
@@ -342,6 +403,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintStart_toEndOf="@+id/scoutedBy"
         app:layout_constraintTop_toBottomOf="@+id/matchNumberHelp"
+        app:strokeWidth="1.5dp"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -356,7 +418,7 @@
         android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
         android:minHeight="32dp"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -377,6 +439,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/comments"
+        app:strokeWidth="1.5dp"
         tools:visibility="visible" />
 
     <TextView
@@ -385,9 +448,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="23dp"
-        android:text="@string/autoGroupLabelText"
+        android:text="@string/teleopGroupLabelText"
         android:textAlignment="textEnd"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
@@ -395,222 +458,118 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/autoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
-        android:text="@string/teleopGroupLabelText"
-        android:textColor="@color/light_grey"
+        android:text="@string/autoGroupLabelText"
         android:textAlignment="center"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="2dp"
         android:layout_height="315dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="184dp"
         android:background="?android:attr/listDivider"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/lowMakeTeleopDownBtn"
-        app:layout_constraintStart_toEndOf="@+id/taxiHelp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/lowAutoGoalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="35dp"
-        android:text="@string/low_goal"
-        android:textColor="@color/light_grey"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taxiSelector" />
-
-    <Spinner
-        android:id="@+id/autoLowMakesSpinner"
-        android:layout_width="125dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="4dp"
-        android:entries="@array/autoScoring"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoText"
-        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
-
-    <Spinner
-        android:id="@+id/autoHighMakesSpinner"
-        android:layout_width="125dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:entries="@array/autoScoring"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiAutoText"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
         android:id="@+id/hiAutoText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/high_goal"
-        android:textColor="@color/light_grey"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taxiSelector" />
-
-    <TextView
-        android:id="@+id/lowAutoGoalText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:text="@string/makes"
-        android:textColor="@color/light_grey"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/hiAutoText"
-        app:layout_constraintEnd_toStartOf="@+id/divider2"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/hiTeleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="75dp"
         android:text="@string/high_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/autoText" />
 
     <TextView
-        android:id="@+id/hiTeleText2"
+        android:id="@+id/lowAutoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="75dp"
         android:text="@string/low_goal"
-        android:textColor="@color/light_grey"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/highTeleopMissNumText" />
+        app:layout_constraintTop_toBottomOf="@+id/highAutoNumText" />
 
     <TextView
-        android:id="@+id/defPlaysText"
+        android:id="@+id/midAutoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/defense_plays"
-        android:textColor="@color/light_grey"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="75dp"
+        android:text="@string/middle_goal"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
-
-    <TextView
-        android:id="@+id/defPlaysNumText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:textColor="@color/light_grey"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/defPlaysText"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
-
-    <Button
-        android:id="@+id/defPlaysIncrementBtn"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Inc_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toEndOf="@+id/defPlaysDecrementBtn"
-        app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/defPlaysDecrementBtn"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/dec_Button"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/defPlaysText"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/climbAttText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:textColor="@color/light_grey"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@id/defPlaysIncrementBtn"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/highAutoNumText" />
 
     <Spinner
-        android:id="@+id/climbAttDropdown"
+        android:id="@+id/autoPlatform"
         style="@android:style/Widget.Material.Light.Spinner"
         android:layout_width="300dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/climb"
-        app:layout_constraintStart_toEndOf="@+id/climbAttText"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalDivider3"
+        android:layout_height="33dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        android:entries="@array/endgame"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalDivider3"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <Spinner
-        android:id="@+id/climbTimeDropdown"
+        android:id="@+id/telePlatform"
         style="@android:style/Widget.Material.Light.Spinner"
-        android:layout_width="300dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/climbTime"
-        app:layout_constraintStart_toEndOf="@+id/climbAttText"
-        app:layout_constraintTop_toBottomOf="@+id/climbAttDropdown"
+        android:layout_width="301dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="12dp"
+        android:entries="@array/endgame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/climbResultText"
+        android:id="@+id/gameResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="6dp"
         android:text="@string/game_result"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintStart_toEndOf="@+id/comments" />
 
     <Spinner
-        android:id="@+id/climbResultDropdown"
+        android:id="@+id/gameResult"
         style="@android:style/Widget.Material.Light.Spinner"
         android:layout_width="135dp"
         android:layout_height="22dp"
@@ -618,7 +577,36 @@
         android:layout_marginBottom="6dp"
         android:entries="@array/winLossTie"
         app:layout_constraintBottom_toTopOf="@+id/scoreHelp"
-        app:layout_constraintStart_toEndOf="@+id/climbResultText"
+        app:layout_constraintStart_toEndOf="@+id/gameResultText"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <Switch
+        android:id="@+id/defenseSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:scrollbarThumbHorizontal="@android:drawable/editbox_background"
+        android:textColorHighlight="#FFC107"
+        android:textColorLink="#FFEB3B"
+        android:textOff="EEOFF"
+        android:textOn="EEON"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/defPlaysText" />
+
+    <TextView
+        android:id="@+id/defPlaysText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="260dp"
+        android:scrollbarThumbHorizontal="@android:drawable/editbox_background"
+        android:text="@string/defense_plays"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
